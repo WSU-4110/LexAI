@@ -1,0 +1,992 @@
+[
+  {
+    "id": "ocd-bill/604653c9-8cae-4a17-9f4e-2f9996630844",
+    "identifier": "SB 770",
+    "title": "Food: milk; definition of pasteurized milk ordinance; update. Amends sec. 6 of 2001 PA 266 (MCL 288.476).",
+    "session": "2025-2026",
+    "chamber": "Senate",
+    "updated_at": "2026-02-27T23:54:11.943657+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/SB770/"
+  },
+  {
+    "id": "ocd-bill/c2602491-0a0d-438c-a8e3-bc60a9a814b3",
+    "identifier": "SB 272",
+    "title": "Housing: condominium; definition of undeveloped land; modify. Amends sec. 67 of 1978 PA 59 (MCL 559.167).",
+    "session": "2025-2026",
+    "chamber": "Senate",
+    "updated_at": "2026-02-27T23:52:15.324877+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/SB272/"
+  },
+  {
+    "id": "ocd-bill/120fdd94-36fd-4a1e-a107-b087549ae743",
+    "identifier": "SB 736",
+    "title": "Crimes: crimes against minors; definition of child abuse; modify. Amends sec. 136b of 1931 PA 328 (MCL 750.136b).   TIE BAR WITH: SB 0735'25",
+    "session": "2025-2026",
+    "chamber": "Senate",
+    "updated_at": "2026-02-27T23:47:48.505026+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/SB736/"
+  },
+  {
+    "id": "ocd-bill/0fc53eed-e1a1-48e3-9b1c-23de5289b143",
+    "identifier": "SB 735",
+    "title": "Children: child abuse or child neglect; definition of child neglect; modify. Amends sec. 2 of 1975 PA 238 (MCL 722.622).",
+    "session": "2025-2026",
+    "chamber": "Senate",
+    "updated_at": "2026-02-27T23:47:32.158535+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/SB735/"
+  },
+  {
+    "id": "ocd-bill/7271240b-5c0b-4eeb-ab38-c9963fc2492e",
+    "identifier": "SB 771",
+    "title": "Environmental protection: sewage; onsite wastewater treatment systems; regulate, and provide for assessments and evaluations. Amends secs. 12751, 12752, 12757 & 12771 of 1978 PA 368 (MCL 333.12751 et seq.) & adds pt. 128.",
+    "session": "2025-2026",
+    "chamber": "Senate",
+    "updated_at": "2026-02-27T23:45:38.141151+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/SB771/"
+  },
+  {
+    "id": "ocd-bill/21fb3211-b52e-44be-97df-7e070fae8491",
+    "identifier": "HB 5435",
+    "title": "Transportation: motor fuel tax; motor fuel tax act; modify to include tax on electric fuel. Amends title & sec. 53 of 2000 PA 403 (MCL 207.1053) & adds secs. 157, 158 & 158a.   TIE BAR WITH: HB 5434'25,  HB 5433'25",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:18:51.224854+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5435/"
+  },
+  {
+    "id": "ocd-bill/3b023ce1-41d6-4ee9-a53d-f138efbc0afe",
+    "identifier": "HB 5584",
+    "title": "Land use: zoning and growth management; duplexes; permit in single-family residential zones. Amends sec. 102 of 2006 PA 110 (MCL 125.3102) & adds sec. 517.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:18:41.404240+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5584/"
+  },
+  {
+    "id": "ocd-bill/38ccb525-89d5-4c8e-8322-3760bc5d7f37",
+    "identifier": "HB 5575",
+    "title": "Crimes: public office and officers; certain terms related to the crime of intimidating or harassing an individual based on actual or perceived employment as a first responder; define. Amends 1931 PA 328 (MCL 750.1 - 750.568) by adding sec. 409d.  TIE BAR WITH: HB 5574'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:18:13.345986+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5575/"
+  },
+  {
+    "id": "ocd-bill/4372db54-0326-4d3f-a703-9fdbb867ab4d",
+    "identifier": "HB 5433",
+    "title": "Use tax: definitions; definition of qualified commercial motor vehicle; modify. Amends secs. 2 & 4a of 1937 PA 94 (MCL 205.92 & 205.94a).   TIE BAR WITH: HB 5434'25,  HB 5435'25",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:17:47.952106+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5433/"
+  },
+  {
+    "id": "ocd-bill/ad3925e2-b902-41b9-b6ea-6f13d6dd57ad",
+    "identifier": "HB 5587",
+    "title": "State agencies (proposed): other; grants for community violence intervention services; provide for. Creates new act.   TIE BAR WITH: HB 5586'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:17:22.355086+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5587/"
+  },
+  {
+    "id": "ocd-bill/4f496384-8d29-48cf-ba92-d6bb330f59da",
+    "identifier": "HB 5571",
+    "title": "Construction: code; single exit stairway in multiple-family dwellings with not more than 6 levels; allow under certain conditions. Amends 1972 PA 230 (MCL 125.1501 - 125.1531) by adding sec. 4j.  TIE BAR WITH: HB 5570'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:16:42.952512+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5571/"
+  },
+  {
+    "id": "ocd-bill/d20e63bb-1d20-4592-b7cd-b8b94d1297ff",
+    "identifier": "HB 5219",
+    "title": "Food: milk; sale of raw milk and raw milk products under the food law; allow. Amends secs. 1107, 1109 & 6140 of 2000 PA 92 (MCL 289.1107 et seq.) & adds secs. 4102a & 4102b.   TIE BAR WITH: HB 5217'25,  HB 5218'25",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:16:17.290932+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5219/"
+  },
+  {
+    "id": "ocd-bill/8a3c227e-7443-4952-a3aa-7fc1174ba935",
+    "identifier": "HB 5564",
+    "title": "Civil procedure: other; regulation and licensing of earned wage access service providers; provide for. Amends sec. 4012 of 1961 PA 236 (MCL 600.4012).  TIE BAR WITH: HB 5558'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:15:13.147517+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5564/"
+  },
+  {
+    "id": "ocd-bill/c339d7b1-b53f-4e4c-9ac4-88dd53e974fa",
+    "identifier": "HB 5570",
+    "title": "Housing: codes; single exit stairway in multiple-family dwellings; allow under certain conditions. Amends 1972 PA 230 (MCL 125.1501 - 125.1531) by adding sec. 4i.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:14:52.762209+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5570/"
+  },
+  {
+    "id": "ocd-bill/376a782f-12e9-4c8e-ae24-ec8c15b3ebbf",
+    "identifier": "HB 5583",
+    "title": "Land use: zoning and growth management; setback requirement greater than 25 feet; prohibit. Amends 2006 PA 110 (MCL 125.3101 - 125.3702) by adding sec. 205c.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:13:55.751284+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5583/"
+  },
+  {
+    "id": "ocd-bill/a8a7ceeb-0345-4188-bb0a-c7ad33d149b4",
+    "identifier": "HB 5562",
+    "title": "Financial institutions: other; definition of financial licensing acts in the consumer financial services act; modify to include the earned wage access services act. Amends sec. 2 of 1988 PA 161 (MCL 487.2052).   TIE BAR WITH: HB 5558'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:13:31.566815+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5562/"
+  },
+  {
+    "id": "ocd-bill/8cf16c7a-1aea-407c-a9b7-ea4601fd635a",
+    "identifier": "HB 5039",
+    "title": "Health occupations: health professionals; disciplinary action for making a false representation in assisted reproduction; provide for. Amends secs. 16221 & 16226 of 1978 PA 368 (MCL 333.16221 & 333.16226).   TIE BAR WITH: HB 5035'25,  HB 5036'25",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:13:15.282976+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5039/"
+  },
+  {
+    "id": "ocd-bill/c8637f36-1d7b-4849-91c8-9d1801545e48",
+    "identifier": "HB 5561",
+    "title": "Consumer credit: collection practices; regulation of collection agencies in the occupational code; provide for exemption for certain earned wage access services. Amends sec. 901 of 1980 PA 299 (MCL 339.901).   TIE BAR WITH: HB 5558'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:11:48.451814+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5561/"
+  },
+  {
+    "id": "ocd-bill/f8dec83e-c0da-4236-a2af-b52c274db6c2",
+    "identifier": "HB 5566",
+    "title": "Financial institutions: generally; credit reform act; amend to exempt earned wage access services. Amends sec. 2 of 1995 PA 162 (MCL 445.1852).  TIE BAR WITH: HB 5558'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:11:35.169615+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5566/"
+  },
+  {
+    "id": "ocd-bill/7e615146-3111-4a71-b33e-e996b053049b",
+    "identifier": "HB 5582",
+    "title": "Land use: zoning and growth management; minimum residential parking space requirements and limitations on mobile homes; limit. Amends 2006 PA 110 (MCL 125.3101 - 125.3702) by adding sec. 205b.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:10:32.665287+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5582/"
+  },
+  {
+    "id": "ocd-bill/c346c9a5-c11e-41c8-8501-1ac8d91a6756",
+    "identifier": "HB 5434",
+    "title": "Transportation: carriers; tax on motor carriers for electric fuel; provide for. Amends title & secs. 1, 2, 2a, 5, 8, 9 & 10 of 1980 PA 119 (MCL 207.211 et seq.).   TIE BAR WITH: HB 5433'25,  HB 5435'25",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:10:25.041281+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5434/"
+  },
+  {
+    "id": "ocd-bill/275c2835-1787-4c0c-a5c3-14a4c23e57f1",
+    "identifier": "HB 5579",
+    "title": "Labor: fair employment practices; use of electronic monitoring or automated decisions tools by an employer; prohibit except for certain purposes. Creates new act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:10:17.309627+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5579/"
+  },
+  {
+    "id": "ocd-bill/c20a5a5c-9632-4689-9c5d-cca83d180597",
+    "identifier": "HB 5588",
+    "title": "Highways: memorial; portion of Auburn Road in Rochester Hills; designate as the \"Sheriff Deputy Brad Reckling Memorial Highway\". Amends 2001 PA 142 (MCL 250.1001 - 250.2092) by adding sec. 121.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:10:03.286485+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5588/"
+  },
+  {
+    "id": "ocd-bill/ad664efe-f858-40d8-8ee8-1adf6f338cf1",
+    "identifier": "HB 5577",
+    "title": "Land use: other; coordinate systems; update. Amends secs. 1, 1a, 3, 4, 6, 7, 8 & 9 of 1964 PA 9 (MCL 54.231 et seq.) & repeals secs. 2, 5 & 5a of 1964 PA 9 (MCL 54.232 et seq.).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:09:58.005266+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5577/"
+  },
+  {
+    "id": "ocd-bill/028b6555-901f-4ec4-b32e-99a1d06d62c2",
+    "identifier": "HB 5559",
+    "title": "Financial institutions: money transmitters; money transmission services act; provide for exemption for certain earned wage access services. Amends sec. 4 of 2006 PA 250 (MCL 487.1004).   TIE BAR WITH: HB 5558'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:09:37.417145+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5559/"
+  },
+  {
+    "id": "ocd-bill/9697fa9f-786c-4989-8886-ee753c3211fe",
+    "identifier": "HB 5585",
+    "title": "Land use: zoning and growth management; zoning restrictions related to accessory dwelling units and mobile homes; modify. Amends sec. 102 of 2006 PA 110 (MCL 125.3102) & adds secs. 207a & 516.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:09:23.851106+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5585/"
+  },
+  {
+    "id": "ocd-bill/4708572a-8622-4282-8be0-9686d5a08427",
+    "identifier": "HB 5567",
+    "title": "Financial institutions: generally; regulatory loan act; amend to exempt earned wage access services. Amends sec. 20 of 1939 PA 21 (MCL 493.20).   TIE BAR WITH: HB 5558'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:09:18.840623+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5567/"
+  },
+  {
+    "id": "ocd-bill/0dc3fec8-f751-4783-855e-f7bed9001b82",
+    "identifier": "HB 5565",
+    "title": "Financial institutions: other; deferred presentment service transactions act; provide for exemption for certain earned wage access services. Amends sec. 11 of 2005 PA 244 (MCL 487.2131).  TIE BAR WITH: HB 5558'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:09:08.647866+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5565/"
+  },
+  {
+    "id": "ocd-bill/b78cb035-7391-4023-85e8-24566d2d10d7",
+    "identifier": "HB 5578",
+    "title": "Family law: child custody; changing the established custodial environment of a child; expand. Amends secs. 7 & 8 of 1970 PA 91 (722.27 & 722.28).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:08:31.613895+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5578/"
+  },
+  {
+    "id": "ocd-bill/ba05bcee-d232-42e7-8c01-a7234018dff7",
+    "identifier": "HB 5573",
+    "title": "Property tax: other; definition of nonprofit charitable institution; provide for. Amends sec. 7o of 1893 PA 206 (MCL 211.7o).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:08:03.401039+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5573/"
+  },
+  {
+    "id": "ocd-bill/be0c2d87-df59-4dd7-9557-2290c73491a3",
+    "identifier": "HB 5560",
+    "title": "Labor: hours and wages; regulation of wages and fringe benefits; provide for exemption for certain earned wage access services. Amends 1978 PA 390 (MCL 408.471 - 408.490) by adding sec. 18a.   TIE BAR WITH: HB 5558'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:07:33.664908+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5560/"
+  },
+  {
+    "id": "ocd-bill/1d458e27-29b3-49ea-8689-d64d25287ec9",
+    "identifier": "HB 5576",
+    "title": "Criminal procedure: sentencing guidelines; sentencing guidelines for intimidating or harassing an individual based on actual or perceived employment as a first responder; provide for. Amends sec. 16t, ch. XVII of 1927 PA 175 (MCL 777.16t).   TIE BAR WITH: HB 5574'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:07:22.340196+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5576/"
+  },
+  {
+    "id": "ocd-bill/4df3173b-0eb3-47ea-a530-4b09040e464f",
+    "identifier": "HB 5563",
+    "title": "Consumer credit: collection practices; regulation of collection practices; provide for exemption for certain earned wage access services. Amends sec. 1 of 1981 PA 70 (MCL 445.251).   TIE BAR WITH: HB 5558'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:05:09.354528+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5563/"
+  },
+  {
+    "id": "ocd-bill/3558c743-3016-4f4e-9baf-3a42b47f51da",
+    "identifier": "HB 5581",
+    "title": "Land use: zoning and growth management; minimum home size requirements; limit. Amends sec. 201 of 2006 PA 110 (MCL 125.3201) & adds sec. 205e.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:05:03.717625+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5581/"
+  },
+  {
+    "id": "ocd-bill/3095716f-add7-40b4-a959-a93b1859bb74",
+    "identifier": "HB 5574",
+    "title": "Crimes: public office and officers; intimidating or harassing an individual based on actual or perceived employment as a first responder; prohibit, and provide penalties. Amends 1931 PA 328 (MCL 750.1 - 750.568) by adding sec. 409c.  TIE BAR WITH: HB 5575'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:04:58.010361+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5574/"
+  },
+  {
+    "id": "ocd-bill/3a1f3f10-37f6-484d-9f0a-9ae9c6ae73fd",
+    "identifier": "HB 5580",
+    "title": "Insurance: insurers; property insurance denial, cancellation, or increased premiums for owners of certain breeds of dogs; prohibit. Amends 1956 PA 218 (MCL 500.100 - 500.8302) by adding sec. 2130a.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:04:01.420137+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5580/"
+  },
+  {
+    "id": "ocd-bill/b63a3268-347b-42af-ab00-d1801b5203e8",
+    "identifier": "HB 5569",
+    "title": "Financial institutions: generally; criminal usury; amend to exempt earned wage access services. Amends 1968 PA 259 (MCL 438.41 - 438.42) by adding sec. 1a.   TIE BAR WITH: HB 5558'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:03:05.803935+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5569/"
+  },
+  {
+    "id": "ocd-bill/731e2669-ee79-43f2-8694-f37e374d382d",
+    "identifier": "HB 5572",
+    "title": "Property tax: exemptions; exemption of real and personal property owned and occupied by a nonprofit corporation; modify. Amends sec. 7o of 1893 PA 206 (MCL 211.7o).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:02:58.549645+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5572/"
+  },
+  {
+    "id": "ocd-bill/4ad843c8-0bfe-40c8-9703-407c429cb61d",
+    "identifier": "HB 5568",
+    "title": "Financial institutions: generally; 1966 PA 326; amend to exempt earned wage access services. Amends sec. 1 of 1966 PA 326 (MCL 438.31).  TIE BAR WITH: HB 5558'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:02:19.635997+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5568/"
+  },
+  {
+    "id": "ocd-bill/8b9cb284-65a6-42a1-8261-0e85db8b5107",
+    "identifier": "HB 4908",
+    "title": "Occupations: cosmetologists; shampoo services performed in a cosmetology establishment by certain cosmetology apprentices; allow. Amends sec. 1203a of 1980 PA 299 (MCL 339.1203a).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:02:08.102778+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB4908/"
+  },
+  {
+    "id": "ocd-bill/71f7dc34-d237-493f-8b04-7e9e1e0bfa90",
+    "identifier": "HB 5586",
+    "title": "State agencies (proposed): other; office of community violence intervention services; establish. Creates new act.   TIE BAR WITH: HB 5587'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T20:01:57.383516+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5586/"
+  },
+  {
+    "id": "ocd-bill/eee0bc1d-4284-439d-b559-e209aec25d58",
+    "identifier": "HB 5634",
+    "title": "Health: immunizations; promulgation of certain rules that are more stringent than the requirements for claiming exemption from immunizations; prohibit. Amends sec. 9215 of 1978 PA 368 (MCL 333.9215).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:04:22.000754+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5634/"
+  },
+  {
+    "id": "ocd-bill/77a56278-c9a2-4665-8df1-fd44dc1a57cb",
+    "identifier": "HB 5621",
+    "title": "Appropriations: omnibus; appropriations for multiple departments and branches for fiscal year 2027-2028; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:03:30.972387+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5621/"
+  },
+  {
+    "id": "ocd-bill/6b0b4622-48eb-4f09-b647-5bde0ea826ec",
+    "identifier": "SB 463",
+    "title": "Tobacco: other; minors that purchase, possess, or use tobacco products, vapor products, or alternative nicotine products; sunset criminal penalties and civil sanctions for. Amends sec. 2 of 1915 PA 31 (MCL 722.642).   TIE BAR WITH: SB 0464'25,  SB 0465'25,  SB 0466'25",
+    "session": "2025-2026",
+    "chamber": "Senate",
+    "updated_at": "2026-02-27T00:03:15.012643+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/SB463/"
+  },
+  {
+    "id": "ocd-bill/4b45709b-3f64-4c21-abd1-0235b504a6f5",
+    "identifier": "HB 5620",
+    "title": "Appropriations: omnibus; appropriations for multiple departments and branches for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:03:14.209343+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5620/"
+  },
+  {
+    "id": "ocd-bill/283954be-e97b-4538-aee5-f502997aea26",
+    "identifier": "HB 5627",
+    "title": "Appropriations: supplemental; appropriations for multiple departments and branches for fiscal year 2027-2028; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:02:59.955930+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5627/"
+  },
+  {
+    "id": "ocd-bill/1c8bcd16-4f4d-4416-906b-284660be95ee",
+    "identifier": "HB 5641",
+    "title": "Trade: other; Michigan international trade commission; establish. Creates new act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:02:55.793265+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5641/"
+  },
+  {
+    "id": "ocd-bill/4a5b354b-7d44-4613-920b-93526bde3857",
+    "identifier": "HB 5616",
+    "title": "Appropriations: capital outlay; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:02:41.962103+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5616/"
+  },
+  {
+    "id": "ocd-bill/b9db556c-7d01-40e7-92ee-a56968b2a7f3",
+    "identifier": "HB 5623",
+    "title": "Appropriations: supplemental; appropriations for multiple departments and branches for fiscal year 2024-2025; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:02:26.846367+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5623/"
+  },
+  {
+    "id": "ocd-bill/ca874ec3-43af-4ff6-96fb-52535ee3dcc2",
+    "identifier": "HB 5604",
+    "title": "Appropriations: department of health and human services; appropriations for fiscal year 2026-2027 for Medicaid and behavioral health; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:01:23.328575+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5604/"
+  },
+  {
+    "id": "ocd-bill/070f29de-798f-40b6-84c7-f738eba66d26",
+    "identifier": "HCR 2",
+    "title": "A concurrent resolution prescribing the Rules of the Legislature for Selecting Commissioners to an Article V Convention.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:01:04.719114+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HCR2/"
+  },
+  {
+    "id": "ocd-bill/552d707d-d144-4c03-80fe-093dbb76973d",
+    "identifier": "HB 5633",
+    "title": "Appropriations: supplemental; supplemental appropriations in the school aid act for fiscal year 2026-2027; provide for. Amends secs. 11 & 17b of 1979 PA 94 (MCL 388.1611 & 388.1617b).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:00:54.910814+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5633/"
+  },
+  {
+    "id": "ocd-bill/36b58a82-3e87-4c4a-ad25-61c41ec4c446",
+    "identifier": "HB 5597",
+    "title": "Construction: inspectors; third-party building inspections; allow. Amends secs. 12 & 13 of 1972 PA 230 (MCL 125.1512 & 125.1513) & adds sec. 12a.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:00:51.446014+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5597/"
+  },
+  {
+    "id": "ocd-bill/c89da4c0-dbfc-4c4e-83fb-dd449fd0d56b",
+    "identifier": "HB 5593",
+    "title": "Health facilities: other; hyperbaric oxygen inspection fund; create. Amends 1978 PA 368 (MCL 333.1101 - 333.25211) by adding section 21224 to pt. 212.   TIE BAR WITH: HB 5590'26,  HB 5591'26,  HB 5592'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:00:25.955970+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5593/"
+  },
+  {
+    "id": "ocd-bill/c0c01c35-d1f9-426c-87af-761010afaf21",
+    "identifier": "HB 5595",
+    "title": "Public utilities: public service commission; moratorium on approvals by the Michigan public service commission of any new enterprise data centers; provide for. Amends 1939 PA 3 (MCL 460.1 - 460.11) by adding sec. 10ii.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:00:16.415277+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5595/"
+  },
+  {
+    "id": "ocd-bill/ace79ca0-f377-4f29-b76e-a2cd54f9383d",
+    "identifier": "HB 5611",
+    "title": "Appropriations: department of lifelong education, advancement, and potential; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-27T00:00:04.585653+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5611/"
+  },
+  {
+    "id": "ocd-bill/cfaf6786-f26c-4a92-ac94-1fe3483a7319",
+    "identifier": "HB 5590",
+    "title": "Health facilities: other; licensure of freestanding hyperbaric oxygen therapy facilities; provide for. Amends 1978 PA 368 (MCL 333.1101 - 333.25211) by adding secs. 21211, 21213, 21215, 21217, 21219, 21221, 21223, 21227 & 21231 to pt. 212.   TIE BAR WITH: HB 5591'26,  HB 5592'26,  HB 5593'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:59:59.440290+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5590/"
+  },
+  {
+    "id": "ocd-bill/69c8fe8b-c707-447f-af33-b40ead503aed",
+    "identifier": "HB 5451",
+    "title": "Food: service establishments; annual fire inspections for food trucks; provide for. Amends sec. 6135 of 2000 PA 92 (MCL 289.6135) & adds secs. 2130 & 6115a.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:59:18.986674+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5451/"
+  },
+  {
+    "id": "ocd-bill/4fe32301-c6f3-4f33-981f-90ab62a3b95d",
+    "identifier": "HB 5605",
+    "title": "Appropriations: department of health and human services; appropriations for fiscal year 2026-2027 for public health; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:59:05.056761+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5605/"
+  },
+  {
+    "id": "ocd-bill/3ac69afc-e184-44cd-b099-e747b94c4d17",
+    "identifier": "HB 5602",
+    "title": "Appropriations: department of environment, Great Lakes, and energy; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:57:55.381794+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5602/"
+  },
+  {
+    "id": "ocd-bill/c765dbc0-156e-446f-a9ad-f3052f3e595e",
+    "identifier": "HB 5617",
+    "title": "Appropriations: community colleges; appropriations for fiscal year 2026-2027; provide for. Amends secs. 201 & 206 of 1979 PA 94 (MCL 388.1801 & 388.1806).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:57:23.965703+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5617/"
+  },
+  {
+    "id": "ocd-bill/e3cef05b-84ee-483e-9e22-f8dac14695c3",
+    "identifier": "HB 5635",
+    "title": "Health: immunizations; promulgation of certain rules that are more stringent than the requirements for claiming exemption from immunizations; prohibit. Amends sec. 1177 of 1976 PA 451 (MCL 380.1177).  TIE BAR WITH: HB 5634'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:57:20.972759+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5635/"
+  },
+  {
+    "id": "ocd-bill/80019c74-0d87-47f0-a038-f651f5ab360c",
+    "identifier": "HB 5612",
+    "title": "Appropriations: department of military and veterans affairs; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:57:18.578471+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5612/"
+  },
+  {
+    "id": "ocd-bill/c340efcc-9ac8-4bf5-a9e6-f148619a3e30",
+    "identifier": "HB 5639",
+    "title": "State agencies (existing): treasury; online tariff calculator; provide for. Amends 1941 PA 122 (MCL 205.1 - 205.31) by adding sec. 5a.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:56:02.980828+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5639/"
+  },
+  {
+    "id": "ocd-bill/3d865908-d84c-4598-8047-1ed56bd41d65",
+    "identifier": "HB 5601",
+    "title": "Appropriations: general government; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:55:56.627157+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5601/"
+  },
+  {
+    "id": "ocd-bill/c41505d5-fc6e-4e02-9f92-6e193c29d097",
+    "identifier": "HB 5622",
+    "title": "Appropriations: supplemental; appropriations for multiple departments and branches for fiscal year 2023-2024; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:55:51.857110+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5622/"
+  },
+  {
+    "id": "ocd-bill/f84a4547-d88f-4b47-93af-d9da95ebe17e",
+    "identifier": "HB 5599",
+    "title": "Appropriations: department of corrections; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:55:39.713773+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5599/"
+  },
+  {
+    "id": "ocd-bill/fbe12a43-cd6c-42d7-abaa-163a6cb01b9c",
+    "identifier": "HB 5632",
+    "title": "Appropriations: supplemental; supplemental appropriations in the school aid act for fiscal year 2027-2028; provide for. Amends secs. 11 & 17b of 1979 PA 94 (MCL 388.1611 & 388.1617).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:55:39.451030+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5632/"
+  },
+  {
+    "id": "ocd-bill/e3091b06-f9f6-4340-94f4-2342f8090714",
+    "identifier": "HB 5637",
+    "title": "Trade: consumer goods and services; disclosure of price adjustment due to tariff; require. Amends secs. 3 & 4 of 1976 PA 331 (MCL 445.903 & 445.904) & adds sec. 3j.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:55:39.186216+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5637/"
+  },
+  {
+    "id": "ocd-bill/1186c6bb-2809-4862-aa60-563594c51800",
+    "identifier": "HB 5613",
+    "title": "Appropriations: department of natural resources; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:55:38.921656+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5613/"
+  },
+  {
+    "id": "ocd-bill/de459ebf-2597-479f-a937-d98835029ecf",
+    "identifier": "HB 5591",
+    "title": "Health facilities: other; licensure of freestanding hyperbaric oxygen therapy facilities; provide for. Amends 1978 PA 368 (MCL 333.1101 - 333.25211) by adding pt. 212.   TIE BAR WITH: HB 5590'26,  HB 5592'26,  HB 5593'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:55:10.184826+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5591/"
+  },
+  {
+    "id": "ocd-bill/b339f348-e7d7-49a5-82c6-0ff55310a231",
+    "identifier": "HB 5631",
+    "title": "Appropriations: supplemental; supplemental appropriations in the school aid act for fiscal year 2025-2026; provide for. Amends secs. 11 & 17b of 1979 PA 94 (MCL 388.1611 & 388.1617b).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:55:05.658218+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5631/"
+  },
+  {
+    "id": "ocd-bill/154b0f58-a1ff-4848-8e5f-20fc6e84ee64",
+    "identifier": "SB 483",
+    "title": "Health: other; palliative care advisory task force; create. Amends 1978 PA 368 (MCL 333.1101 - 333.25211) by adding sec. 2220.",
+    "session": "2025-2026",
+    "chamber": "Senate",
+    "updated_at": "2026-02-26T23:55:03.265045+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/SB483/"
+  },
+  {
+    "id": "ocd-bill/f0b6770c-f75c-45c6-be48-0e303fe48a27",
+    "identifier": "HB 5606",
+    "title": "Appropriations: department of health and human services; appropriations for fiscal year 2026-2027 for human services; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:54:43.164249+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5606/"
+  },
+  {
+    "id": "ocd-bill/6910f11b-41e4-4117-8e9e-6efeea560aeb",
+    "identifier": "HB 5607",
+    "title": "Appropriations: department of health and human services; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:54:32.673147+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5607/"
+  },
+  {
+    "id": "ocd-bill/31c77b56-d990-4c38-9c35-44d75df1708e",
+    "identifier": "HB 5598",
+    "title": "Appropriations: department of agriculture and rural development; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:53:57.715659+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5598/"
+  },
+  {
+    "id": "ocd-bill/6d62034c-468c-45e5-8ca2-f8e519f57530",
+    "identifier": "HB 5600",
+    "title": "Appropriations: department of insurance and financial services; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:53:19.654280+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5600/"
+  },
+  {
+    "id": "ocd-bill/54e8ee29-6d6d-4dc4-922f-9015476e0a8c",
+    "identifier": "HR 253",
+    "title": "A resolution to commemorate the observance of the holy month of Ramadan and Lent.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:53:16.604833+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HR253/"
+  },
+  {
+    "id": "ocd-bill/45e402f6-7e32-442c-b253-0ac686174dd6",
+    "identifier": "HB 5618",
+    "title": "Appropriations: higher education; appropriations for fiscal year 2026-2027; provide for. Amends secs. 236 & 241 of 1979 PA 94 (MCL 388.1836 & 388.1841).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:52:55.610156+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5618/"
+  },
+  {
+    "id": "ocd-bill/bbf950ec-b96b-4750-9027-9943d6a3c7cd",
+    "identifier": "HB 5624",
+    "title": "Appropriations: supplemental; appropriations for multiple departments and branches for fiscal year 2024-2025; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:52:54.638050+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5624/"
+  },
+  {
+    "id": "ocd-bill/d274cba0-027e-4f53-883b-71934c358f9d",
+    "identifier": "HB 5619",
+    "title": "Appropriations: omnibus; appropriations for multiple departments and branches for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:52:38.718031+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5619/"
+  },
+  {
+    "id": "ocd-bill/c1806c4e-444e-42f1-b6c2-800b443305ff",
+    "identifier": "HB 5594",
+    "title": "Businesses: other; moratorium on certain approvals for and operation of any new data centers; provide for. Creates new act.   TIE BAR WITH: HB 5596'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:52:33.865680+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5594/"
+  },
+  {
+    "id": "ocd-bill/04fe07a1-68d6-4842-a7f9-b9a80b676030",
+    "identifier": "HB 5609",
+    "title": "Appropriations: department of licensing and regulatory affairs; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:52:33.115163+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5609/"
+  },
+  {
+    "id": "ocd-bill/8c0d4ca0-4365-4fa9-9e17-959db2912101",
+    "identifier": "HR 251",
+    "title": "A resolution to declare February 28, 2026, as Rare Disease Day in the state of Michigan.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:52:26.464267+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HR251/"
+  },
+  {
+    "id": "ocd-bill/5097da8a-cab4-462e-bd1a-567126f7c718",
+    "identifier": "HB 5638",
+    "title": "State agencies (existing): technology, management, and budget; statewide strategic tariff response plan; require department to prepare and publish. Creates new act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:51:47.645779+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5638/"
+  },
+  {
+    "id": "ocd-bill/7f905a9b-85b5-4740-b1ff-83b6712e4944",
+    "identifier": "HB 5450",
+    "title": "Food: service establishments; annual fire inspections for food trucks; provide for. Amends sec. 3113 of 2000 PA 92 (MCL 289.3113).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:51:47.037453+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5450/"
+  },
+  {
+    "id": "ocd-bill/cb498145-bc08-42da-8c09-83c02120509d",
+    "identifier": "HB 5596",
+    "title": "Businesses: other; Michigan zoning enabling act; make subject to the data center regulation act. Amends sec. 205 of 2006 PA 110 (MCL 125.3205).   TIE BAR WITH: HB 5594'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:51:38.250773+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5596/"
+  },
+  {
+    "id": "ocd-bill/baf47d50-b982-422f-bf65-71fc0609046d",
+    "identifier": "HB 5636",
+    "title": "Highways: memorial; portion of Telegraph Road; designate as the \"Deputy Claude Wilson Memorial Highway\". Amends 2001 PA 142 (MCL 250.1001 - 250.2092) by adding sec. 123.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:51:28.971915+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5636/"
+  },
+  {
+    "id": "ocd-bill/5ba661d5-ebbe-4f4b-b289-a022aa43ec97",
+    "identifier": "HB 5589",
+    "title": "Education: other; any requirement to use social media as a form of engagement; prohibit. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1136a.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:51:22.973428+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5589/"
+  },
+  {
+    "id": "ocd-bill/b54b0296-fc24-4791-a43f-a04e9edf27f9",
+    "identifier": "HB 5608",
+    "title": "Appropriations: judiciary; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:51:14.142280+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5608/"
+  },
+  {
+    "id": "ocd-bill/04746d7f-268c-4374-8217-ce95b8be15a4",
+    "identifier": "HB 5628",
+    "title": "Appropriations: school aid; fiscal year 2026-2027 appropriations for K-12 school aid; provide for. Amends secs. 11 & 17b of 1979 PA 94 (MCL 388.1611 & 388.1617b).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:51:04.368608+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5628/"
+  },
+  {
+    "id": "ocd-bill/f30f12cb-60a8-47cd-b795-f5333c7dd088",
+    "identifier": "HB 5626",
+    "title": "Appropriations: supplemental; appropriations for multiple departments and branches for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:50:55.620111+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5626/"
+  },
+  {
+    "id": "ocd-bill/7de07410-b859-41c7-9d59-73698ebfe2a6",
+    "identifier": "SB 604",
+    "title": "Liquor: authorized distribution agents; authorized distribution agent fees; increase. Amends sec. 205 of 1998 PA 58 (MCL 436.1205).",
+    "session": "2025-2026",
+    "chamber": "Senate",
+    "updated_at": "2026-02-26T23:50:29.421614+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/SB604/"
+  },
+  {
+    "id": "ocd-bill/8a37d755-5236-4063-8cd0-f830e2dd3aac",
+    "identifier": "HB 5640",
+    "title": "State agencies (existing): treasury; monthly report on fiscal impact of tariffs on the economy of this state; require. Amends sec. 18 of 1941 PA 122 (MCL 205.18).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:50:20.158406+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5640/"
+  },
+  {
+    "id": "ocd-bill/207da83f-9209-466a-9e78-ebd265442162",
+    "identifier": "HB 5629",
+    "title": "Appropriations: school aid omnibus; fiscal year 2027-2028 appropriations for K-12 school aid, higher education, and community colleges; provide for. Amends secs. 11, 201 & 236 of 1979 PA 94 (MCL 388.1611 et seq.).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:50:09.777472+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5629/"
+  },
+  {
+    "id": "ocd-bill/1b69b5b6-74e6-424a-9a47-fd86b2cd002e",
+    "identifier": "HR 252",
+    "title": "A resolution to declare March 2026 as Women\u2019s History Month in the state of Michigan.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:50:02.648663+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HR252/"
+  },
+  {
+    "id": "ocd-bill/c70af6f5-4d09-4931-99d7-5756b61c7505",
+    "identifier": "HB 5592",
+    "title": "Health facilities: other; licensure of freestanding hyperbaric oxygen therapy facilities; provide for. Amends secs. 20104, 20106, 20155, 20161, 20162 & 20164 of 1978 PA 368 (MCL 333.20104 et sec.).  TIE BAR WITH: HB 5590'26,  HB 5591'26,  HB 5593'26",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:49:58.076460+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5592/"
+  },
+  {
+    "id": "ocd-bill/2680a2b9-647c-4140-9d37-1d2a929e320b",
+    "identifier": "HB 5603",
+    "title": "Appropriations: department of education; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:49:42.485234+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5603/"
+  },
+  {
+    "id": "ocd-bill/0af5347e-0502-445d-93af-c15c5a4628c6",
+    "identifier": "HB 5614",
+    "title": "Appropriations: department of state police; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:49:17.633792+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5614/"
+  },
+  {
+    "id": "ocd-bill/629e4295-9aa7-4ed5-a177-174a53dd459f",
+    "identifier": "HB 5615",
+    "title": "Appropriations: transportation department; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:49:11.420167+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5615/"
+  },
+  {
+    "id": "ocd-bill/090fe2e0-cda2-4d50-abf5-144dda21ebaa",
+    "identifier": "HB 5610",
+    "title": "Appropriations: department of labor and economic opportunity; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:48:54.181388+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5610/"
+  },
+  {
+    "id": "ocd-bill/f8d17b83-dcb4-4034-8a85-a5763786c6b7",
+    "identifier": "HB 5625",
+    "title": "Appropriations: supplemental; appropriations for multiple departments and branches for fiscal year 2025-2026; provide for. Creates appropriation act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:48:38.149527+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5625/"
+  },
+  {
+    "id": "ocd-bill/8e5996c9-1b24-43b1-a5c2-2df3beaa5b8e",
+    "identifier": "HB 5630",
+    "title": "Appropriations: school aid omnibus; fiscal year 2026-2027 appropriations for K-12 school aid, higher education, and community colleges; provide for. Amends secs. 11, 201 & 236 of 1979 PA 94 (MCL 388.1611 et seq.).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T23:48:33.328695+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5630/"
+  },
+  {
+    "id": "ocd-bill/70281f0f-36be-4f0a-bc44-58b736acc771",
+    "identifier": "SB 805",
+    "title": "Health facilities: other; licensure of freestanding hyperbaric oxygen therapy facilities; provide for. Amends 1978 PA 368 (MCL 333.1101 - 333.25211) by adding secs. 21211, 21213, 21215, 21217, 21219, 21221, 21223, 21227 & 21231 to pt. 212.   TIE BAR WITH: SB 0803'26,  SB 0804'26,  SB 0806'26",
+    "session": "2025-2026",
+    "chamber": "Senate",
+    "updated_at": "2026-02-26T20:20:47.553550+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/SB805/"
+  },
+  {
+    "id": "ocd-bill/61f2a38b-75ab-44d3-a7a7-5e4111ffbb51",
+    "identifier": "SB 801",
+    "title": "Criminal procedure: search and seizure; protections against unlawful search and seizure; provide for. Amends sec. 15d, ch. IV of 1927 PA 175 (MCL 765.15d) & adds sec. 1h to ch. IV.",
+    "session": "2025-2026",
+    "chamber": "Senate",
+    "updated_at": "2026-02-26T20:20:40.390349+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/SB801/"
+  },
+  {
+    "id": "ocd-bill/305b9f2e-9f7a-4268-952a-c0f4de53a855",
+    "identifier": "HB 5496",
+    "title": "Taxation: excise taxes; excise tax on the purchase of wireless communications devices; require for purchases of devices primarily for the use of individuals under 18 years of age. Creates new act.",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T20:20:13.996476+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB5496/"
+  },
+  {
+    "id": "ocd-bill/8e87298d-84ed-4859-8da2-0c57305e4f46",
+    "identifier": "HB 4909",
+    "title": "Occupations: cosmetologists; record retention requirements for cosmetology schools; revise. Amends sec. 1205a of 1980 PA 299 (MCL 339.1205a).",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T20:20:03.832371+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB4909/"
+  },
+  {
+    "id": "ocd-bill/b025b12d-0096-4b98-afe4-749bf82c9756",
+    "identifier": "HB 4594",
+    "title": "Health occupations: dentists; use of the title \"dental specialist\"; prohibit. Amends sec. 16605 of 1978 PA 368 (MCL 333.16605).   TIE BAR WITH: HB 4593'25",
+    "session": "2025-2026",
+    "chamber": "House",
+    "updated_at": "2026-02-26T20:19:41.864760+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/HB4594/"
+  },
+  {
+    "id": "ocd-bill/32d9c12f-9de7-4e55-a46f-d17c7b2dae26",
+    "identifier": "SB 809",
+    "title": "Agriculture: animals; certain definitions in the privately owned cervidae producers marketing act; modify. Amends secs. 2, 3, 4, 6, 7, 8, 9, 10, 11, 14 & 17 of 2000 PA 190 (MCL 287.952 et seq.).",
+    "session": "2025-2026",
+    "chamber": "Senate",
+    "updated_at": "2026-02-26T20:19:39.943268+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/SB809/"
+  },
+  {
+    "id": "ocd-bill/b121dbbf-8b01-4f53-ac6c-16fb526034a8",
+    "identifier": "SB 811",
+    "title": "Occupations: notaries public; remote notary services; allow. Amends secs. 26c & 26d of 2003 PA 238 (MCL 55.286c & 55.286d).",
+    "session": "2025-2026",
+    "chamber": "Senate",
+    "updated_at": "2026-02-26T20:19:23.768613+00:00",
+    "url": "https://openstates.org/mi/bills/2025-2026/SB811/"
+  }
+]
