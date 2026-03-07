@@ -15,9 +15,8 @@ struct HomeView: View {
         NavigationStack {
             ZStack {
                 VStack{
-                    Text("LexAI Home Page")
-                        
                     
+                   ChatView()
                 }
                 if isSidebarOpen {
                     Color.black.opacity(0.3)
