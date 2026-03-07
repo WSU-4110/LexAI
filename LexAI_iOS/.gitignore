@@ -1,0 +1,7 @@
+# User-specific Xcode metadata (per-developer, should not be shared)
+xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+
+# Google Firebase config (contains API keys)
+GoogleService-Info.plist
