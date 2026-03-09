@@ -9,7 +9,7 @@ import SwiftUI
 
 import UniformTypeIdentifiers
 
-struct ImportingExampleView: View {
+struct ImportFile: View {
     @State private var importing = false
     
     var body: some View {
@@ -17,8 +17,11 @@ struct ImportingExampleView: View {
             importing = true
         }, label: {
             Image(systemName: "square.and.arrow.up")
-                .imageScale(.large)
-                .foregroundStyle(Color("grape"))
+                .resizable()
+                .frame(width: 25, height: 35)
+                .fontWeight(.bold)
+                .foregroundStyle(Color.white)
+                .shadow(radius: 8, x: 0, y: 8)
             
         })
         .fileImporter(
@@ -36,5 +39,5 @@ struct ImportingExampleView: View {
 }
 
 #Preview() {
-    ImportingExampleView()
+    ImportFile()
 }
