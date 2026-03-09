@@ -1,0 +1,978 @@
+[
+  {
+    "id": "ocd-bill/604653c9-8cae-4a17-9f4e-2f9996630844",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 770",
+    "title": "Food: milk; definition of pasteurized milk ordinance; update. Amends sec. 6 of 2001 PA 266 (MCL 288.476).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Food: milk"
+    ],
+    "extras": {},
+    "created_at": "2026-01-27T19:22:29.715369+00:00",
+    "updated_at": "2026-02-27T23:54:11.943657+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB770/",
+    "first_action_date": "2026-01-27",
+    "latest_action_date": "2026-01-27",
+    "latest_action_description": "REFERRED TO COMMITTEE ON NATURAL RESOURCES AND AGRICULTURE",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "86d2a440-a870-4402-af9e-b9e63a43fce6",
+        "note": "Senate Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2026-SIB-0770.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/Senate/pdf/2026-SIB-0770.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/c2602491-0a0d-438c-a8e3-bc60a9a814b3",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 272",
+    "title": "Housing: condominium; definition of undeveloped land; modify. Amends sec. 67 of 1978 PA 59 (MCL 559.167).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Construction: other",
+      "Housing: condominium"
+    ],
+    "extras": {},
+    "created_at": "2025-04-30T16:56:09.647101+00:00",
+    "updated_at": "2026-03-04T03:37:33.770426+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB272/",
+    "first_action_date": "2025-04-30",
+    "latest_action_date": "2025-04-30",
+    "latest_action_description": "REFERRED TO COMMITTEE ON HOUSING AND HUMAN SERVICES",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "a3da0f8c-f8ee-4d9b-999e-fc69ef35b4d5",
+        "note": "Senate Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2025-SIB-0272.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/Senate/pdf/2025-SIB-0272.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/120fdd94-36fd-4a1e-a107-b087549ae743",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 736",
+    "title": "Crimes: crimes against minors; definition of child abuse; modify. Amends sec. 136b of 1931 PA 328 (MCL 750.136b).   TIE BAR WITH: SB 0735'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Children: child abuse or child neglect",
+      "Crimes: crimes against minors"
+    ],
+    "extras": {},
+    "created_at": "2025-12-12T00:10:37.958391+00:00",
+    "updated_at": "2026-02-27T23:47:48.505026+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB736/",
+    "first_action_date": "2025-12-10",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REASSIGNED TO COMMITTEE ON HOUSING AND HUMAN SERVICES",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "1395f3e0-0266-4a06-a097-daa60586a127",
+        "note": "Senate Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2025-SIB-0736.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/Senate/pdf/2025-SIB-0736.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/0fc53eed-e1a1-48e3-9b1c-23de5289b143",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 735",
+    "title": "Children: child abuse or child neglect; definition of child neglect; modify. Amends sec. 2 of 1975 PA 238 (MCL 722.622).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Children: child abuse or child neglect"
+    ],
+    "extras": {},
+    "created_at": "2025-12-12T00:15:45.630103+00:00",
+    "updated_at": "2026-02-27T23:47:32.158535+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB735/",
+    "first_action_date": "2025-12-10",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REASSIGNED TO COMMITTEE ON HOUSING AND HUMAN SERVICES",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "192b4708-dec9-4ba2-990f-b56faa481180",
+        "note": "Senate Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2025-SIB-0735.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/Senate/pdf/2025-SIB-0735.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/7271240b-5c0b-4eeb-ab38-c9963fc2492e",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 771",
+    "title": "Environmental protection: sewage; onsite wastewater treatment systems; regulate, and provide for assessments and evaluations. Amends secs. 12751, 12752, 12757 & 12771 of 1978 PA 368 (MCL 333.12751 et seq.) & adds pt. 128.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Environmental protection: sewage",
+      "Environmental protection: water pollution",
+      "Health: local health departments"
+    ],
+    "extras": {},
+    "created_at": "2026-01-28T19:39:35.822855+00:00",
+    "updated_at": "2026-02-27T23:45:38.141151+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB771/",
+    "first_action_date": "2026-01-28",
+    "latest_action_date": "2026-01-28",
+    "latest_action_description": "REFERRED TO COMMITTEE ON NATURAL RESOURCES AND AGRICULTURE",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "9b08c9e8-431a-4706-b0cf-7f86e1066f96",
+        "note": "Senate Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2026-SIB-0771.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/Senate/pdf/2026-SIB-0771.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/21fb3211-b52e-44be-97df-7e070fae8491",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5435",
+    "title": "Transportation: motor fuel tax; motor fuel tax act; modify to include tax on electric fuel. Amends title & sec. 53 of 2000 PA 403 (MCL 207.1053) & adds secs. 157, 158 & 158a.   TIE BAR WITH: HB 5434'25,  HB 5433'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Taxation: excise taxes",
+      "Transportation: motor fuel tax",
+      "Vehicles: other"
+    ],
+    "extras": {},
+    "created_at": "2025-12-23T20:26:15.252307+00:00",
+    "updated_at": "2026-02-27T20:18:51.224854+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5435/",
+    "first_action_date": "2025-12-23",
+    "latest_action_date": "2025-12-31",
+    "latest_action_description": "bill electronically reproduced 12/23/2025",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "193bb635-017d-4dcc-b922-235286a354c4",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-5435.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2025-HIB-5435.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/3b023ce1-41d6-4ee9-a53d-f138efbc0afe",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5584",
+    "title": "Land use: zoning and growth management; duplexes; permit in single-family residential zones. Amends sec. 102 of 2006 PA 110 (MCL 125.3102) & adds sec. 517.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Housing: other",
+      "Land use: zoning and growth management"
+    ],
+    "extras": {},
+    "created_at": "2026-02-25T03:18:05.024021+00:00",
+    "updated_at": "2026-03-03T23:59:31.475961+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5584/",
+    "first_action_date": "2026-02-24",
+    "latest_action_date": "2026-03-03",
+    "latest_action_description": "Rep. Brenda Carter removed as cosponsor",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "ff6563a1-c7e9-4520-8509-7e20567de369",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5584.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2026-HIB-5584.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/38ccb525-89d5-4c8e-8322-3760bc5d7f37",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5575",
+    "title": "Crimes: public office and officers; certain terms related to the crime of intimidating or harassing an individual based on actual or perceived employment as a first responder; define. Amends 1931 PA 328 (MCL 750.1 - 750.568) by adding sec. 409d.  TIE BAR WITH: HB 5574'26",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Crimes: other",
+      "Crimes: public office and officers"
+    ],
+    "extras": {},
+    "created_at": "2026-02-25T03:24:58.312515+00:00",
+    "updated_at": "2026-02-27T20:18:13.345986+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5575/",
+    "first_action_date": "2026-02-24",
+    "latest_action_date": "2026-02-26",
+    "latest_action_description": "bill electronically reproduced 02/24/2026",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "8ad67680-7ae4-4cbd-96ff-3a4af25f9a2e",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5575.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2026-HIB-5575.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/4372db54-0326-4d3f-a703-9fdbb867ab4d",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5433",
+    "title": "Use tax: definitions; definition of qualified commercial motor vehicle; modify. Amends secs. 2 & 4a of 1937 PA 94 (MCL 205.92 & 205.94a).   TIE BAR WITH: HB 5434'25,  HB 5435'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Use tax: definitions"
+    ],
+    "extras": {},
+    "created_at": "2025-12-23T20:23:18.194730+00:00",
+    "updated_at": "2026-02-27T20:17:47.952106+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5433/",
+    "first_action_date": "2025-12-23",
+    "latest_action_date": "2025-12-31",
+    "latest_action_description": "bill electronically reproduced 12/23/2025",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "256a0d6a-ea1a-4989-be89-7030638f31b5",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-5433.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2025-HIB-5433.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/ad3925e2-b902-41b9-b6ea-6f13d6dd57ad",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5587",
+    "title": "State agencies (proposed): other; grants for community violence intervention services; provide for. Creates new act.   TIE BAR WITH: HB 5586'26",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "State agencies (proposed): other"
+    ],
+    "extras": {},
+    "created_at": "2026-02-25T03:12:01.228388+00:00",
+    "updated_at": "2026-02-27T20:17:22.355086+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5587/",
+    "first_action_date": "2026-02-24",
+    "latest_action_date": "2026-02-26",
+    "latest_action_description": "bill electronically reproduced 02/24/2026",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "1755138a-a5b2-421d-bce9-157a60c4502d",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5587.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2026-HIB-5587.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/c346c9a5-c11e-41c8-8501-1ac8d91a6756",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5434",
+    "title": "Transportation: carriers; tax on motor carriers for electric fuel; provide for. Amends title & secs. 1, 2, 2a, 5, 8, 9 & 10 of 1980 PA 119 (MCL 207.211 et seq.).   TIE BAR WITH: HB 5433'25,  HB 5435'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Taxation: excise taxes",
+      "Transportation: carriers",
+      "Transportation: motor carrier fuel tax",
+      "Vehicles: other"
+    ],
+    "extras": {},
+    "created_at": "2025-12-23T20:40:02.319794+00:00",
+    "updated_at": "2026-02-27T20:10:25.041281+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5434/",
+    "first_action_date": "2025-12-23",
+    "latest_action_date": "2025-12-31",
+    "latest_action_description": "bill electronically reproduced 12/23/2025",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "a7a04455-b396-4a46-89f0-b66ada06443d",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-5434.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2025-HIB-5434.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/275c2835-1787-4c0c-a5c3-14a4c23e57f1",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5579",
+    "title": "Labor: fair employment practices; use of electronic monitoring or automated decisions tools by an employer; prohibit except for certain purposes. Creates new act.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Communications: artificial intelligence",
+      "Labor: fair employment practices"
+    ],
+    "extras": {},
+    "created_at": "2026-02-25T03:26:59.502580+00:00",
+    "updated_at": "2026-02-27T20:10:17.309627+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5579/",
+    "first_action_date": "2026-02-24",
+    "latest_action_date": "2026-02-26",
+    "latest_action_description": "bill electronically reproduced 02/24/2026",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "0cf372a5-08ee-4d71-9ebb-50af5a9aecae",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5579.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2026-HIB-5579.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/c20a5a5c-9632-4689-9c5d-cca83d180597",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5588",
+    "title": "Highways: memorial; portion of Auburn Road in Rochester Hills; designate as the \"Sheriff Deputy Brad Reckling Memorial Highway\". Amends 2001 PA 142 (MCL 250.1001 - 250.2092) by adding sec. 121.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Highways: memorial",
+      "State agencies (existing): transportation"
+    ],
+    "extras": {},
+    "created_at": "2026-02-25T03:18:43.508527+00:00",
+    "updated_at": "2026-02-27T20:10:03.286485+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5588/",
+    "first_action_date": "2026-02-24",
+    "latest_action_date": "2026-02-26",
+    "latest_action_description": "bill electronically reproduced 02/24/2026",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "97520019-45f6-4a06-87ea-3ba137dd7ed9",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5588.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2026-HIB-5588.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/ad664efe-f858-40d8-8ee8-1adf6f338cf1",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5577",
+    "title": "Land use: other; coordinate systems; update. Amends secs. 1, 1a, 3, 4, 6, 7, 8 & 9 of 1964 PA 9 (MCL 54.231 et seq.) & repeals secs. 2, 5 & 5a of 1964 PA 9 (MCL 54.232 et seq.).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Land use: other",
+      "Property: other"
+    ],
+    "extras": {},
+    "created_at": "2026-02-25T03:18:03.317285+00:00",
+    "updated_at": "2026-03-04T23:36:15.061547+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5577/",
+    "first_action_date": "2026-02-24",
+    "latest_action_date": "2026-02-26",
+    "latest_action_description": "bill electronically reproduced 02/24/2026",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "65e00c7f-9f97-45c1-87df-870ae2702bf8",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5577.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2026-HIB-5577.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/028b6555-901f-4ec4-b32e-99a1d06d62c2",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5559",
+    "title": "Financial institutions: money transmitters; money transmission services act; provide for exemption for certain earned wage access services. Amends sec. 4 of 2006 PA 250 (MCL 487.1004).   TIE BAR WITH: HB 5558'26",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Businesses: other",
+      "Financial institutions: money transmitters"
+    ],
+    "extras": {},
+    "created_at": "2026-02-25T03:18:57.982445+00:00",
+    "updated_at": "2026-02-27T20:09:37.417145+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5559/",
+    "first_action_date": "2026-02-24",
+    "latest_action_date": "2026-02-26",
+    "latest_action_description": "bill electronically reproduced 02/24/2026",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "3b0fe242-e0e3-49bb-9ee8-e31a1dc5f796",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5559.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2026-HIB-5559.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/9697fa9f-786c-4989-8886-ee753c3211fe",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5585",
+    "title": "Land use: zoning and growth management; zoning restrictions related to accessory dwelling units and mobile homes; modify. Amends sec. 102 of 2006 PA 110 (MCL 125.3102) & adds secs. 207a & 516.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Land use: zoning and growth management"
+    ],
+    "extras": {},
+    "created_at": "2026-02-25T03:24:56.202533+00:00",
+    "updated_at": "2026-03-03T23:51:48.997954+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5585/",
+    "first_action_date": "2026-02-24",
+    "latest_action_date": "2026-03-03",
+    "latest_action_description": "Rep. Brenda Carter removed as cosponsor",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "55cb3116-009a-445a-ab30-efa5e4e3823e",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5585.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2026-HIB-5585.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/4708572a-8622-4282-8be0-9686d5a08427",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5567",
+    "title": "Financial institutions: generally; regulatory loan act; amend to exempt earned wage access services. Amends sec. 20 of 1939 PA 21 (MCL 493.20).   TIE BAR WITH: HB 5558'26",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Financial institutions: generally"
+    ],
+    "extras": {},
+    "created_at": "2026-02-25T03:20:05.676682+00:00",
+    "updated_at": "2026-02-27T20:09:18.840623+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5567/",
+    "first_action_date": "2026-02-24",
+    "latest_action_date": "2026-02-26",
+    "latest_action_description": "bill electronically reproduced 02/24/2026",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "23574116-1c93-4f33-82e0-c4e071efc65a",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5567.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2026-HIB-5567.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/0dc3fec8-f751-4783-855e-f7bed9001b82",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5565",
+    "title": "Financial institutions: other; deferred presentment service transactions act; provide for exemption for certain earned wage access services. Amends sec. 11 of 2005 PA 244 (MCL 487.2131).  TIE BAR WITH: HB 5558'26",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Businesses: other",
+      "Financial institutions: other"
+    ],
+    "extras": {},
+    "created_at": "2026-02-25T03:14:10.410480+00:00",
+    "updated_at": "2026-02-27T20:09:08.647866+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5565/",
+    "first_action_date": "2026-02-24",
+    "latest_action_date": "2026-02-26",
+    "latest_action_description": "bill electronically reproduced 02/24/2026",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "fb77beb6-d2d9-452a-b3ab-383ebc20056d",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5565.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2026-HIB-5565.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/b78cb035-7391-4023-85e8-24566d2d10d7",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5578",
+    "title": "Family law: child custody; changing the established custodial environment of a child; expand. Amends secs. 7 & 8 of 1970 PA 91 (722.27 & 722.28).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Family law: child custody"
+    ],
+    "extras": {},
+    "created_at": "2026-02-25T03:20:03.566799+00:00",
+    "updated_at": "2026-02-27T20:08:31.613895+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5578/",
+    "first_action_date": "2026-02-24",
+    "latest_action_date": "2026-02-26",
+    "latest_action_description": "bill electronically reproduced 02/24/2026",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "465b2e26-853a-4971-a97a-ef2ac80a5ff1",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5578.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2026-HIB-5578.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocd-bill/ba05bcee-d232-42e7-8c01-a7234018dff7",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5573",
+    "title": "Property tax: other; definition of nonprofit charitable institution; provide for. Amends sec. 7o of 1893 PA 206 (MCL 211.7o).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Property tax: other"
+    ],
+    "extras": {},
+    "created_at": "2026-02-25T03:13:31.406607+00:00",
+    "updated_at": "2026-02-27T20:08:03.401039+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5573/",
+    "first_action_date": "2026-02-24",
+    "latest_action_date": "2026-02-26",
+    "latest_action_description": "bill electronically reproduced 02/24/2026",
+    "latest_passage_date": "",
+    "versions": [
+      {
+        "id": "faf7386f-7559-42cc-b0e3-80cf7d435d12",
+        "note": "House Introduced Bill",
+        "date": "",
+        "classification": "",
+        "links": [
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5573.htm",
+            "media_type": "text/html"
+          },
+          {
+            "url": "https://legislature.mi.gov/documents/2025-2026/billintroduced/House/pdf/2026-HIB-5573.pdf",
+            "media_type": "application/pdf"
+          }
+        ]
+      }
+    ]
+  }
+]
