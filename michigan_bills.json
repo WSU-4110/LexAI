@@ -1,0 +1,3691 @@
+[
+  {
+    "id": "ocd-bill/df1556ef-8f74-4efb-98a3-aa5f7bb39193",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5150",
+    "title": "Health occupations: respiratory therapists; licensure for respiratory therapists; modify. Amends secs. 16204, 16344, 18701, 18703, 18707 & 18709 of 1978 PA 368 (MCL 333.16204 et seq.) & adds secs. 18710 & 18712.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health occupations: respiratory therapists",
+      "State agencies (existing): licensing and regulatory affairs"
+    ],
+    "extras": {},
+    "created_at": "2025-10-28T22:35:08.257529+00:00",
+    "updated_at": "2026-02-19T15:35:47.777174+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5150/",
+    "first_action_date": "2025-10-28",
+    "latest_action_date": "2026-02-04",
+    "latest_action_description": "recommendation concurred in",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/c23d5859-1c3a-4745-bebf-715660fac23e",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5529",
+    "title": "Land use: land division; parcel and lot size requirements; limit. Amends secs. 109, 148 & 186 of 1967 PA 288 (MCL 560.109 et seq.).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Land use: land division"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:32:48.299734+00:00",
+    "updated_at": "2026-02-19T15:35:36.289589+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5529/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/f71c7443-5882-4442-b816-752b06928f9d",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5528",
+    "title": "Crimes: disorderly conduct; criteria for inciting a riot; clarify. Amends secs. 1 & 2 of 1968 PA 302 (MCL 752.541 & 752.542).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Crimes: disorderly conduct"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:31:18.351579+00:00",
+    "updated_at": "2026-02-19T15:31:32.216885+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5528/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/e64d5c24-2377-4c1a-b7db-0ac3d303a6b6",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5524",
+    "title": "State management: funds; funding for businesses with lost revenue due to road construction projects; provide for. Amends 1951 PA 51 (MCL 247.651 - 247.675) & adds sec. 10q.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Businesses: other",
+      "Highways: construction and repair",
+      "State management: funds"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:32:51.205943+00:00",
+    "updated_at": "2026-02-19T15:26:07.890128+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5524/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/326fd992-2577-4721-83f1-e53572857f92",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5526",
+    "title": "Public utilities: rates; approval of new fees and fee increases; require. Amends sec. 10p of 1939 PA 3 (MCL 460.10p).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Public utilities: public service commission",
+      "Public utilities: rates"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:19:35.134725+00:00",
+    "updated_at": "2026-02-19T15:25:21.797605+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5526/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/171f1059-3100-4ec4-bedd-2d3cb7660121",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HCR 5",
+    "title": "A concurrent resolution providing for a joint convention of the House of Representatives and Senate.",
+    "classification": [
+      "resolution"
+    ],
+    "subject": [],
+    "extras": {},
+    "created_at": "2026-02-19T03:25:09.751963+00:00",
+    "updated_at": "2026-02-19T03:25:09.999593+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HCR5/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "RECEIVED FROM HOUSE",
+    "latest_passage_date": "2026-02-18"
+  },
+  {
+    "id": "ocd-bill/966f99a1-0aae-4731-83c0-23985df92b44",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 71",
+    "title": "Highways: bridges; Mackinac Bridge; designate as a key facility. Amends sec. 552c of 1931 PA 328 (MCL 750.552c).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Highways: bridges",
+      "State agencies (existing): transportation"
+    ],
+    "extras": {},
+    "created_at": "2025-02-11T16:40:30.864153+00:00",
+    "updated_at": "2026-02-19T03:22:26.266306+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB71/",
+    "first_action_date": "2025-02-11",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "referred to Committee on Rules",
+    "latest_passage_date": "2025-03-13"
+  },
+  {
+    "id": "ocd-bill/c17bbf30-0efc-4cf4-8317-04cb25f92e0e",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 41",
+    "title": "Highways: memorial; portion of M-22; designate as the \"Company K Indian Veterans 1st Michigan Sharpshooters Civil War Memorial Highway\". Amends 2001 PA 142 (MCL 250.1001 - 250.2092) by adding sec. 108.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Highways: memorial"
+    ],
+    "extras": {},
+    "created_at": "2025-02-04T18:39:24.570466+00:00",
+    "updated_at": "2026-02-19T03:17:07.070137+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB41/",
+    "first_action_date": "2025-02-04",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "referred to Committee on Rules",
+    "latest_passage_date": "2025-03-06"
+  },
+  {
+    "id": "ocd-bill/a612e3cf-1459-4d27-a43a-37bec53cace9",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5531",
+    "title": "Land use: zoning and growth management; required studies and documents for site plan approval; limit. Amends sec. 501 of 2006 PA 110 (MCL 125.3501).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Economic development: other",
+      "Land use: planning",
+      "Land use: zoning and growth management"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:32:14.598450+00:00",
+    "updated_at": "2026-02-18T23:32:14.891118+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5531/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/ed128b19-155b-49fa-8380-d93b6c9bb9d4",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4981",
+    "title": "Health occupations: counselors; reference to limited licensed counselor; modify to limited licensed professional counselor. Amends secs. 16281, 16905, 18101, 18105, 18106, 18111, 18114 & 18117 of 1978 PA 368 (MCL 333.16281 et seq.).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health occupations: counselors",
+      "Occupations: individual licensing and registration",
+      "State agencies (existing): licensing and regulatory affairs"
+    ],
+    "extras": {},
+    "created_at": "2025-09-18T19:32:46.570744+00:00",
+    "updated_at": "2026-02-18T23:31:25.489189+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4981/",
+    "first_action_date": "2025-09-18",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "transmitted",
+    "latest_passage_date": "2026-02-18"
+  },
+  {
+    "id": "ocd-bill/75dcecb3-0372-406e-99d6-79b1a51ed49e",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5036",
+    "title": "Crimes: other; false representation in assisted reproduction; prohibit, and provide penalties. Amends 1931 PA 328 (MCL 750.1 - 750.568) by adding sec. 219g.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Crimes: criminal sexual conduct",
+      "Crimes: fraud",
+      "Crimes: other",
+      "Health occupations: health professionals"
+    ],
+    "extras": {},
+    "created_at": "2025-09-24T21:35:57.307488+00:00",
+    "updated_at": "2026-02-18T23:31:08.224509+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5036/",
+    "first_action_date": "2025-09-24",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "transmitted",
+    "latest_passage_date": "2026-02-18"
+  },
+  {
+    "id": "ocd-bill/e12dfdaf-056b-4e42-8951-f09997fe03c9",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SR 97",
+    "title": "A resolution to designate February 19, 2026, as Conductive Education Day.",
+    "classification": [
+      "resolution"
+    ],
+    "subject": [],
+    "extras": {},
+    "created_at": "2026-02-18T23:31:00.101856+00:00",
+    "updated_at": "2026-02-18T23:31:00.322003+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SR97/",
+    "first_action_date": "2026-02-19",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "INTRODUCED BY SENATOR MARK HUIZENGA",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/befb9584-d3ce-43aa-87d3-fe426b519ac5",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5037",
+    "title": "Criminal procedure: statute of limitations; statute of limitations for certain criminal sexual conduct offenses related to a false representation in assisted reproduction; provide for. Amends sec. 24, ch. VII of 1927 PA 175 (MCL 767.24).   TIE BAR WITH: HB 5036'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Crimes: criminal sexual conduct",
+      "Criminal procedure: statute of limitations",
+      "Health occupations: health professionals"
+    ],
+    "extras": {},
+    "created_at": "2025-09-24T21:29:20.559781+00:00",
+    "updated_at": "2026-02-18T23:30:46.146031+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5037/",
+    "first_action_date": "2025-09-24",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "transmitted",
+    "latest_passage_date": "2026-02-18"
+  },
+  {
+    "id": "ocd-bill/18c8102e-539e-4005-8f8c-88f381525ec4",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HR 246",
+    "title": "A resolution to declare February 16-20, 2026, as Spontaneous Coronary Artery Dissection Awareness Week in the state of Michigan.",
+    "classification": [
+      "resolution"
+    ],
+    "subject": [],
+    "extras": {},
+    "created_at": "2026-02-18T23:30:16.730663+00:00",
+    "updated_at": "2026-02-18T23:30:17.260756+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HR246/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "adopted",
+    "latest_passage_date": "2026-02-18"
+  },
+  {
+    "id": "ocd-bill/eada0099-a05a-4ef9-a4b0-42159047b23c",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5530",
+    "title": "Land use: zoning and growth management; minimum residential lot size requirements; limit. Amends 2006 PA 110 (MCL 125.3201) by adding sec. 205f.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Housing: other",
+      "Land use: zoning and growth management"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:29:53.453424+00:00",
+    "updated_at": "2026-02-18T23:29:53.730516+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5530/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/66c053dd-10b2-4f0b-b6b7-767c5802f4f0",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4279",
+    "title": "Military affairs: other; Michigan National Guard apprenticeship program; create. Creates new act.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Military affairs: other"
+    ],
+    "extras": {},
+    "created_at": "2025-03-20T18:57:49.802808+00:00",
+    "updated_at": "2026-02-18T23:29:48.815553+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4279/",
+    "first_action_date": "2025-03-20",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "placed on third reading",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/ac91fdcd-586b-4d02-aba5-475b7b1e659d",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 704",
+    "title": "Marihuana: other; cannabis regulatory agency; allow to operate a marihuana reference laboratory and to collect, transport, possess, test, and perform research with marihuana. Amends sec. 7 of 2018 IL 1 (MCL 333.27957).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Marihuana: administration",
+      "Marihuana: other"
+    ],
+    "extras": {},
+    "created_at": "2025-11-13T19:11:47.098276+00:00",
+    "updated_at": "2026-02-18T23:29:36.887914+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB704/",
+    "first_action_date": "2025-11-13",
+    "latest_action_date": "2025-11-13",
+    "latest_action_description": "REFERRED TO COMMITTEE ON REGULATORY AFFAIRS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/a66c84aa-4a63-47cb-a23f-d94b5610b6a6",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5525",
+    "title": "Vehicles: abandoned; fee waiver for certain individuals; provide for. Amends sec. 252a of 1949 PA 300 (MCL 257.252a).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Vehicles: abandoned"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:29:31.024599+00:00",
+    "updated_at": "2026-02-18T23:29:31.238147+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5525/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/460bde64-fcbc-42c5-a894-12654a7dd4ce",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5317",
+    "title": "Counties: boards and commissions; county parks and recreation commission membership; modify. Amends sec. 1 of 1965 PA 261 (MCL 46.351).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Counties: boards and commissions",
+      "Recreation: local parks"
+    ],
+    "extras": {},
+    "created_at": "2025-12-02T22:55:02.669365+00:00",
+    "updated_at": "2026-02-18T23:28:55.885796+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5317/",
+    "first_action_date": "2025-12-02",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "placed on third reading",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/32a46b91-604c-4764-8cb4-c83f9adde1ae",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5527",
+    "title": "Crimes: assaultive; elements of certain offenses; modify. Amends secs. 81d &167 of 1931 PA 328 (MCL 750.81d & 750.167).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Crimes: assaultive",
+      "Crimes: disorderly conduct"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:28:49.281497+00:00",
+    "updated_at": "2026-02-18T23:28:49.569935+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5527/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/4e76b9e6-e84c-4c6f-94c3-8942a4c7c5d7",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4395",
+    "title": "Occupations: barbers; license to perform services at veteran service organizations; provide for. Amends secs. 1117 & 1217 of 1980 PA 299 (MCL 339.1117 & 339.1217).   TIE BAR WITH: HB 4394'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Occupations: barbers",
+      "Occupations: cosmetologists",
+      "Veterans: other"
+    ],
+    "extras": {},
+    "created_at": "2025-04-24T18:54:25.293361+00:00",
+    "updated_at": "2026-02-18T23:27:37.961442+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4395/",
+    "first_action_date": "2025-04-24",
+    "latest_action_date": "2025-06-17",
+    "latest_action_description": "REFERRED TO COMMITTEE ON REGULATORY AFFAIRS",
+    "latest_passage_date": "2025-06-17"
+  },
+  {
+    "id": "ocd-bill/618bedec-a749-499c-a94e-be615626504d",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5220",
+    "title": "Children: protection; continuing education for mandated reporters in child abuse and neglect detection; require Amends sec. 3b of 1975 PA 238 (MCL 722.623b).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Children: protection"
+    ],
+    "extras": {},
+    "created_at": "2025-11-05T23:00:08.494057+00:00",
+    "updated_at": "2026-02-18T23:26:37.669814+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5220/",
+    "first_action_date": "2025-11-05",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "transmitted",
+    "latest_passage_date": "2026-02-18"
+  },
+  {
+    "id": "ocd-bill/8b4f49e1-1ce8-4d4a-b1f7-fa70808526de",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4527",
+    "title": "Disabilities: other; penalties for certain violations to provision in use of travel aids by blind persons act; increase. Amends secs. 1a, 2 & 3 of 1937 PA 10 (MCL 752.51a et seq.).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Animals: dogs",
+      "Crimes: vehicle offenses",
+      "Disabilities: other",
+      "State agencies (existing): health and human services"
+    ],
+    "extras": {},
+    "created_at": "2025-06-03T18:58:24.568328+00:00",
+    "updated_at": "2026-02-18T23:25:44.262224+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4527/",
+    "first_action_date": "2025-06-03",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "referred to Committee on Judiciary",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/41e3491b-e879-4898-86f9-8e9120ed224e",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5523",
+    "title": "Insurance: automobile; premium discount for seniors who complete traffic accident prevention course; require insurers to offer, and modify requirements for the course. Amends sec. 2111a of 1956 PA 218 (MCL 500.2111a).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Insurance: automobile"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:25:39.443611+00:00",
+    "updated_at": "2026-02-18T23:25:39.666613+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5523/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/b26257ff-25e8-4d7b-9e3f-da066b5ccd3f",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4079",
+    "title": "Property tax: special assessments; income eligibility cap for special assessment deferment program; modify. Amends secs. 3 & 4 of 1976 PA 225 (MCL 211.763 & 211.764).   TIE BAR WITH: HB 4080'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Property tax: special assessments"
+    ],
+    "extras": {},
+    "created_at": "2025-02-12T20:41:26.127884+00:00",
+    "updated_at": "2026-02-18T23:25:35.589683+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4079/",
+    "first_action_date": "2025-02-12",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "placed on third reading",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/21cbeaf7-cd17-4b46-bb26-14b7abe60f67",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5532",
+    "title": "Land use: zoning and growth management; city or village zoning ordinance amendment; revise protest petition requirements. Amends sec. 403 of 2006 PA 110 (MCL 125.3403).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Land use: zoning and growth management"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:25:13.103330+00:00",
+    "updated_at": "2026-02-18T23:25:13.389757+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5532/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/070f29de-798f-40b6-84c7-f738eba66d26",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HCR 2",
+    "title": "A concurrent resolution prescribing the Rules of the Legislature for Selecting Commissioners to an Article V Convention.",
+    "classification": [
+      "resolution"
+    ],
+    "subject": [],
+    "extras": {},
+    "created_at": "2025-10-29T02:38:34.329490+00:00",
+    "updated_at": "2026-02-18T23:25:12.348183+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HCR2/",
+    "first_action_date": "2025-10-28",
+    "latest_action_date": "2025-10-28",
+    "latest_action_description": "referred to Committee on Government Operations",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/391116a1-282c-4ed7-b76f-1b7daf1142f5",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4576",
+    "title": "Appropriations: department of education; appropriations for fiscal year 2025-2026; provide for. Creates appropriation act.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Appropriations: department of education"
+    ],
+    "extras": {},
+    "created_at": "2025-06-05T19:04:01.392780+00:00",
+    "updated_at": "2026-02-18T23:24:50.889517+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4576/",
+    "first_action_date": "2025-06-05",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "re-referred to Committee on Appropriations",
+    "latest_passage_date": "2025-12-16"
+  },
+  {
+    "id": "ocd-bill/52b3859d-4770-4b18-8de8-1102477c03de",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4080",
+    "title": "Property tax: special assessments; special assessment deferment program; reinstate. Amends secs. 1 & 2 of 1976 PA 225 (MCL 211.761 & 211.762).   TIE BAR WITH: HB 4079'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Property tax: special assessments"
+    ],
+    "extras": {},
+    "created_at": "2025-02-12T20:41:35.660643+00:00",
+    "updated_at": "2026-02-18T23:24:28.697245+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4080/",
+    "first_action_date": "2025-02-12",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "placed on third reading",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/55faca9e-db72-4dbc-875e-4615d8722ca1",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5520",
+    "title": "Education: elementary; grade 3 reading requirements; provide for. Amends sec. 1280f of 1976 PA 451 (MCL 380.1280f).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Education: elementary",
+      "State agencies (existing): education"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:23:24.654331+00:00",
+    "updated_at": "2026-02-18T23:23:24.928425+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5520/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/afedea06-d5e1-4358-8ecc-60f20f7310fd",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4394",
+    "title": "Occupations: licensing fees; permit fee for barbers and cosmetologists to operate outside of a licensed facility for veterans; establish. Amends secs. 17 & 25 of 1979 PA 152 (MCL 338.2217 & 338.2225).   TIE BAR WITH: HB 4395'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Occupations: licensing fees"
+    ],
+    "extras": {},
+    "created_at": "2025-04-24T18:52:58.933262+00:00",
+    "updated_at": "2026-02-18T23:23:20.714502+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4394/",
+    "first_action_date": "2025-04-24",
+    "latest_action_date": "2025-06-17",
+    "latest_action_description": "REFERRED TO COMMITTEE ON REGULATORY AFFAIRS",
+    "latest_passage_date": "2025-06-17"
+  },
+  {
+    "id": "ocd-bill/8cf16c7a-1aea-407c-a9b7-ea4601fd635a",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5039",
+    "title": "Health occupations: health professionals; disciplinary action for making a false representation in assisted reproduction; provide for. Amends secs. 16221 & 16226 of 1978 PA 368 (MCL 333.16221 & 333.16226).   TIE BAR WITH: HB 5036'25,  HB 5035'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health occupations: health professionals",
+      "State agencies (existing): licensing and regulatory affairs"
+    ],
+    "extras": {},
+    "created_at": "2025-09-24T21:34:50.189868+00:00",
+    "updated_at": "2026-02-18T23:23:07.895957+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5039/",
+    "first_action_date": "2025-09-24",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "transmitted",
+    "latest_passage_date": "2026-02-18"
+  },
+  {
+    "id": "ocd-bill/cc8fc4c7-68d9-4659-889a-041017ca41a6",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5031",
+    "title": "Economic development: local development financing authority; smart zone state capture use; modify. Amends secs. 402, 412a & 412b of 2018 PA 57 (MCL 125.4402 et seq.).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Economic development: local development financing authority"
+    ],
+    "extras": {},
+    "created_at": "2025-09-18T19:23:31.917999+00:00",
+    "updated_at": "2026-02-18T23:23:02.377047+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5031/",
+    "first_action_date": "2025-09-18",
+    "latest_action_date": "2025-09-24",
+    "latest_action_description": "bill electronically reproduced 09/18/2025",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/0867dfe5-599b-4f08-82d7-b5ed2fb86f71",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4845",
+    "title": "Transportation: funds; requirements for competitive bidding for certain road construction project contracts; modify. Amends sec. 11c of 1951 PA 51 (MCL 247.661c).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "State agencies (existing): transportation",
+      "Transportation: funds"
+    ],
+    "extras": {},
+    "created_at": "2025-09-04T19:16:51.468369+00:00",
+    "updated_at": "2026-02-18T23:21:43.170207+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4845/",
+    "first_action_date": "2025-09-04",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "referred to Committee on Rules",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/b5b245e4-b93b-4e64-b24d-233f2e2f55e7",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HR 245",
+    "title": "A resolution to declare February 2026 as National Teen Dating Violence Awareness and Prevention Month and February 10, 2026, as National Teen Dating Violence and Prevention Day in the state of Michigan.",
+    "classification": [
+      "resolution"
+    ],
+    "subject": [],
+    "extras": {},
+    "created_at": "2026-02-18T23:21:08.080487+00:00",
+    "updated_at": "2026-02-18T23:21:08.373097+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HR245/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "adopted",
+    "latest_passage_date": "2026-02-18"
+  },
+  {
+    "id": "ocd-bill/ec9b77a6-2d06-42bb-876c-351ab3ce12de",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5522",
+    "title": "Health occupations: physician's assistants; licensure of physician's assistants; modify. Amends (see bill).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health occupations: physician's assistants",
+      "Health occupations: physicians",
+      "Health occupations: podiatrists",
+      "State agencies (existing): licensing and regulatory affairs"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:20:53.127353+00:00",
+    "updated_at": "2026-02-18T23:20:53.432709+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5522/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/870e2937-5c73-4f76-bad0-7092021b916e",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5038",
+    "title": "Criminal procedure: sentencing guidelines; sentencing guidelines for false representation regarding assisted reproduction; provide for. Amends sec. 16l, ch. XVII of 1927 PA 175 (MCL 777.16l).  TIE BAR WITH: HB 5036'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Crimes: criminal sexual conduct",
+      "Crimes: fraud",
+      "Crimes: other",
+      "Criminal procedure: sentencing guidelines"
+    ],
+    "extras": {},
+    "created_at": "2025-09-24T21:24:08.466206+00:00",
+    "updated_at": "2026-02-18T23:19:43.692695+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5038/",
+    "first_action_date": "2025-09-24",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "transmitted",
+    "latest_passage_date": "2026-02-18"
+  },
+  {
+    "id": "ocd-bill/74c5802c-ea5e-487c-a9bb-449c9bda33aa",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5035",
+    "title": "Civil procedure: civil actions; civil action for making a false representation in assisted reproduction; provide for. Amends 1961 PA 236 (MCL 600.101 - 600.9947) by adding sec. 2980.   TIE BAR WITH: HB 5036'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Civil procedure: civil actions",
+      "Crimes: fraud",
+      "Health occupations: health professionals"
+    ],
+    "extras": {},
+    "created_at": "2025-09-24T21:24:10.847167+00:00",
+    "updated_at": "2026-02-18T23:19:38.613279+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5035/",
+    "first_action_date": "2025-09-24",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "transmitted",
+    "latest_passage_date": "2026-02-18"
+  },
+  {
+    "id": "ocd-bill/def72b7f-c12e-4ad9-bc12-fac168503325",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4530",
+    "title": "Mental health: other; deadline for mental health professionals to release mental health records or information pertinent to child abuse or neglect investigation to the department; modify. Amends sec. 748a of 1974 PA 258 (MCL 330.1748a).   TIE BAR WITH: HB 4531'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Children: protection",
+      "Health occupations: mental health care professionals",
+      "Mental health: children",
+      "Mental health: other"
+    ],
+    "extras": {},
+    "created_at": "2025-06-03T19:00:31.615804+00:00",
+    "updated_at": "2026-02-18T23:19:37.359668+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4530/",
+    "first_action_date": "2025-06-03",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "transmitted",
+    "latest_passage_date": "2026-02-18"
+  },
+  {
+    "id": "ocd-bill/4dbe0497-8a7e-4906-a92f-46f2527c4c4d",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5521",
+    "title": "Human services: medical services; organ transplant coverage; prohibit if the organ is from a country known for organ harvesting. Amends 1939 PA 280 (MCL 400.1 - 400.119b) by adding sec. 109z.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Human services: medical services"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:19:34.489899+00:00",
+    "updated_at": "2026-02-18T23:19:34.708863+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5521/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/4fa8591b-e91d-4b9d-af42-2a9274fd2eea",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5249",
+    "title": "Health: emergency services; ambulance operation adaptive care license; create. Amends sec. 20920 of 1978 PA 368 (MCL 333.20920).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health: emergency services"
+    ],
+    "extras": {},
+    "created_at": "2025-11-12T22:53:09.266048+00:00",
+    "updated_at": "2026-02-18T23:19:25.873992+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5249/",
+    "first_action_date": "2025-11-12",
+    "latest_action_date": "2026-02-04",
+    "latest_action_description": "recommendation concurred in",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/00ca3673-9137-4b4f-b3b2-db7c7f6262d8",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4528",
+    "title": "Criminal procedure: sentencing guidelines; sentencing guidelines for driver causing death of blind person or dog guide in crosswalk; enact. Amends sec. 17b, ch. XVII of 1927 PA 175 (MCL 777.17b).   TIE BAR WITH: HB 4527'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Criminal procedure: sentencing guidelines",
+      "Disabilities: other"
+    ],
+    "extras": {},
+    "created_at": "2025-06-03T18:58:28.243272+00:00",
+    "updated_at": "2026-02-18T23:19:14.761540+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4528/",
+    "first_action_date": "2025-06-03",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "referred to Committee on Judiciary",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/05a04b7c-a3c4-4f25-92f8-3df34e58f93f",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4402",
+    "title": "Health: diseases; dissemination of information about cytomegalovirus (CMV) to certain individuals and in certain situations; provide for. Amends secs. 5431 & 5432 of 1978 PA 368 (MCL 333.5431 & 333.5432) & adds sec. 5143.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Children: protection",
+      "Health: diseases",
+      "Health: screening",
+      "State agencies (existing): health and human services"
+    ],
+    "extras": {},
+    "created_at": "2025-04-29T18:52:30.944888+00:00",
+    "updated_at": "2026-02-18T23:18:43.797698+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4402/",
+    "first_action_date": "2025-04-29",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "placed on third reading",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/0c3f5da1-6500-402e-8c34-3af266f9eb8f",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5046",
+    "title": "Civil procedure: foreclosure; recording of deed; modify. Amends secs. 3232 & 3240 of 1961 PA 236 (MCL 600.3232 & 600.3240).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Civil procedure: foreclosure"
+    ],
+    "extras": {},
+    "created_at": "2025-09-24T21:34:52.808310+00:00",
+    "updated_at": "2026-02-18T23:18:18.522022+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5046/",
+    "first_action_date": "2025-09-24",
+    "latest_action_date": "2025-09-25",
+    "latest_action_description": "bill electronically reproduced 09/24/2025",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/7150a27c-fd95-4c54-90a3-db45ed1bee16",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5518",
+    "title": "Liquor: hours; allowable hours for sale of alcoholic beverages in airports; revise. Amends sec. 1114 of 1998 PA 58 (MCL 436.2114).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Aeronautics: airports",
+      "Liquor: hours"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:18:05.840125+00:00",
+    "updated_at": "2026-02-18T23:18:06.050484+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5518/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/a004c58d-48c8-4392-8335-ac4cde430aed",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5517",
+    "title": "Corporate income tax: credits; distributor credit for returnable containers; provide for. Amends 1967 PA 281 (MCL 206.1 - 206.847) by adding secs. 279 & 679.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Corporate income tax: credits",
+      "Individual income tax: credit"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:17:42.064621+00:00",
+    "updated_at": "2026-02-18T23:17:42.320438+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5517/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/8bf33a19-76b5-4f43-8877-2c73b8d4399a",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5045",
+    "title": "Housing: other; redemption of premises; modify. Amends secs. 48g & 48i of 1966 PA 346 (MCL 125.1448g & 125.1448i).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Housing: other"
+    ],
+    "extras": {},
+    "created_at": "2025-09-24T21:35:42.559727+00:00",
+    "updated_at": "2026-02-18T23:17:22.091699+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5045/",
+    "first_action_date": "2025-09-24",
+    "latest_action_date": "2025-09-25",
+    "latest_action_description": "bill electronically reproduced 09/24/2025",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/4f919c29-1296-44ee-927e-29df3b6be94d",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5519",
+    "title": "Individual income tax: rate; rollback of rate to 3.9%; provide for. Amends sec. 51 of 1967 PA 281 (MCL 206.51).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Individual income tax: rate"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T23:17:14.925101+00:00",
+    "updated_at": "2026-02-18T23:17:15.250710+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5519/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-19",
+    "latest_action_description": "bill electronically reproduced 02/18/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/8428a0c7-ecbc-4c8d-a59c-bcd6ad407420",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 492",
+    "title": "Education: students; guidelines for unenrolling students; provide for. Amends sec. 1135 of 1976 PA 451 (MCL 380.1135).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Education: students"
+    ],
+    "extras": {},
+    "created_at": "2025-07-29T15:10:36.907176+00:00",
+    "updated_at": "2026-02-18T19:51:30.103662+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB492/",
+    "first_action_date": "2025-07-29",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "PLACED ON ORDER OF THIRD READING WITH SUBSTITUTE (S-1)",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/26db28a9-4e7d-453e-8c5b-65d97992c8df",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5102",
+    "title": "Health occupations: dentists; dentistry task force; eliminate. Amends sec. 16620 of 1978 PA 368 (MCL 333.16620) & repeals sec. 16624 of 1978 PA 368 (MCL 333.16624).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health occupations: dentists",
+      "State agencies (existing): boards and commissions"
+    ],
+    "extras": {},
+    "created_at": "2025-10-22T22:31:00.413866+00:00",
+    "updated_at": "2026-02-18T19:50:41.519054+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5102/",
+    "first_action_date": "2025-10-22",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "referred to second reading",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/bccc00ff-1c85-41c3-9fdd-21b3cd62ce8a",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4901",
+    "title": "Health: licensing; licensing of nurses and speech-language pathologists; modify. Amends secs. 17211 & 17603 of 1978 PA 368 (MCL 333.17211 & 333.17603).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health occupations: nurses",
+      "Health occupations: speech-language pathologists",
+      "Health: licensing"
+    ],
+    "extras": {},
+    "created_at": "2025-09-11T19:23:39.906849+00:00",
+    "updated_at": "2026-02-18T19:50:35.798003+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4901/",
+    "first_action_date": "2025-09-11",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "recommendation concurred in",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/4b37bcdd-f5c7-4afd-9511-e040a1e83378",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5210",
+    "title": "Natural resources: fishing; listing of different vessels on a single license; allow. Amends sec. 47331 of 1994 PA 451 (MCL 324.47331).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Natural resources: fishing"
+    ],
+    "extras": {},
+    "created_at": "2025-11-04T22:46:42.413743+00:00",
+    "updated_at": "2026-02-18T19:49:41.554317+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5210/",
+    "first_action_date": "2025-11-04",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "referred to second reading",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/c703e260-c624-4ee5-a1a1-c125a9792b39",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 787",
+    "title": "Marihuana: other; marihuana accessory with a heating element; prohibit the sale of unless the heating element is made of or encased in certain materials. Amends sec. 11 of 2018 IL 1 (MCL 333.27961).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Marihuana: other",
+      "Trade: consumer goods and services"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T19:48:43.409163+00:00",
+    "updated_at": "2026-02-18T19:48:43.616273+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB787/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "REFERRED TO COMMITTEE ON REGULATORY AFFAIRS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/11ba9812-5133-4733-839f-b7c47dd24dad",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 790",
+    "title": "Corporate income tax: revenue distribution; earmark to support grant, fellowship, and internship programs offered by the Michigan Space Grant Consortium; provide for. Amends sec. 695 of 1967 PA 281 (MCL 206.695).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Corporate income tax: revenue distribution"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T19:48:40.690047+00:00",
+    "updated_at": "2026-02-18T19:48:40.897744+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB790/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "REFERRED TO COMMITTEE ON APPROPRIATIONS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/70b15cb9-9895-4279-99be-9553ce658d87",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5364",
+    "title": "Education: other; revision to state academic standards; require approval of the legislature for. Amends sec. 1278 of 1976 PA 451 (MCL 380.1278).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Education: other",
+      "Legislature: other"
+    ],
+    "extras": {},
+    "created_at": "2025-12-17T03:09:30.713474+00:00",
+    "updated_at": "2026-02-18T19:48:38.895021+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5364/",
+    "first_action_date": "2025-12-16",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "referred to second reading",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/8c58fb69-9fee-4c62-afab-9648cef20531",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 786",
+    "title": "Tobacco: other; vapor product with heating element; prohibit the sale of unless the heating element is made of or encased in certain materials. Creates new act.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Tobacco: other"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T19:47:13.242907+00:00",
+    "updated_at": "2026-02-18T19:47:13.461463+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB786/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "REFERRED TO COMMITTEE ON REGULATORY AFFAIRS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/337ac93b-d53e-44c5-a6bd-5534ed5e8cb9",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4141",
+    "title": "Education: students; a wireless communications device policy: require the board of a school district or board of directors of a public school academy to implement. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1303a & repeals sec. 1303 of 1976 PA 451 (MCL 380.1303).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Communications: technology",
+      "Education: students"
+    ],
+    "extras": {},
+    "created_at": "2025-02-27T05:11:05.772391+00:00",
+    "updated_at": "2026-02-18T19:42:28.820151+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4141/",
+    "first_action_date": "2025-02-26",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "assigned PA 2 with immediate effect",
+    "latest_passage_date": "2026-01-22"
+  },
+  {
+    "id": "ocd-bill/30089318-9317-4308-a7a4-40752fab5390",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5430",
+    "title": "Recreation: campgrounds; regulations regarding individuals residing at campgrounds; provide for. Amends sec. 12501 of 1978 PA 368 (MCL 333.12501) & adds sec. 12510a.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Recreation: campgrounds"
+    ],
+    "extras": {},
+    "created_at": "2025-12-23T20:37:33.555847+00:00",
+    "updated_at": "2026-02-18T19:42:01.422249+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5430/",
+    "first_action_date": "2025-12-23",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "referred to second reading",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/2f1567a5-0ab3-426a-9662-9a5ec9840ff0",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4078",
+    "title": "Health: medical examiners; requirements for an investigation of the cause and manner of death; modify. Amends secs. 2 & 3 of 1953 PA 181 (MCL 52.202 & 52.203).   TIE BAR WITH: HB 4077'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Counties: boards and commissions",
+      "Health: medical examiners",
+      "Records: vital records"
+    ],
+    "extras": {},
+    "created_at": "2025-02-12T20:41:12.832937+00:00",
+    "updated_at": "2026-02-18T19:41:56.403201+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4078/",
+    "first_action_date": "2025-02-12",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "PLACED ON ORDER OF THIRD READING",
+    "latest_passage_date": "2025-04-29"
+  },
+  {
+    "id": "ocd-bill/6a946271-e327-47d1-bff4-d9c5be926612",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 789",
+    "title": "Businesses: business corporations; benefit corporations; authorize formation and establish duties of officers and directors. Amends (See bill).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Businesses: business corporations",
+      "Businesses: profit corporations"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T19:41:02.675712+00:00",
+    "updated_at": "2026-02-18T19:41:02.885120+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB789/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "REFERRED TO COMMITTEE ON FINANCE, INSURANCE, AND CONSUMER PROTECTION",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/559f5048-f9a0-4af5-b0e6-5f5b0884857a",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4077",
+    "title": "Health: medical examiners; process for medical certification of a death record; modify. Amends secs. 2804, 2843, 2843b, 2844 & 16221 of 1978 PA 368 (MCL 333.2804 et seq.).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health: medical examiners",
+      "Records: death",
+      "Records: vital records"
+    ],
+    "extras": {},
+    "created_at": "2025-02-12T20:41:21.745278+00:00",
+    "updated_at": "2026-02-18T19:39:30.761784+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4077/",
+    "first_action_date": "2025-02-12",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "PLACED ON ORDER OF THIRD READING",
+    "latest_passage_date": "2025-04-29"
+  },
+  {
+    "id": "ocd-bill/11372c77-62ec-496a-aea9-4f7b82c96bd4",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 788",
+    "title": "Medical marihuana: other; marihuana paraphernalia with a heating element; prohibit the sale of unless the heating element is made of or encased in certain materials. Amends 2016 PA 281 (MCL 333.27101 - 333.27801) by adding sec. 407b.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Medical marihuana: other",
+      "Trade: consumer goods and services"
+    ],
+    "extras": {},
+    "created_at": "2026-02-18T19:39:17.745784+00:00",
+    "updated_at": "2026-02-18T19:39:17.986187+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB788/",
+    "first_action_date": "2026-02-18",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "REFERRED TO COMMITTEE ON REGULATORY AFFAIRS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/089a6854-9d29-4be8-82c8-4cff69a3f9ce",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5313",
+    "title": "Health: licensing; setting aside certain disciplinary records; provide for, and modify certain continuing education requirements and sanctions. Amends secs. 16211, 16216, 16221, 16226, 16231, 16238, 17033 & 17533 of 1978 PA 368  (MCL 333.16211 et seq.) & adds secs. 16211a & 16231b.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health: licensing",
+      "Health: occupations",
+      "State agencies (existing): licensing and regulatory affairs"
+    ],
+    "extras": {},
+    "created_at": "2025-12-02T23:04:42.295948+00:00",
+    "updated_at": "2026-02-18T19:38:24.353280+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5313/",
+    "first_action_date": "2025-12-02",
+    "latest_action_date": "2026-02-18",
+    "latest_action_description": "recommendation concurred in",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/f03a6aa3-7906-493a-b4e9-db2873278540",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 301",
+    "title": "Corporate income tax: credits; employer credit for paid organ donation leave; provide for. Amends 1967 PA 281 (MCL 206.1 - 206.847) by adding secs. 279 & 679.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Corporate income tax: credits",
+      "Health: anatomical gifts",
+      "Individual income tax: credit"
+    ],
+    "extras": {},
+    "created_at": "2025-05-13T16:57:34.636401+00:00",
+    "updated_at": "2026-02-18T03:24:01.790845+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB301/",
+    "first_action_date": "2025-05-13",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REASSIGNED TO COMMITTEE ON HEALTH POLICY",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/52a00444-4bc7-4c04-bfa2-d39e850ba80d",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5302",
+    "title": "Health: substance use disorder prevention; competitive grant program to provide grants for recovery community organizations; modify. Amends sec. 273b of 1974 PA 258 (MCL 330.1273b).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health: substance use disorder prevention"
+    ],
+    "extras": {},
+    "created_at": "2025-12-02T23:02:52.165558+00:00",
+    "updated_at": "2026-02-17T23:46:15.343013+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5302/",
+    "first_action_date": "2025-12-02",
+    "latest_action_date": "2025-12-09",
+    "latest_action_description": "bill electronically reproduced 12/02/2025",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/9de28c41-79bd-473d-8531-e5d09f011f1e",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4779",
+    "title": "Health facilities: other; surgical smoke plume evacuation plan; require. Amends 1978 PA 368 (MCL 333.1101 - 333.25211) by adding sec. 20187.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health facilities: other"
+    ],
+    "extras": {},
+    "created_at": "2025-08-20T21:18:55.022726+00:00",
+    "updated_at": "2026-02-17T23:44:18.690547+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4779/",
+    "first_action_date": "2025-08-20",
+    "latest_action_date": "2025-08-21",
+    "latest_action_description": "bill electronically reproduced 08/20/2025",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/206fec11-838b-4394-882a-f147356b618f",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 716",
+    "title": "Controlled substances: schedules; scheduling of certain controlled substances; modify. Amends sec. 7204 of 1978 PA 368 (MCL 333.7204).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Controlled substances: schedules",
+      "State agencies (existing): boards and commissions"
+    ],
+    "extras": {},
+    "created_at": "2025-11-13T19:21:37.541284+00:00",
+    "updated_at": "2026-02-17T23:37:23.173353+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB716/",
+    "first_action_date": "2025-11-13",
+    "latest_action_date": "2025-11-13",
+    "latest_action_description": "REFERRED TO COMMITTEE ON HEALTH POLICY",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/7d8b6e75-092c-4772-bd9c-9f1b8884f6f0",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4072",
+    "title": "Health: pharmaceuticals; allow patients to take unused portion of eye drops or eye ointments after certain procedures for continued patient care; provide for. Amends 1978 PA 368 (MCL 333.1101 - 333.25211) by adding secs. 17773, 20817 & 21539.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health facilities: freestanding surgical outpatient facilities",
+      "Health facilities: hospitals",
+      "Health occupations: health professionals",
+      "Health occupations: pharmacists",
+      "Health: pharmaceuticals"
+    ],
+    "extras": {},
+    "created_at": "2025-02-12T20:41:30.533516+00:00",
+    "updated_at": "2026-02-17T23:37:09.854340+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4072/",
+    "first_action_date": "2025-02-12",
+    "latest_action_date": "2025-05-13",
+    "latest_action_description": "REFERRED TO COMMITTEE ON HEALTH POLICY",
+    "latest_passage_date": "2025-05-13"
+  },
+  {
+    "id": "ocd-bill/97df62ae-1ce0-4581-b590-3265f1904544",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5158",
+    "title": "Criminal procedure: sentencing guidelines; sentencing guidelines for delivery of controlled substance causing serious injury; provide for. Amends secs. 72, 73, 74, 75, 76, 77 & 78 of 1931 PA 328 (MCL 750.72 et seq.).   TIE BAR WITH: HB 5157'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Crimes: controlled substances",
+      "Criminal procedure: sentencing guidelines"
+    ],
+    "extras": {},
+    "created_at": "2025-10-29T22:39:56.234169+00:00",
+    "updated_at": "2026-02-17T19:57:46.510377+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5158/",
+    "first_action_date": "2025-10-29",
+    "latest_action_date": "2025-10-30",
+    "latest_action_description": "bill electronically reproduced 10/29/2025",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/bcb300bf-3cb2-456b-903c-613ad3ba8b1f",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5157",
+    "title": "Crimes: penalties; delivery of controlled substance causing serious injury; provide penalties. Amends 1931 PA 328 (MCL 750.1 - 750.568) by adding sec. 89a.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Controlled substances: penalties",
+      "Controlled substances: use",
+      "Crimes: controlled substances",
+      "Crimes: penalties"
+    ],
+    "extras": {},
+    "created_at": "2025-10-29T22:34:35.979146+00:00",
+    "updated_at": "2026-02-17T19:57:11.181351+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5157/",
+    "first_action_date": "2025-10-29",
+    "latest_action_date": "2025-10-30",
+    "latest_action_description": "bill electronically reproduced 10/29/2025",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/a9593265-f6f6-404b-8cf2-bce74daa7121",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4949",
+    "title": "Recreation: other; exemption from liability for sport shooting ranges; modify. Amends secs. 2 & 2a of 1989 PA 269 (MCL 691.1542 & 691.1542a).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Recreation: other"
+    ],
+    "extras": {},
+    "created_at": "2025-09-16T21:25:01.308964+00:00",
+    "updated_at": "2026-02-17T19:50:07.959310+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4949/",
+    "first_action_date": "2025-09-16",
+    "latest_action_date": "2025-09-17",
+    "latest_action_description": "bill electronically reproduced 09/16/2025",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/65e41057-a59e-494a-b956-d0ca42893c7b",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 597",
+    "title": "Marihuana: licenses; number of marihuana retailer licenses; place limit on. Amends secs. 7, 8, 9 & 9a of 2018 IL 1 (MCL 333.27957 et seq.) & adds sec. 9b.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Marihuana: licenses"
+    ],
+    "extras": {},
+    "created_at": "2025-10-02T22:30:54.360621+00:00",
+    "updated_at": "2026-02-13T23:45:30.459489+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB597/",
+    "first_action_date": "2025-10-02",
+    "latest_action_date": "2025-10-02",
+    "latest_action_description": "REFERRED TO COMMITTEE ON REGULATORY AFFAIRS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/6889fb4b-cf71-492f-b620-fe87261cd5a6",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 767",
+    "title": "Vehicles: fund-raising registration plates; special fund-raising registration plate for the Golf Association of Michigan Foundation; create. Amends 1949 PA 300 (MCL 257.1 - 257.923) by adding sec. 811kk.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Vehicles: fund-raising registration plates"
+    ],
+    "extras": {},
+    "created_at": "2026-01-15T19:19:26.331785+00:00",
+    "updated_at": "2026-02-13T23:42:18.045712+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB767/",
+    "first_action_date": "2026-01-15",
+    "latest_action_date": "2026-01-15",
+    "latest_action_description": "REFERRED TO COMMITTEE ON TRANSPORTATION AND INFRASTRUCTURE",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/cb44242b-cf72-42c8-b4bd-24d693e2b378",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5458",
+    "title": "Vehicles: fund-raising registration plates; special fund-raising registration plate for the Golf Association of Michigan Foundation; create. Amends 1949 PA 300 (MCL 257.1 - 257.923) by adding sec. 811kk.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Vehicles: fund-raising registration plates"
+    ],
+    "extras": {},
+    "created_at": "2026-01-21T23:26:13.622235+00:00",
+    "updated_at": "2026-02-13T23:38:39.949941+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5458/",
+    "first_action_date": "2026-01-21",
+    "latest_action_date": "2026-01-22",
+    "latest_action_description": "bill electronically reproduced 01/21/2026",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/c9dd97ff-3e1a-460c-b970-1068701b46f9",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 598",
+    "title": "Medical marihuana: licenses; number of marihuana provisioning center licenses; place limit on. Amends secs. 102, 302, 401 & 402 of 2016 PA 281 (MCL 333.27102 et seq.) & adds sec. 402a.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Medical marihuana: licenses"
+    ],
+    "extras": {},
+    "created_at": "2025-10-02T22:28:08.511312+00:00",
+    "updated_at": "2026-02-13T23:37:38.811371+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB598/",
+    "first_action_date": "2025-10-02",
+    "latest_action_date": "2025-10-02",
+    "latest_action_description": "REFERRED TO COMMITTEE ON REGULATORY AFFAIRS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/81b2be0c-e890-4b29-954a-01c14cc5660e",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 525",
+    "title": "Aeronautics: unmanned aircraft systems; exceptions to prohibited use of an unmanned aircraft system; expand. Amends sec. 7 of 2016 PA 436 (MCL 259.307).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Aeronautics: unmanned aircraft systems"
+    ],
+    "extras": {},
+    "created_at": "2025-09-04T17:12:13.922432+00:00",
+    "updated_at": "2026-02-13T19:45:05.174608+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB525/",
+    "first_action_date": "2025-09-04",
+    "latest_action_date": "2026-02-12",
+    "latest_action_description": "REFERRED TO COMMITTEE OF THE WHOLE WITH SUBSTITUTE (S-1)",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/4cbb1cef-f3f6-4878-8086-7154e9439648",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 581",
+    "title": "Economic development: downtown development authorities; definition of downtown district; modify. Amends sec. 201 of 2018 PA 57 (MCL 125.4201).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Economic development: downtown development authorities",
+      "Economic development: tax increment financing"
+    ],
+    "extras": {},
+    "created_at": "2025-09-22T19:21:09.065686+00:00",
+    "updated_at": "2026-02-13T07:23:55.112787+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB581/",
+    "first_action_date": "2025-09-22",
+    "latest_action_date": "2026-02-12",
+    "latest_action_description": "REFERRED TO COMMITTEE OF THE WHOLE",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/22ba2d39-4f80-4809-ac77-06606115ab77",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4556",
+    "title": "Education: examinations; certain requirements concerning the Michigan merit examination; modify. Amends sec. 1279g of 1976 PA 451 (MCL 380.1279g).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Education: examinations",
+      "Education: reports",
+      "Education: students"
+    ],
+    "extras": {},
+    "created_at": "2025-06-05T19:01:43.312401+00:00",
+    "updated_at": "2026-02-13T03:23:44.740029+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4556/",
+    "first_action_date": "2025-06-05",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE OF THE WHOLE WITH SUBSTITUTE (S-3)",
+    "latest_passage_date": "2026-01-14"
+  },
+  {
+    "id": "ocd-bill/78d57aae-0157-4e88-8a39-56db695e5803",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4557",
+    "title": "Education: examinations; certain requirements concerning the Michigan merit examination; modify. Amends secs. 22p & 104c of 1979 PA 94 (MCL 388.1622p & 388.1704c) & repeals sec. 104b of 1979 PA 94 (MCL 388.1704b).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Education: examinations",
+      "Education: students",
+      "State agencies (existing): education"
+    ],
+    "extras": {},
+    "created_at": "2025-06-05T19:00:00.818071+00:00",
+    "updated_at": "2026-02-13T03:23:34.284521+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4557/",
+    "first_action_date": "2025-06-05",
+    "latest_action_date": "2026-02-12",
+    "latest_action_description": "REFERRED TO COMMITTEE OF THE WHOLE WITH SUBSTITUTE (S-1)",
+    "latest_passage_date": "2026-01-14"
+  },
+  {
+    "id": "ocd-bill/c93dbb50-69eb-4a98-a04e-bc5c7590eae0",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 544",
+    "title": "Insurance: other; post-claim underwriting; prohibit. Amends sec. 2026 of 1956 PA 218 (MCL 500.2026).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Insurance: other"
+    ],
+    "extras": {},
+    "created_at": "2025-09-17T17:17:19.105649+00:00",
+    "updated_at": "2026-02-11T19:42:33.818841+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB544/",
+    "first_action_date": "2025-09-17",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "PLACED ON ORDER OF THIRD READING",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/120fdd94-36fd-4a1e-a107-b087549ae743",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 736",
+    "title": "Crimes: crimes against minors; definition of child abuse; modify. Amends sec. 136b of 1931 PA 328 (MCL 750.136b).   TIE BAR WITH: SB 0735'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Children: child abuse or child neglect",
+      "Crimes: crimes against minors"
+    ],
+    "extras": {},
+    "created_at": "2025-12-12T00:10:37.958391+00:00",
+    "updated_at": "2026-02-11T19:42:29.255512+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB736/",
+    "first_action_date": "2025-12-10",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REASSIGNED TO COMMITTEE ON HOUSING AND HUMAN SERVICES",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/b8514fad-3342-46dd-8aa0-f4c453e611cd",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SR 95",
+    "title": "A resolution to recognize February 11, 2026, as the United Auto Workers\u2019 (UAW) White Shirt Day.",
+    "classification": [
+      "resolution"
+    ],
+    "subject": [],
+    "extras": {},
+    "created_at": "2026-02-10T19:50:02.113145+00:00",
+    "updated_at": "2026-02-11T19:42:18.296268+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SR95/",
+    "first_action_date": "2026-02-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "ADOPTED",
+    "latest_passage_date": "2026-02-11"
+  },
+  {
+    "id": "ocd-bill/bc170f82-8054-472d-a772-dfb061c6df23",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SR 96",
+    "title": "A resolution to recognize February 2026 as Black History Month.",
+    "classification": [
+      "resolution"
+    ],
+    "subject": [],
+    "extras": {},
+    "created_at": "2026-02-11T19:41:17.817172+00:00",
+    "updated_at": "2026-02-11T19:41:18.101644+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SR96/",
+    "first_action_date": "2026-02-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "ADOPTED",
+    "latest_passage_date": "2026-02-11"
+  },
+  {
+    "id": "ocd-bill/44ddc75a-38b3-4e37-8ca4-db0b73558b8c",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 547",
+    "title": "Insurance: no-fault; utilization reviews; require compliance with decision on appeal. Amends sec. 3157a of 1956 PA 218 (MCL 500.3157a).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Insurance: no-fault"
+    ],
+    "extras": {},
+    "created_at": "2025-09-17T17:23:11.636944+00:00",
+    "updated_at": "2026-02-11T19:41:00.901880+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB547/",
+    "first_action_date": "2025-09-17",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "PLACED ON ORDER OF THIRD READING",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/c621a3a8-0263-46a8-9f4a-461d3011bf67",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 782",
+    "title": "Insurance: no-fault; denial of claim based on failure to list all household members on policy; prohibit.  Amends sec. 3114 of 1956 PA 218 (MCL 500.3114).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Insurance: no-fault"
+    ],
+    "extras": {},
+    "created_at": "2026-02-11T19:40:41.588876+00:00",
+    "updated_at": "2026-02-11T19:40:41.798361+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB782/",
+    "first_action_date": "2026-02-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON FINANCE, INSURANCE, AND CONSUMER PROTECTION",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/fc54dd1d-dfc6-4fe4-ab31-b822faf53ae5",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4907",
+    "title": "Occupations: individual licensing and registration; testing of control and safety devices by boiler repairers and installers; allow. Amends sec. 907 of 2016 PA 407 (MCL 339.5907).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Occupations: individual licensing and registration"
+    ],
+    "extras": {},
+    "created_at": "2025-09-11T19:19:05.857835+00:00",
+    "updated_at": "2026-02-11T19:40:25.811259+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4907/",
+    "first_action_date": "2025-09-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON LABOR",
+    "latest_passage_date": "2026-02-11"
+  },
+  {
+    "id": "ocd-bill/c98082c8-34c4-467a-a3dc-a3ea3d1aa89a",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 781",
+    "title": "Vehicles: fund-raising registration plates; special fund-raising registration plate to support the Upper Peninsula; provide for. Amends 1949 PA 300 (MCL 257.1 - 257.923) by adding secs. 811gg, 811kk & 811ll.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Natural resources: Great Lakes",
+      "State agencies (existing): state",
+      "Vehicles: fund-raising registration plates"
+    ],
+    "extras": {},
+    "created_at": "2026-02-11T19:40:07.534645+00:00",
+    "updated_at": "2026-02-11T19:40:07.749953+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB781/",
+    "first_action_date": "2026-02-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON TRANSPORTATION AND INFRASTRUCTURE",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/3526c2b1-8ae6-4402-a2d0-638ed902ead8",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 550",
+    "title": "Insurance: automobile; manuals of rules; provide requirements for. Amends secs. 2021, 2106, 2108, 2112, 2458 & 2652 of 1956 PA 218 (MCL 500.2021 et seq.).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Insurance: automobile"
+    ],
+    "extras": {},
+    "created_at": "2025-09-17T17:17:44.109319+00:00",
+    "updated_at": "2026-02-11T19:39:43.229324+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB550/",
+    "first_action_date": "2025-09-17",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "PLACED ON ORDER OF THIRD READING",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/b8e69660-3837-4aa7-b0cf-91ae6c2eb6ee",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 757",
+    "title": "Communications: social media; addictive feeds for minors by social media platforms; prohibit. Creates new act.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Children: other",
+      "Communications: social media"
+    ],
+    "extras": {},
+    "created_at": "2025-12-17T20:49:36.277369+00:00",
+    "updated_at": "2026-02-11T19:38:00.981515+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB757/",
+    "first_action_date": "2025-12-17",
+    "latest_action_date": "2025-12-17",
+    "latest_action_description": "REFERRED TO COMMITTEE ON FINANCE, INSURANCE, AND CONSUMER PROTECTION",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/282dcd18-bfd9-40fa-be0b-0a8db1bcf4ae",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 780",
+    "title": "Alienage: other; certain immigration enforcement agreements; prohibit. Creates new act.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Alienage: other",
+      "Law enforcement: local police",
+      "State agencies (existing): state police"
+    ],
+    "extras": {},
+    "created_at": "2026-02-11T19:37:38.624343+00:00",
+    "updated_at": "2026-02-11T19:37:38.835244+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB780/",
+    "first_action_date": "2026-02-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON GOVERNMENT OPERATIONS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/aceb14b8-2372-4406-a830-1a86e3f475b1",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 546",
+    "title": "Insurance: other; penalties for late payment of claims; increase. Amends secs. 2006 & 3142 of 1956 PA 218 (MCL 500.2006 & 500.3142).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Insurance: other"
+    ],
+    "extras": {},
+    "created_at": "2025-09-17T17:16:07.081351+00:00",
+    "updated_at": "2026-02-11T19:37:08.332886+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB546/",
+    "first_action_date": "2025-09-17",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "PLACED ON ORDER OF THIRD READING",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/479cc060-b1ee-4f91-914d-06c22e323f9e",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 784",
+    "title": "Education: meals; free school lunch and breakfast program; create. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1271.   TIE BAR WITH: SB 0785'26",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Education: meals",
+      "State agencies (existing): education"
+    ],
+    "extras": {},
+    "created_at": "2026-02-11T19:36:24.847651+00:00",
+    "updated_at": "2026-02-11T19:36:25.058881+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB784/",
+    "first_action_date": "2026-02-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON EDUCATION",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/cf6a392c-90aa-42f5-8b70-3e0e8724db8e",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 545",
+    "title": "Insurance: other; underwriting transparency; provide for. Amends 1956 PA 218 (MCL 500.100 - 500.8302) by adding sec. 2229.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Insurance: other"
+    ],
+    "extras": {},
+    "created_at": "2025-09-17T17:26:40.981490+00:00",
+    "updated_at": "2026-02-11T19:36:22.962743+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB545/",
+    "first_action_date": "2025-09-17",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "PLACED ON ORDER OF THIRD READING",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/0692ac0f-e94a-47bc-b362-8bb0b213c736",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4306",
+    "title": "Traffic control: driver license; exceptions to driver license suspension for certain individuals who suffered an epileptic seizure; provide for. Amends sec. 309 of 1949 PA 300 (MCL 257.309) & adds sec. 309a.   TIE BAR WITH: HB 4307'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Traffic control: driver license"
+    ],
+    "extras": {},
+    "created_at": "2025-03-27T16:51:51.248826+00:00",
+    "updated_at": "2026-02-11T19:36:20.586245+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4306/",
+    "first_action_date": "2025-03-27",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REASSIGNED TO COMMITTEE ON HEALTH POLICY",
+    "latest_passage_date": "2025-11-05"
+  },
+  {
+    "id": "ocd-bill/1f8215d1-b013-4858-afa3-7ef3d0aacd15",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 759",
+    "title": "Consumer protection: privacy; Michigan consumer protection act; amend to include violation of kids code act as violation. Amends sec. 3 of 1976 PA 331 (MCL 445.903).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Children: other",
+      "Communications: internet",
+      "Consumer protection: privacy"
+    ],
+    "extras": {},
+    "created_at": "2025-12-17T20:59:05.395205+00:00",
+    "updated_at": "2026-02-11T19:34:34.813255+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB759/",
+    "first_action_date": "2025-12-17",
+    "latest_action_date": "2025-12-17",
+    "latest_action_description": "REFERRED TO COMMITTEE ON FINANCE, INSURANCE, AND CONSUMER PROTECTION",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/0fc53eed-e1a1-48e3-9b1c-23de5289b143",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 735",
+    "title": "Children: child abuse or child neglect; definition of child neglect; modify. Amends sec. 2 of 1975 PA 238 (MCL 722.622).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Children: child abuse or child neglect"
+    ],
+    "extras": {},
+    "created_at": "2025-12-12T00:15:45.630103+00:00",
+    "updated_at": "2026-02-11T19:34:20.693977+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB735/",
+    "first_action_date": "2025-12-10",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REASSIGNED TO COMMITTEE ON HOUSING AND HUMAN SERVICES",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/9e9a838b-d222-4ce3-ac6b-68c5a1901765",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5198",
+    "title": "Elections: other; certification that contributions for election administration are not from foreign nationals; require. Amends 1954 PA 116 (MCL 168.1 - 168.992) by adding sec. 645a.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Elections: election officials",
+      "Elections: other"
+    ],
+    "extras": {},
+    "created_at": "2025-10-30T22:42:41.406084+00:00",
+    "updated_at": "2026-02-11T19:34:05.341292+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5198/",
+    "first_action_date": "2025-10-30",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON GOVERNMENT OPERATIONS",
+    "latest_passage_date": "2026-02-11"
+  },
+  {
+    "id": "ocd-bill/0c4f68e2-e44f-4301-84d8-b8ac86f25712",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 779",
+    "title": "Vehicles: driver training; instruction on slow-down and move-over laws; require.  Amends sec. 39 of 2006 PA 384 (MCL 256.659).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Vehicles: driver training"
+    ],
+    "extras": {},
+    "created_at": "2026-02-11T19:33:57.676458+00:00",
+    "updated_at": "2026-02-11T19:33:57.886203+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB779/",
+    "first_action_date": "2026-02-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON TRANSPORTATION AND INFRASTRUCTURE",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/6a7cb351-3cca-4a77-929d-d909cf194644",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4855",
+    "title": "Weapons: firearms; possession of a pistol by a bow hunter; allow. Amends sec. 43510 of 1994 PA 451 (MCL 324.43510).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Natural resources: hunting",
+      "Weapons: firearms"
+    ],
+    "extras": {},
+    "created_at": "2025-09-09T19:15:25.786381+00:00",
+    "updated_at": "2026-02-11T19:33:55.845626+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4855/",
+    "first_action_date": "2025-09-09",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON NATURAL RESOURCES AND AGRICULTURE",
+    "latest_passage_date": "2026-02-11"
+  },
+  {
+    "id": "ocd-bill/6218c3ff-b920-43ea-b059-2610ab026541",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4898",
+    "title": "Occupations: individual licensing and registration; boiler repair license; provide for. Amends sec. 941 of 2016 PA 407 (MCL 339.5941) & adds secs. 928, 928a & 928b.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Occupations: individual licensing and registration"
+    ],
+    "extras": {},
+    "created_at": "2025-09-11T19:21:33.529142+00:00",
+    "updated_at": "2026-02-11T19:33:46.709114+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4898/",
+    "first_action_date": "2025-09-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON LABOR",
+    "latest_passage_date": "2026-02-11"
+  },
+  {
+    "id": "ocd-bill/ad60a111-2a1c-4dbb-b8d0-ac26b1c94d4a",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4897",
+    "title": "Occupations: individual licensing and registration; boiler installer license; provide for. Amends sec. 939 of 2016 PA 407 (MCL 339.5939) & adds secs. 926, 926a & 926b.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Occupations: individual licensing and registration"
+    ],
+    "extras": {},
+    "created_at": "2025-09-11T19:17:42.084589+00:00",
+    "updated_at": "2026-02-11T19:31:41.800249+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4897/",
+    "first_action_date": "2025-09-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON LABOR",
+    "latest_passage_date": "2026-02-11"
+  },
+  {
+    "id": "ocd-bill/313e34c8-ba99-4099-bdc8-60a0e378d33e",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 543",
+    "title": "Insurance: other; penalties for violations of the insurance code; increase. Amends secs. 150 & 2038 of 1956 PA 218 (MCL 500.150 & 500.2038).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Insurance: other"
+    ],
+    "extras": {},
+    "created_at": "2025-09-17T17:25:32.502347+00:00",
+    "updated_at": "2026-02-11T19:31:37.558574+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB543/",
+    "first_action_date": "2025-09-17",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "PLACED ON ORDER OF THIRD READING",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/e0472209-3602-44c2-8317-9890a1227308",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 783",
+    "title": "Economic development: other; eligibility for stock buybacks during the period of award if awarded an economic incentive; prohibit. Amends 1984 PA 270 (MCL 125.2001 - 125.2094) by adding sec. 7c.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Economic development: other"
+    ],
+    "extras": {},
+    "created_at": "2026-02-11T19:31:32.738937+00:00",
+    "updated_at": "2026-02-11T19:31:32.952044+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB783/",
+    "first_action_date": "2026-02-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON ECONOMIC AND COMMUNITY DEVELOPMENT",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/cd2fa0ed-9c3c-4b96-89da-73a3c6fe4446",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5197",
+    "title": "Campaign finance: contributions and expenditures; contributions by certain foreign entities; prohibit. Amends secs. 7, 15, 24, 26, 51 & 54 of 1976 PA 388 (MCL 169.207 et seq.) & adds sec. 34a.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Businesses: business corporations",
+      "Businesses: nonprofit corporations",
+      "Businesses: professional corporations",
+      "Campaign finance: contributions and expenditures",
+      "Campaign finance: public disclosure",
+      "Elections: initiative and referendum"
+    ],
+    "extras": {},
+    "created_at": "2025-10-30T22:51:15.609359+00:00",
+    "updated_at": "2026-02-11T19:31:07.097877+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5197/",
+    "first_action_date": "2025-10-30",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON GOVERNMENT OPERATIONS",
+    "latest_passage_date": "2026-02-11"
+  },
+  {
+    "id": "ocd-bill/ca9f7763-1059-48f9-bf96-9124e86b7049",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 549",
+    "title": "Insurance: other; data security enforcement; modify. Amends secs. 553, 561 & 563 of 1956 PA 218 (MCL 500.553 et seq.) & adds secs. 564 & 564a.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Insurance: other"
+    ],
+    "extras": {},
+    "created_at": "2025-09-17T17:22:32.749390+00:00",
+    "updated_at": "2026-02-11T19:30:49.286793+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB549/",
+    "first_action_date": "2025-09-17",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "PLACED ON ORDER OF THIRD READING",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/b5cd9fb1-8686-48ec-9c3a-83fdc7dde120",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4307",
+    "title": "Health occupations: physicians; voluntary reporting to secretary of state patients with certain conditions that affect ability to operate a motor vehicle; modify. Amends sec. 5139 of 1978 PA 368 (MCL 333.5139).   TIE BAR WITH: HB 4306'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health occupations: physicians"
+    ],
+    "extras": {},
+    "created_at": "2025-03-27T16:52:06.581168+00:00",
+    "updated_at": "2026-02-11T19:30:41.844577+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4307/",
+    "first_action_date": "2025-03-27",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REASSIGNED TO COMMITTEE ON HEALTH POLICY",
+    "latest_passage_date": "2025-11-05"
+  },
+  {
+    "id": "ocd-bill/a97bf123-5963-4684-91c3-8a537b129dce",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 495",
+    "title": "Education: safety; emergency operations plan requirements; modify. Amends sec. 1308b of 1976 PA 451 (MCL 380.1308b).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Communications: cellular telephone",
+      "Education: safety"
+    ],
+    "extras": {},
+    "created_at": "2025-08-12T15:08:31.878742+00:00",
+    "updated_at": "2026-02-11T19:29:06.934647+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB495/",
+    "first_action_date": "2025-08-12",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "ASSIGNED PA 0001'26 WITH IMMEDIATE EFFECT",
+    "latest_passage_date": "2026-01-28"
+  },
+  {
+    "id": "ocd-bill/8146b600-fef8-41cc-bcd1-13cb3a640104",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 785",
+    "title": "Education: meals; free school lunch and breakfast program; modify.  Amends sec. 30d of 1979 PA 94 (MCL 388.1630d).  TIE BAR WITH: SB 0784'26",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Education: meals",
+      "School aid: other",
+      "State agencies (existing): education"
+    ],
+    "extras": {},
+    "created_at": "2026-02-11T19:28:43.850371+00:00",
+    "updated_at": "2026-02-11T19:28:44.060516+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB785/",
+    "first_action_date": "2026-02-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON EDUCATION",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/fcd25144-9680-45d3-8877-e0e33f0bc69a",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 758",
+    "title": "Communications: internet; Michigan kids code act; create. Creates new act.   TIE BAR WITH: SB 0759'25",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Children: other",
+      "Communications: internet",
+      "Consumer protection: privacy"
+    ],
+    "extras": {},
+    "created_at": "2025-12-17T20:54:16.138972+00:00",
+    "updated_at": "2026-02-11T19:28:39.068530+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB758/",
+    "first_action_date": "2025-12-17",
+    "latest_action_date": "2025-12-17",
+    "latest_action_description": "REFERRED TO COMMITTEE ON FINANCE, INSURANCE, AND CONSUMER PROTECTION",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/b53e6e78-09df-48ca-bdda-fa11de066ddd",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 4445",
+    "title": "Natural resources: hunting; feeding or baiting deer; allow. Amends secs. 40102 & 40111a of 1994 PA 451 (MCL 324.40102 & 324.40111a).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Natural resources: hunting"
+    ],
+    "extras": {},
+    "created_at": "2025-05-06T18:55:17.612307+00:00",
+    "updated_at": "2026-02-11T19:28:29.271251+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB4445/",
+    "first_action_date": "2025-05-06",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON NATURAL RESOURCES AND AGRICULTURE",
+    "latest_passage_date": "2026-02-11"
+  },
+  {
+    "id": "ocd-bill/39308a57-aef0-472b-9d1a-2be5dd61e1e5",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 760",
+    "title": "Trade: business regulation; availability of companion chatbots to minors; prohibit. Creates new act.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Communications: artificial intelligence",
+      "Trade: business regulation"
+    ],
+    "extras": {},
+    "created_at": "2025-12-17T21:03:01.712795+00:00",
+    "updated_at": "2026-02-11T19:28:14.226498+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB760/",
+    "first_action_date": "2025-12-17",
+    "latest_action_date": "2025-12-17",
+    "latest_action_description": "REFERRED TO COMMITTEE ON FINANCE, INSURANCE, AND CONSUMER PROTECTION",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/48e62471-1973-4ef1-b89f-453546c7c796",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 778",
+    "title": "Vehicles: driver training; instruction on slow-down and move-over laws; require.  Amends sec. 309 of 1949 PA 300 (MCL 257.309).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Vehicles: driver training"
+    ],
+    "extras": {},
+    "created_at": "2026-02-11T19:28:11.757913+00:00",
+    "updated_at": "2026-02-11T19:28:11.979514+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB778/",
+    "first_action_date": "2026-02-11",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON TRANSPORTATION AND INFRASTRUCTURE",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/9d515f44-14d9-4e00-8c62-d052f6ca9e9d",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5288",
+    "title": "Economic development: Michigan strategic fund; compliance with the Uyghur forced labor prevention act; provide for. Amends sec. 4 of 1984 PA 270 (MCL 125.2004) & adds sec. 7c.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Economic development: Michigan strategic fund",
+      "State management: funds"
+    ],
+    "extras": {},
+    "created_at": "2025-11-13T23:07:15.867460+00:00",
+    "updated_at": "2026-02-11T19:27:41.954243+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5288/",
+    "first_action_date": "2025-11-13",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON ECONOMIC AND COMMUNITY DEVELOPMENT",
+    "latest_passage_date": "2026-02-11"
+  },
+  {
+    "id": "ocd-bill/e0f15401-0d4a-4049-a5df-2c00c8dc03d5",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/d387cf69-631c-4013-bb32-4a00c848fcc4",
+      "name": "House",
+      "classification": "lower"
+    },
+    "identifier": "HB 5455",
+    "title": "Health occupations: physicians; interstate medical licensure compact; update. Amends 1978 PA 368 (MCL 333.1101 - 333.25211) by adding sec. 16189.",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Health occupations: physicians",
+      "State: interstate compacts and agreements"
+    ],
+    "extras": {},
+    "created_at": "2026-01-15T23:04:11.507958+00:00",
+    "updated_at": "2026-02-11T15:33:21.564359+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/HB5455/",
+    "first_action_date": "2026-01-15",
+    "latest_action_date": "2026-02-11",
+    "latest_action_description": "REFERRED TO COMMITTEE ON GOVERNMENT OPERATIONS",
+    "latest_passage_date": "2026-02-11"
+  },
+  {
+    "id": "ocd-bill/4f7260f0-ed58-4c16-97f2-90ece833e26a",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 698",
+    "title": "Campaign finance: statements and reports; filing of campaign statements; modify. Amends secs. 15, 16, 17, 24b, 33 & 82 of 1976 PA 388 (MCL 169.215 et seq.) & repeals secs. 34 & 35 of 1976 PA 388 (MCL 169.234 & 169.235).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Campaign finance: statements and reports"
+    ],
+    "extras": {},
+    "created_at": "2025-10-30T22:42:29.979259+00:00",
+    "updated_at": "2026-02-10T19:57:33.197978+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB698/",
+    "first_action_date": "2025-10-30",
+    "latest_action_date": "2025-10-30",
+    "latest_action_description": "REFERRED TO COMMITTEE ON ELECTIONS AND ETHICS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/9a3a677c-684a-47a9-b8fd-07ed21fd28f5",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 694",
+    "title": "Elections: scheduling; reference to August primary election in the revised judicature act of 1961; revise to May primary election. Amends secs. 550, 550a, 805, 8175 & 8176 of 1961 PA 236 (MCL 600.550 et seq.).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Elections: judicial",
+      "Elections: scheduling"
+    ],
+    "extras": {},
+    "created_at": "2025-10-30T22:39:08.707324+00:00",
+    "updated_at": "2026-02-10T19:53:29.269156+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB694/",
+    "first_action_date": "2025-10-30",
+    "latest_action_date": "2025-10-30",
+    "latest_action_description": "REFERRED TO COMMITTEE ON ELECTIONS AND ETHICS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/8d664c86-bcb0-4ff0-ac21-e8f50514f309",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 697",
+    "title": "Elections: petitions; signature requirements for qualifying petitions; modify. Amends sec. 544f of 1954 PA 116 (MCL 168.544f).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Elections: candidates",
+      "Elections: petitions"
+    ],
+    "extras": {},
+    "created_at": "2025-10-30T22:40:15.721573+00:00",
+    "updated_at": "2026-02-10T19:52:42.671722+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB697/",
+    "first_action_date": "2025-10-30",
+    "latest_action_date": "2025-10-30",
+    "latest_action_description": "REFERRED TO COMMITTEE ON ELECTIONS AND ETHICS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/f7334180-e318-4438-b030-ed976dc1e797",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 696",
+    "title": "Elections: scheduling; reference to August election date in 1846 PA 16; revise to May election date. Amends sec. 2a of 1846 RS 16 (MCL 41.2a).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Elections: primary",
+      "Elections: scheduling",
+      "Townships: other"
+    ],
+    "extras": {},
+    "created_at": "2025-10-30T22:45:12.389340+00:00",
+    "updated_at": "2026-02-10T19:47:22.135327+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB696/",
+    "first_action_date": "2025-10-30",
+    "latest_action_date": "2025-10-30",
+    "latest_action_description": "REFERRED TO COMMITTEE ON ELECTIONS AND ETHICS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/dae5d560-a9ae-4ef5-a49e-a0f6c97ce59d",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 695",
+    "title": "Vehicles: registration; reference to the Michigan election law in the Michigan vehicle code; modify. Amends sec. 801j of 1949 PA 300 (MCL 257.801j).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Elections: general election",
+      "Vehicles: registration"
+    ],
+    "extras": {},
+    "created_at": "2025-10-30T22:44:54.499949+00:00",
+    "updated_at": "2026-02-10T19:46:57.588469+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB695/",
+    "first_action_date": "2025-10-30",
+    "latest_action_date": "2025-10-30",
+    "latest_action_description": "REFERRED TO COMMITTEE ON ELECTIONS AND ETHICS",
+    "latest_passage_date": ""
+  },
+  {
+    "id": "ocd-bill/9cc81420-907a-499c-81ee-2579eb6a19f6",
+    "session": "2025-2026",
+    "jurisdiction": {
+      "id": "ocd-jurisdiction/country:us/state:mi/government",
+      "name": "Michigan",
+      "classification": "state"
+    },
+    "from_organization": {
+      "id": "ocd-organization/7cf9891c-6c1f-45ec-b24c-7aa9be45e9cc",
+      "name": "Senate",
+      "classification": "upper"
+    },
+    "identifier": "SB 692",
+    "title": "Transportation: authorities; reference to the Michigan election law in the regional transit authority act; modify. Amends sec. 10 of 2012 PA 387 (MCL 124.550).",
+    "classification": [
+      "bill"
+    ],
+    "subject": [
+      "Elections: general election",
+      "Transportation: authorities"
+    ],
+    "extras": {},
+    "created_at": "2025-10-30T22:43:56.492784+00:00",
+    "updated_at": "2026-02-10T19:46:35.693763+00:00",
+    "openstates_url": "https://openstates.org/mi/bills/2025-2026/SB692/",
+    "first_action_date": "2025-10-30",
+    "latest_action_date": "2025-10-30",
+    "latest_action_description": "REFERRED TO COMMITTEE ON ELECTIONS AND ETHICS",
+    "latest_passage_date": ""
+  }
+]
