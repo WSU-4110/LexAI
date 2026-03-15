@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AuthView: View {
     
-    @EnvironmentObject private var authManager: FirebaseManager
+    @EnvironmentObject private var firebaseManager: FirebaseManager
     
     @State private var email = ""
     @State private var password = ""
@@ -51,7 +51,7 @@ struct AuthView: View {
                     VStack(spacing: 20) {
                         
                         // Error banner
-                        if let error = authManager.errorMessage {
+                        if let error = firebaseManager.errorMessage {
                             HStack(spacing: 8) {
                                 Image(systemName: "exclamationmark.triangle.fill")
                                     .foregroundStyle(.red)
@@ -154,7 +154,7 @@ struct AuthView: View {
                             submit()
                         } label: {
                             Group {
-                                if authManager.isLoading {
+                                if firebaseManager.isLoading {
                                     ProgressView()
                                         .tint(.white)
                                 } else {
@@ -168,7 +168,7 @@ struct AuthView: View {
                         .buttonStyle(.borderedProminent)
                         .buttonBorderShape(.roundedRectangle(radius: 14))
                         .controlSize(.large)
-                        .disabled(!isFormValid || authManager.isLoading)
+                        .disabled(!isFormValid || firebaseManager.isLoading)
                         
                         HStack(spacing: 4) {
                             Text(isSignUpMode
@@ -179,7 +179,7 @@ struct AuthView: View {
                             Button(isSignUpMode ? "Sign In" : "Sign Up") {
                                 withAnimation(.easeInOut(duration: 0.25)) {
                                     isSignUpMode.toggle()
-                                    authManager.errorMessage = nil
+                                    firebaseManager.errorMessage = nil
                                     confirmPassword = ""
                                 }
                             }
@@ -221,9 +221,9 @@ struct AuthView: View {
         focusedField = nil
         Task {
             if isSignUpMode {
-                await authManager.signUp(email: email, password: password)
+                await firebaseManager.signUp(email: email, password: password)
             } else {
-                await authManager.signIn(email: email, password: password)
+                await firebaseManager.signIn(email: email, password: password)
             }
         }
     }
