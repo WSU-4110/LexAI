@@ -19,6 +19,8 @@ class FirebaseManager: ObservableObject {
     
     private var authStateListener: AuthStateDidChangeListenerHandle?
     
+    static let shared = FirebaseManager() // Singleton instance
+    
     init() {
         authStateListener = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             Task { @MainActor in

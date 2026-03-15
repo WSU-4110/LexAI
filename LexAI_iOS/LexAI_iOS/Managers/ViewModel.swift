@@ -13,7 +13,7 @@ import Combine
 class ViewModel: ObservableObject {
 
     
-    @Published var authManager = FirebaseManager()
+    @Published var firebaseManager = FirebaseManager.shared
     let db =  Firestore.firestore()
     
     init() {
