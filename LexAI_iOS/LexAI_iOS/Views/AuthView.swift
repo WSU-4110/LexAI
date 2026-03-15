@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AuthView: View {
     
-    @EnvironmentObject private var authManager: AuthManager
+    @EnvironmentObject private var authManager: FirebaseManager
     
     @State private var email = ""
     @State private var password = ""
@@ -231,7 +231,7 @@ struct AuthView: View {
 
 #Preview {
     AuthView()
-        .environmentObject(AuthManager())
+        .environmentObject(FirebaseManager())
 }
 
 
