@@ -1,5 +1,6 @@
 //  ChatView.swift
 //  LexAI_iOS
+
 import SwiftUI
 
 private let bottomAnchorId = "bottom"
