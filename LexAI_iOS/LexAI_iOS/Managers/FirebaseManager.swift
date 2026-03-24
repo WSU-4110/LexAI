@@ -45,7 +45,7 @@ class FirebaseManager: ObservableObject {
     }
 
     // MARK: -chat storage - mirshod 3/13
-    func saveChat(prompt: ChatPrompt) {
+    func saveChat(prompt: ChatPrompt, completion: @escaping (Bool) -> Void) {
         let db = Firestore.firestore()
 
         let data: [String: Any] = [
@@ -60,8 +60,10 @@ class FirebaseManager: ObservableObject {
         db.collection("chatHistory").addDocument(data: data) { error in
             if let error = error {
                 print("Error saving chat: \(error)")
+                completion(false)
             } else{
                 print("Chat successfully saved.")
+                completion(true)
             }
         }
     }
