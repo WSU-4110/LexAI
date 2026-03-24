@@ -67,6 +67,53 @@ class FirebaseManager: ObservableObject {
             }
         }
     }
+
+    // MARK: - fetching chats (could be used in sidebar) - mirshod 3/24
+    func fetchChats(userId: String, completion: @escaping ([ChatPrompt]) -> Void) {
+        let db = Firestore.firestore()
+
+        db.collection("chatHistory")
+            .whereField("user", isEqualTo: userId)
+            .getDocuments { snapshot, error in
+                var chats: [ChatPrompt] = []
+
+                if let documents = snapshot?.documents {
+                    for doc in documents {
+                        let data = doc.data()
+
+                        let chat = ChatPrompt(
+                            prompt: data["prompt"] as? String ?? "",
+                            documents: data["documents"] as? [String] ?? [],
+                            location: data["location"] as? String ?? "",
+                            user: data["user"] as? String ?? ""
+                        )
+                        chats.append(chat)
+                    }
+                }
+                completion(chats)
+            }
+    }
+
+    // MARK: - deleting a chat - mirshod 3/24
+    func deleteChat(chatId: String, completion: @escaping (Bool) -> Void) {
+        let db = Firestore.firestore()
+        db.collection("chatHistory")
+            .document(chatId)
+            .delete { error in 
+                completion(error == nil)
+            }
+    }
+
+    // MARK - updating chat storage - mirshod 3/24
+    func updateChat(chatId: String, newPrompt: String, completion: @escaping (Bool) -> Void) {
+        let db = Firestore.firestore()
+
+        db.collection("chatHistory")
+            .document(chatId)
+            .updateData(["prompt": newPrompt]) { error in
+                completion(error == nil)
+            }
+    }
     
     // MARK: - Sign Up
     
