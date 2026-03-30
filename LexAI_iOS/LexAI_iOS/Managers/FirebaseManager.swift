@@ -35,14 +35,7 @@ class FirebaseManager: ObservableObject {
         }
     }
 
-    // struct for storing chats
-    struct ChatPrompt{
-        let prompt: String
-        let documents: [String]
-        let location: String
-        let language: String
-        let user: String
-    }
+   
 
     // MARK: -chat storage - mirshod 3/13
     func saveChat(prompt: ChatPrompt, completion: @escaping (Bool) -> Void) {
@@ -85,6 +78,7 @@ class FirebaseManager: ObservableObject {
                             prompt: data["prompt"] as? String ?? "",
                             documents: data["documents"] as? [String] ?? [],
                             location: data["location"] as? String ?? "",
+                            language: "",
                             user: data["user"] as? String ?? ""
                         )
                         chats.append(chat)
@@ -188,4 +182,14 @@ class FirebaseManager: ObservableObject {
             return error.localizedDescription
         }
     }
+}
+
+
+// struct for storing chats
+struct ChatPrompt{
+    let prompt: String
+    let documents: [String]
+    let location: String
+    let language: String
+    let user: String
 }

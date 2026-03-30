@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 struct LegalDisclaimerAlert: View {
     @State private var showAlert = false
@@ -32,6 +33,7 @@ struct LegalDisclaimerAlert: View {
     }
 }
 
+@MainActor
 class DisclaimerManager: ObservableObject {
     @Published private(set) var hasAccepted = false
 

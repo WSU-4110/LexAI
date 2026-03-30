@@ -9,10 +9,7 @@ import SwiftUI
 import VisionKit
 import Vision
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 ///View for scanning documents
 ///-displays a scanned text preview
 ///-user can scan documents  and add scanned text back to the chat
@@ -27,26 +24,14 @@ struct ScanDocumentsView: UIViewControllerRepresentable {
         return scanner
     }
 
-<<<<<<< Updated upstream
-    func updateUIViewController(_ uiViewController: VNDocumentCameraViewController, context: Context) {}
-
-=======
 
     func updateUIViewController(_ uiViewController: VNDocumentCameraViewController, context: Context) {}
 
 
->>>>>>> Stashed changes
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
 
-<<<<<<< Updated upstream
-    class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
-        let parent: ScanDocumentsView
-        init(_ parent: ScanDocumentsView) {
-            self.parent = parent
-        }
-=======
 
     class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         let parent: ScanDocumentsView
@@ -56,16 +41,12 @@ struct ScanDocumentsView: UIViewControllerRepresentable {
         }
 
 
->>>>>>> Stashed changes
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
             //Process the scan
             var scannedText = ""
             for pageIndex in 0..<scan.pageCount {
                 let image = scan.imageOfPage(at: pageIndex)
-<<<<<<< Updated upstream
-=======
                 
->>>>>>> Stashed changes
                 //To extract the text from the scan
                 if let text = extractText(from: image) {
                     scannedText += text + "\n"
@@ -75,16 +56,11 @@ struct ScanDocumentsView: UIViewControllerRepresentable {
             if !scannedText.isEmpty {
                 parent.onTextAdded?(scannedText.trimmingCharacters(in: .whitespacesAndNewlines))
             }
-<<<<<<< Updated upstream
-            parent.isPresented = false
-        }
-=======
 
             parent.isPresented = false
         }
 
 
->>>>>>> Stashed changes
         func documentCameraViewControllerDidCancel(_ controller: VNDocumentCameraViewController) {
             parent.isPresented = false
         }
@@ -94,31 +70,20 @@ struct ScanDocumentsView: UIViewControllerRepresentable {
         }
         private func extractText(from image: UIImage) -> String? {
             guard let cgImage = image.cgImage else { return nil }
-<<<<<<< Updated upstream
-            let request = VNRecognizeTextRequest()
-            request.recognitionLevel = .accurate
-=======
             
             let request = VNRecognizeTextRequest()
             request.recognitionLevel = .accurate
 
->>>>>>> Stashed changes
             let handler = VNImageRequestHandler(cgImage: cgImage)
             do {
                 try handler.perform([request])
                 guard let observations = request.results else { return nil }
-<<<<<<< Updated upstream
-                let text = observations.compactMap { observation in
-                    observation.topCandidates(1).first?.string
-                }.joined(separator: "\n")
-=======
 
                 let text = observations.compactMap { observation in
                     observation.topCandidates(1).first?.string
                 }
                     .joined(separator: "\n")
 
->>>>>>> Stashed changes
                 return text
             } catch {
                 print("Text extraction error: \(error)")
@@ -132,18 +97,12 @@ struct ScanDocumentsPreviewWrapper: View {
     @State private var showScanner = true
 
     var body: some View {
-<<<<<<< Updated upstream
-=======
         
->>>>>>> Stashed changes
         Text("Document Scanner Preview")
             .font(.title2)
             .padding()
             .fullScreenCover(isPresented: $showScanner) {
-<<<<<<< Updated upstream
-=======
                 
->>>>>>> Stashed changes
                 Text("Scanner cannot run in preview")
                     .font(.headline)
             }
