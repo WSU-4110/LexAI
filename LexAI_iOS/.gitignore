@@ -3,5 +3,9 @@ xcuserdata/
 *.xcuserstate
 *.xcuserdatad/
 
+# Build artifacts
+build/
+DerivedData/
+
 # Google Firebase config (contains API keys)
 GoogleService-Info.plist

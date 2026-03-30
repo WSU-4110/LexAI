@@ -13,15 +13,19 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-            if authManager.isAuthenticated {
+            //changes made by Sara
+            if authManager.userSession != nil {
                 HomeView()
+                    //changes made by Sara
+                    .environmentObject(authManager)
             } else {
                 AuthView()
                     .environmentObject(authManager)
             }
         }
-        .onAppear() {
-            authManager.signOut()
+        // modification made by Sara Al-hachami to fix sign in error
+        .onChange(of: authManager.isAuthenticated) { _, isAuthenticated in
+            print("[AuthDebug] ContentView observed isAuthenticated = \(isAuthenticated)")
         }
     }
 }

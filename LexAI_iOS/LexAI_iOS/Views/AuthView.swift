@@ -219,6 +219,8 @@ struct AuthView: View {
     
     private func submit() {
         focusedField = nil
+        // modification made by Sara Al-hachami to fix sign in error
+        print("[AuthDebug] Submit tapped. mode=\(isSignUpMode ? "signUp" : "signIn"), email=\(email)")
         Task {
             if isSignUpMode {
                 await authManager.signUp(email: email, password: password)

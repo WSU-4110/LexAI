@@ -2,6 +2,7 @@ import SwiftUI
 
 struct LegalDisclaimerAlert: View {
     @State private var showAlert = false
+    @StateObject private var manager = DisclaimerManager()
 
     var body: some View {
         Color.clear
@@ -9,7 +10,10 @@ struct LegalDisclaimerAlert: View {
                 showAlert = true
             }
             .alert("Legal Disclaimer", isPresented: $showAlert) {
-                Button("Agree & Continue", role: .cancel) {}
+                Button("Agree & Continue", role: .cancel) {
+                    manager.acceptDisclaimer()
+                    showAlert = false
+                }
             }message: {
                 Text(
                     """
@@ -25,5 +29,17 @@ struct LegalDisclaimerAlert: View {
                     """
                 )
             }
+    }
+}
+
+class DisclaimerManager: ObservableObject {
+    @Published private(set) var hasAccepted = false
+
+    func acceptDisclaimer() {
+        hasAccepted = true
+    }
+    
+    func resetDisclaimer() {
+        hasAccepted = false
     }
 }
