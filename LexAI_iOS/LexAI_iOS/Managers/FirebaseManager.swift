@@ -9,11 +9,14 @@ import Foundation
 import Combine
 import FirebaseAuth
 import FirebaseFirestore // new import
+typealias AuthManager = FirebaseManager //added by sara al-hachami for the authentication manager to work
 
 //changed class name + filename to FirebaseManager - Mirshod
 class FirebaseManager: ObservableObject {
     
-    @Published var user: User?
+    //changes made by Sara
+    /// Firebase Auth user when signed in; cleared on sign-out. Kept in sync with `addStateDidChangeListener`.
+    @Published var userSession: User?
     @Published var isAuthenticated = false
     @Published var errorMessage: String?
     @Published var isLoading = false
@@ -23,7 +26,10 @@ class FirebaseManager: ObservableObject {
     init() {
         authStateListener = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             Task { @MainActor in
-                self?.user = user
+                // modification made by Sara Al-hachami to fix sign in error
+                print("[AuthDebug] Auth state changed. user=\(user?.uid ?? "nil")")
+                //changes made by Sara
+                self?.userSession = user
                 self?.isAuthenticated = user != nil
             }
         }
@@ -85,6 +91,7 @@ class FirebaseManager: ObservableObject {
                             prompt: data["prompt"] as? String ?? "",
                             documents: data["documents"] as? [String] ?? [],
                             location: data["location"] as? String ?? "",
+                            language: data["language"] as? String ?? "",
                             user: data["user"] as? String ?? ""
                         )
                         chats.append(chat)
@@ -123,7 +130,8 @@ class FirebaseManager: ObservableObject {
         
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
-            self.user = result.user
+            //changes made by Sara
+            self.userSession = result.user
             self.isAuthenticated = true
         } catch {
             self.errorMessage = mapFirebaseError(error)
@@ -135,14 +143,19 @@ class FirebaseManager: ObservableObject {
     // MARK: - Sign In
     
     func signIn(email: String, password: String) async {
+        // modification made by Sara Al-hachami to fix sign in error
+        print("[AuthDebug] signIn() called with email=\(email)")
         isLoading = true
         errorMessage = nil
         
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
-            self.user = result.user
+            print("[AuthDebug] signIn success. uid=\(result.user.uid)")
+            //changes made by Sara
+            self.userSession = result.user
             self.isAuthenticated = true
         } catch {
+            print("[AuthDebug] signIn failed: \(error.localizedDescription)")
             self.errorMessage = mapFirebaseError(error)
         }
         
@@ -154,8 +167,10 @@ class FirebaseManager: ObservableObject {
     func signOut() {
         do {
             try Auth.auth().signOut()
-            self.user = nil
+            //changes made by Sara
+            self.userSession = nil
             self.isAuthenticated = false
+            self.errorMessage = nil
         } catch {
             self.errorMessage = error.localizedDescription
         }
