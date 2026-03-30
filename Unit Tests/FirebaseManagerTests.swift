@@ -39,7 +39,7 @@ final class FirebaseManagerTests: XCTestCase {
     //unit test for deleting chats method
     func testDeleteChat_Success() {
         let manager = FirebaseManager()
-        let expectation = self.expectation(descriptioin: "Delete chat complete.")
+        let expectation = self.expectation(description: "Delete chat complete.")
 
         manager.deleteChat(chatId: "testChatID") { success in
             XCTAssertNotNil(success)
