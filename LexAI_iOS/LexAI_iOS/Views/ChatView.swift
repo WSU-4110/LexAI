@@ -5,10 +5,30 @@ import SwiftUI
 private let bottomAnchorId = "bottom"
 
 struct ChatView: View {
+    @EnvironmentObject var locationManager: LocationManager
+    private let aiService = AIService()
     @State private var messages: [ChatMessage] = []
     @State private var inputText: String = ""
     @State private var showScanDocuments = false
+    @State private var isAwaitingResponse = false
+    @State private var streamingResponse: String = ""
     @Binding var selectedLanguage: String //For language in conversation
+
+    // systemContext injects hidden location-aware context into AI prompts.
+    // This is NOT shown in the UI and is only used by the model.
+    private var systemContext: String {
+        let location = locationManager.locationString.isEmpty
+            ? "an unknown location"
+            : locationManager.locationString
+
+        return """
+You are LexAI, an AI legal assistant. \
+The user is located in \(location). \
+Where relevant, tailor your legal guidance to the laws and \
+jurisdiction of that location. \
+If you are unsure of local law, say so and give general guidance.
+"""
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -61,6 +81,12 @@ struct ChatView: View {
                          MessageBubbleView(message: message)
                      }
 
+                     if !streamingResponse.isEmpty {
+                         MessageBubbleView(
+                             message: ChatMessage(text: streamingResponse, isFromUser: false)
+                         )
+                     }
+
                      Color.clear
                          .frame(height: 8)
                          .id(bottomAnchorId)
@@ -70,6 +96,11 @@ struct ChatView: View {
              }
              .scrollDismissesKeyboard(.interactively)
              .onChange(of: messages.count) { _, _ in
+                 withAnimation(.easeOut(duration: 0.25)) {
+                     proxy.scrollTo(bottomAnchorId, anchor: .bottom)
+                 }
+             }
+             .onChange(of: streamingResponse) { _, _ in
                  withAnimation(.easeOut(duration: 0.25)) {
                      proxy.scrollTo(bottomAnchorId, anchor: .bottom)
                  }
@@ -108,7 +139,7 @@ struct ChatView: View {
                         .frame(width: 35, height: 35)
                         .foregroundStyle(inputText.isEmpty ? Color.white.opacity(0.6) : Color.white)
                 }
-                .disabled(inputText.isEmpty)
+                .disabled(inputText.isEmpty || isAwaitingResponse)
                 .padding(.bottom, 4)
 
                 ImportFile()
@@ -138,15 +169,60 @@ struct ChatView: View {
     private func sendMessage() {
         let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !text.isEmpty else { return }
+        let userInput = text
+        let currentInput = userInput
+        let system = systemContext
         inputText = ""
-        messages.append(ChatMessage(text: text, isFromUser: true))
-        //For reply placeholder ot align to language
-        let response = getLocalizedResponse()
-        messages.append(ChatMessage(text: response, isFromUser: false))
+        messages.append(ChatMessage(text: userInput, isFromUser: true))
+        streamingResponse = ""
 
+        Task {
+            await MainActor.run {
+                isAwaitingResponse = true
+            }
+            let updateQueue = DispatchQueue(label: "stream.queue")
+            let orderedBuffer = NSMutableString()
+
+            do {
+                try await aiService.streamMessage(
+                    system: system,
+                    user: currentInput
+                ) { token in
+                    updateQueue.async {
+                        orderedBuffer.append(token)
+                        Task { @MainActor in
+                            streamingResponse += token
+                        }
+                    }
+                }
+
+                let finalText = await withCheckedContinuation { (continuation: CheckedContinuation<String, Never>) in
+                    updateQueue.async {
+                        continuation.resume(returning: orderedBuffer as String)
+                    }
+                }
+
+                await MainActor.run {
+                    let trimmed = finalText.trimmingCharacters(in: .whitespacesAndNewlines)
+                    if !trimmed.isEmpty {
+                        messages.append(ChatMessage(text: finalText, isFromUser: false))
+                    }
+                    streamingResponse = ""
+                    isAwaitingResponse = false
+                }
+            } catch {
+                let fallback = getLocalizedResponse(context: system)
+                await MainActor.run {
+                    streamingResponse = ""
+                    isAwaitingResponse = false
+                    messages.append(ChatMessage(text: fallback, isFromUser: false))
+                }
+            }
+        }
     }
 
-    private func getLocalizedResponse() -> String {
+    private func getLocalizedResponse(context: String) -> String {
+        _ = context
         switch selectedLanguage {
         case "Spanish":
             return "¡Hola! ¿En qué puedo ayudarte hoy?"
@@ -157,7 +233,11 @@ struct ChatView: View {
         case "German":
             return "Hallo! Wie kann ich Ihnen heute helfen?"
         default:
-            return "Hello! How can I help you today?"
+            let location = locationManager.locationString.isEmpty
+                ? "your area"
+                : locationManager.locationString
+
+            return "Hello from \(location)! How can I help you with legal questions today?"
         }
     }
 }
@@ -187,4 +267,5 @@ private struct MessageBubbleView: View {
 #Preview {
     @Previewable @State var selectedLanguage = "English"
     return ChatView(selectedLanguage: $selectedLanguage)
+        .environmentObject(LocationManager())
 }

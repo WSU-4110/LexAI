@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var locationManager: LocationManager
     @State private var isSidebarOpen = false
     @State private var showToolbar = true
 
@@ -118,4 +119,5 @@ struct HomeView: View {
 #Preview {
     HomeView()
         .environmentObject(AuthManager())
+        .environmentObject(LocationManager())
 }

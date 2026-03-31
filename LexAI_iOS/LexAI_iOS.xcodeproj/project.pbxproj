@@ -24,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		7C8354F52F3B97E800582A10 /* LexAI_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexAI_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D4F0A12F40000100582A10 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		E8D4F0A32F40000100582A10 /* InfoAdditions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = InfoAdditions.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -58,9 +60,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E8D4F0A22F40000100582A10 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E8D4F0A32F40000100582A10 /* InfoAdditions.plist */,
+				E8D4F0A12F40000100582A10 /* Secrets.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		7C8354EC2F3B97E800582A10 = {
 			isa = PBXGroup;
 			children = (
+				E8D4F0A22F40000100582A10 /* Config */,
 				7C8354F72F3B97E800582A10 /* LexAI_iOS */,
 				7C8354F62F3B97E800582A10 /* Products */,
 			);
@@ -293,6 +305,7 @@
 		};
 		7C8355012F3B97E900582A10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8D4F0A12F40000100582A10 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +314,7 @@
 				DEVELOPMENT_TEAM = PBX6J6U58R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/InfoAdditions.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -325,6 +339,7 @@
 		};
 		7C8355022F3B97E900582A10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8D4F0A12F40000100582A10 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -333,6 +348,7 @@
 				DEVELOPMENT_TEAM = PBX6J6U58R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/InfoAdditions.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
