@@ -13,8 +13,6 @@ struct HomeView: View {
     //changes made by Sara
     @EnvironmentObject private var authManager: AuthManager
     @State private var isSidebarOpen = false
-    // Sprint 2 addition
-    @StateObject private var sidebarVM = SidebarViewModel()
     @AppStorage("selectedLanguage") private var selectedLanguage: String = "English" //language storing for conversational use
     @State private var showLanguageDropdown = false
 
@@ -40,7 +38,7 @@ struct HomeView: View {
                 }
 
                 // Sprint 2 addition
-                SideBarView(isOpen: $isSidebarOpen, vm: sidebarVM)
+                SideBarView(isOpen: $isSidebarOpen)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .offset(x: isSidebarOpen ? -10 : -400)
                     .animation(.easeIn(duration: 0.25), value: isSidebarOpen)

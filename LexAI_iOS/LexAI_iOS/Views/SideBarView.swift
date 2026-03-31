@@ -1,10 +1,11 @@
 //  Sidebar.swift
 //  LexAI_iOS
 //
-// Created by Sara on 2/10/26. 
-// Sprint 3 : removed UI (for audit / [BUG] Sidebar PT 2 #46): by Sara Al-hachami 03/31/26
-// Removed background, shadow, and padding, and added a new button to close the sidebar
-// Added a new button to close the sidebar
+// Sprint 3 update (Sidebar UI refinement) — Sara Al-hachami 03/31/26
+// Simplified sidebar layout and improved visual consistency
+// Removed unnecessary UI elements (disclaimer, language option, quick start, tags)
+// Adjusted spacing and structure for cleaner design
+// Added "New chat" button that closes the sidebar using `isOpen`
 
 import SwiftUI
 import Combine
@@ -348,6 +349,7 @@ struct SidebarRowView: View {
 // Sprint 2 addition
 struct SideBarView: View {
     @Binding var isOpen: Bool
+    @StateObject private var viewModel = SidebarViewModel()
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -380,12 +382,13 @@ struct SideBarView: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
-                    ForEach(0..<14, id: \.self) { num in
-                        
-                        Button("Example #\(num + 1)") {
-                            // TODO: Create a function to populate the chat screen when pressing on a previous chat
+                    ForEach(viewModel.sessions) { session in
+                        Button {
+                            viewModel.activeSessionID = session.id
+                        } label: {
+                            Text(session.title)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
-                        
                     }
                 }
             }
