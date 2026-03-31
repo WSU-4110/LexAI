@@ -150,16 +150,7 @@ struct ChatView: View {
             "targetLanguage": targetLanguage,
         ])
 
-        guard
-            let data = result.data as? [String: Any],
-            let displayText = data["displayText"] as? String
-        else {
-            throw NSError(domain: "LexAI.GenerateAnswer", code: 1, userInfo: [
-                NSLocalizedDescriptionKey: "Invalid reply response payload",
-            ])
-        }
-
-        return displayText
+        return try GenerateAnswerResponseParser.displayText(fromCallableData: result.data)
     }
 }
 
