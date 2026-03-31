@@ -11,6 +11,7 @@
 // - colored tag capsules/icons in SidebarRowView (replaced with plain secondary text)
 // - “Clear Conversations” button from bottomSection (confirmationDialog kept; no trigger in UI)
 // - excessive padding in top/search/section labels (reduced for compact layout)
+// - Update 2026-03-31 (Sara Al-hachami): further compact sidebar chrome (background, shadow, padding); "New chat" dismisses the panel by clearing `isOpen`.
 //
 import SwiftUI
 import Combine
