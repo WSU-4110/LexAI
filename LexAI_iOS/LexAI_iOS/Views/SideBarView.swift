@@ -1,18 +1,11 @@
-//  SideBarView.swift
-//  LexAI
-// created by Sara Al-hachami 
-// changes made for sprint 3 by Sara Al-hachami to fix : [BUG] Sidebar PT 2 #46
+//  Sidebar.swift
+//  LexAI_iOS
 //
-// Sprint 3 — removed UI (for audit / #46):
-// - quickTopicsSection + SessionTag chips horizontal scroll (“Quick Start”)
-// - disclaimerBanner (legal disclaimer strip)
-// - sidebar language picker: showLanguagePicker state, .sheet(LanguagePickerView), LanguagePickerView struct, bottom “Language” row
-// - full-width “New Chat” button from topSection (replaced by compact icon in searchBar)
-// - colored tag capsules/icons in SidebarRowView (replaced with plain secondary text)
-// - “Clear Conversations” button from bottomSection (confirmationDialog kept; no trigger in UI)
-// - excessive padding in top/search/section labels (reduced for compact layout)
-// - Update 2026-03-31 (Sara Al-hachami): further compact sidebar chrome (background, shadow, padding); "New chat" dismisses the panel by clearing `isOpen`.
-//
+// Created by Sara on 2/10/26. 
+// Sprint 3 : removed UI (for audit / [BUG] Sidebar PT 2 #46): by Sara Al-hachami 03/31/26
+// Removed background, shadow, and padding, and added a new button to close the sidebar
+// Added a new button to close the sidebar
+
 import SwiftUI
 import Combine
 import UIKit
@@ -355,503 +348,73 @@ struct SidebarRowView: View {
 // Sprint 2 addition
 struct SideBarView: View {
     @Binding var isOpen: Bool
-    @ObservedObject var vm: SidebarViewModel
-    var onSelectSession: ((ChatSession) -> Void)?
-    var onNewChat: (() -> Void)?
-
-    //changes made by Sara
-    @EnvironmentObject private var authManager: AuthManager
-
-    @State private var renamingSession: ChatSession? = nil
-    @State private var renameText: String = ""
-    @State private var showClearConfirm: Bool = false
-    @State private var showArchive: Bool = false
-    @State private var showResources: Bool = false
-
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    private let sidebarWidth: CGFloat = 300
 
     var body: some View {
-        ZStack(alignment: .leading) {
-            if isOpen {
-                Color.black.opacity(0.45)
-                    .ignoresSafeArea()
-                    .onTapGesture { close() }
-                    .transition(.opacity)
-                    .animation(.easeInOut(duration: 0.22), value: isOpen)
-                    .zIndex(1)
-            }
-            if isOpen {
-                sidebarPanel
-                    .frame(width: sidebarWidth)
-                    .transition(.move(edge: .leading))
-                    .zIndex(2)
-            }
-        }
-        .animation(.spring(response: 0.35, dampingFraction: 0.82), value: isOpen)
-        .alert("Rename Conversation", isPresented: Binding(
-            get: { renamingSession != nil },
-            set: { if !$0 { renamingSession = nil } }
-        )) {
-            TextField("Title", text: $renameText)
-            Button("Save") {
-                if let s = renamingSession {
-                    let t = renameText.trimmingCharacters(in: .whitespacesAndNewlines)
-                    if !t.isEmpty { vm.rename(s, to: t) }
-                }
-                renamingSession = nil
-            }
-            Button("Cancel", role: .cancel) { renamingSession = nil }
-        }
-        // Sprint 3: no UI sets showClearConfirm true , and the “Clear Conversations” row removed from bottomSection
-        .confirmationDialog("Clear all conversations?",
-                            isPresented: $showClearConfirm,
-                            titleVisibility: .visible) {
-            Button("Clear All", role: .destructive) { vm.clearAll() }
-            Button("Cancel", role: .cancel) {}
-        }
-        .sheet(isPresented: $showArchive) { ArchiveView(vm: vm) }
-        .sheet(isPresented: $showResources) { ResourcesView() }
-    }
+        VStack(alignment: .leading, spacing: 16) {
 
-    // Panel Section
-    private var sidebarPanel: some View {
-        VStack(spacing: 0) {
-            // Sprint 3: removed quickTopicsSection + disclaimerBanner + extra dividers between them
-            topSection
-            searchBar
-            Divider().padding(.vertical, 2)
-            historySection
-            Divider().padding(.vertical, 2)
-            bottomSection
-        }
-        .frame(maxHeight: .infinity)
-        .background(Color(.systemBackground))
-        .ignoresSafeArea(edges: .vertical)
-    }
-
-    // Top Section
-    // Sprint 3: removed full-width “New Chat” button from here (now compact icon in searchBar)
-    private var topSection: some View {
-        VStack(spacing: 12) {
-            HStack {
-                HStack(spacing: 6) {
-                    Image(systemName: "scale.3d")
-                        .font(.system(size: 18, weight: .semibold))
-                    Text("LexAI")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                }
-                .foregroundStyle(.primary)
-                Spacer()
-                Button { close() } label: {
-                    Image(systemName: "xmark")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.secondary)
-                        .padding(8)
-                        .background(Color(.systemGray6), in: RoundedRectangle(cornerRadius: 8))
-                }
-            }
-        }
-        .padding(.horizontal, 12)
-        .padding(.top, 16)
-        .padding(.bottom, 4)
-    }
-
-    // Search Section
-    // Sprint 3: compact New Chat icon inline right of search (replaces full-width button above)
-    private var searchBar: some View {
-        HStack(spacing: 8) {
-            Image(systemName: "magnifyingglass").font(.system(size: 14)).foregroundStyle(.secondary)
-            TextField("Search conversations...", text: $vm.searchQuery)
-                .font(.system(size: 14))
-                .autocorrectionDisabled()
-                .textInputAutocapitalization(.never)
-            if !vm.searchQuery.isEmpty {
-                Button { vm.searchQuery = "" } label: {
-                    Image(systemName: "xmark.circle.fill").font(.system(size: 14)).foregroundStyle(.secondary)
-                }
-            }
             Button {
-                let s = vm.newSession()
-                onSelectSession?(s)
-                onNewChat?()
-                close()
+                isOpen = false
             } label: {
-                Image(systemName: "square.and.pencil")
-                    .font(.system(size: 13, weight: .medium))
-                    .foregroundStyle(.primary)
-                    .frame(width: 28, height: 28)
-                    .background(Color(.systemGray5), in: RoundedRectangle(cornerRadius: 7))
+                HStack {
+                    Text("New chat")
+                        .font(.headline)
+                        .bold()
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .font(.subheadline)
+                        .bold()
+                }
+                .padding(.horizontal, 14)
+                .padding(.vertical, 10)
+                .background(Color.accentColor.opacity(0.15))
+                .foregroundStyle(Color.accentColor)
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             }
-            .buttonStyle(.plain)
-        }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 7)
-        .background(Color(.systemGray6), in: RoundedRectangle(cornerRadius: 10))
-        .padding(.horizontal, 12)
-        .padding(.bottom, 4)
-    }
 
-    // History Section
-    private var historySection: some View {
-        ScrollView(showsIndicators: false) {
-            LazyVStack(alignment: .leading, spacing: 2) {
-                let empty = vm.pinnedSessions.isEmpty && vm.starredSessions.isEmpty && vm.groupedSessions.isEmpty
-                if empty && vm.searchQuery.isEmpty {
-                    emptyState
-                } else if empty {
-                    noResultsState
-                } else {
-                    if !vm.pinnedSessions.isEmpty {
-                        sectionLabel("Pinned")
-                        ForEach(vm.pinnedSessions) { sessionRow($0) }
-                    }
-                    if !vm.starredSessions.isEmpty {
-                        sectionLabel("Starred")
-                        ForEach(vm.starredSessions) { sessionRow($0) }
-                    }
-                    ForEach(vm.groupedSessions, id: \.label) { group in
-                        sectionLabel(group.label)
-                        ForEach(group.items) { sessionRow($0) }
-                    }
-                }
-            }
-            .padding(.bottom, 8)
-        }
-        .frame(maxHeight: .infinity)
-    }
+        
+//            History Section
+            Text("History")
+                .font(.headline)
+                .bold()
 
-    private func sectionLabel(_ text: String) -> some View {
-        Text(text)
-            .font(.system(size: 11, weight: .semibold))
-            .foregroundStyle(.secondary)
-            .textCase(.uppercase)
-            .tracking(0.5)
-            .padding(.horizontal, 12)
-            .padding(.top, 8)
-            .padding(.bottom, 2)
-    }
 
-    private func sessionRow(_ session: ChatSession) -> some View {
-        SidebarRowView(session: session, isActive: vm.activeSessionID == session.id)
-            .padding(.horizontal, 6)
-            .onTapGesture {
-                vm.activeSessionID = session.id
-                onSelectSession?(session)
-                close()
-            }
-            .contextMenu {
-                Button { withAnimation { vm.togglePin(session) } } label: {
-                    Label(session.isPinned ? "Unpin" : "Pin", systemImage: session.isPinned ? "pin.slash" : "pin")
-                }
-                Button { withAnimation { vm.toggleStar(session) } } label: {
-                    Label(session.isStarred ? "Unstar" : "Star", systemImage: session.isStarred ? "star.slash" : "star")
-                }
-                Button { renameText = session.title; renamingSession = session } label: {
-                    Label("Rename", systemImage: "pencil")
-                }
-                Menu("Tag") {
-                    ForEach(SessionTag.allCases, id: \.self) { tag in
-                        Button { vm.setTag(tag, for: session) } label: {
-                            Label(tag.rawValue, systemImage: tag.icon)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 12) {
+                    ForEach(0..<14, id: \.self) { num in
+                        
+                        Button("Example #\(num + 1)") {
+                            // TODO: Create a function to populate the chat screen when pressing on a previous chat
                         }
-                    }
-                    Button { vm.setTag(nil, for: session) } label: {
-                        Label("Remove Tag", systemImage: "xmark")
+                        
                     }
                 }
-                Divider()
-                Button { withAnimation { vm.toggleArchive(session) } } label: {
-                    Label("Archive", systemImage: "archivebox")
-                }
-                Button(role: .destructive) { withAnimation { vm.delete(session) } } label: {
-                    Label("Delete", systemImage: "trash")
-                }
             }
-            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                Button(role: .destructive) { withAnimation { vm.delete(session) } } label: {
-                    Label("Delete", systemImage: "trash")
-                }
-                Button { withAnimation { vm.toggleArchive(session) } } label: {
-                    Label("Archive", systemImage: "archivebox")
-                }
-                .tint(.gray)
-            }
-            .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                Button { withAnimation { vm.togglePin(session) } } label: {
-                    Label(session.isPinned ? "Unpin" : "Pin",
-                          systemImage: session.isPinned ? "pin.slash.fill" : "pin.fill")
-                }
-                .tint(.gray)
-                Button { withAnimation { vm.toggleStar(session) } } label: {
-                    Label(session.isStarred ? "Unstar" : "Star",
-                          systemImage: session.isStarred ? "star.slash.fill" : "star.fill")
-                }
-                .tint(.gray)
-            }
-    }
 
-    // Empty states Section
-    private var emptyState: some View {
-        VStack(spacing: 10) {
-            Image(systemName: "bubble.left.and.bubble.right").font(.system(size: 30)).foregroundStyle(Color(.systemGray3))
-            Text("No conversations yet").font(.system(size: 14, weight: .medium)).foregroundStyle(.secondary)
-            Text("Tap a topic chip or New Chat to get started.")
-                .font(.system(size: 12)).foregroundStyle(Color(.systemGray3)).multilineTextAlignment(.center)
+            Spacer(minLength: 0)
         }
-        .frame(maxWidth: .infinity).padding(.top, 32).padding(.horizontal, 24)
-    }
-
-    private var noResultsState: some View {
-        VStack(spacing: 8) {
-            Image(systemName: "magnifyingglass").font(.system(size: 24)).foregroundStyle(Color(.systemGray3))
-            Text("No results for \"\(vm.searchQuery)\"").font(.system(size: 13)).foregroundStyle(.secondary).multilineTextAlignment(.center)
-        }
-        .frame(maxWidth: .infinity).padding(.top, 32).padding(.horizontal, 24)
-    }
-
-    // MARK: Bottom
-
-    // Sprint 3: removed sidebar “Language” row + LanguagePickerView sheet; removed “Clear Conversations” button
-    private var bottomSection: some View {
-        VStack(spacing: 0) {
-            Button {
-                if let url = URL(string: "https://michiganlegalhelp.org") { UIApplication.shared.open(url) }
-            } label: {
-                HStack(spacing: 10) {
-                    Image(systemName: "person.badge.shield.checkmark").font(.system(size: 15)).foregroundStyle(.secondary).frame(width: 22)
-                    Text("Find a Lawyer Near Me").font(.system(size: 14)).foregroundStyle(.primary)
-                    Spacer()
-                    Image(systemName: "arrow.up.right").font(.system(size: 11, weight: .medium)).foregroundStyle(.secondary)
-                }
-                .padding(.horizontal, 16).padding(.vertical, 10).contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-
-            Button { showResources = true } label: {
-                HStack(spacing: 10) {
-                    Image(systemName: "exclamationmark.shield.fill").font(.system(size: 15)).foregroundStyle(.secondary).frame(width: 22)
-                    Text("Emergency Resources").font(.system(size: 14)).foregroundStyle(.primary)
-                    Spacer()
-                    Image(systemName: "chevron.right").font(.system(size: 11, weight: .medium)).foregroundStyle(Color(.systemGray3))
-                }
-                .padding(.horizontal, 16).padding(.vertical, 10).contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-
-            Divider().padding(.horizontal, 16).padding(.vertical, 4)
-
-            Button { showArchive = true } label: {
-                HStack(spacing: 10) {
-                    Image(systemName: "archivebox").font(.system(size: 15)).foregroundStyle(.secondary).frame(width: 22)
-                    Text("Archived").font(.system(size: 14)).foregroundStyle(.primary)
-                    Spacer()
-                    if !vm.archivedSessions.isEmpty {
-                        Text("\(vm.archivedSessions.count)")
-                            .font(.system(size: 11, weight: .semibold)).foregroundStyle(.white)
-                            .padding(.horizontal, 6).padding(.vertical, 2)
-                            .background(Color(.systemGray3), in: Capsule())
-                    }
-                    Image(systemName: "chevron.right").font(.system(size: 11, weight: .medium)).foregroundStyle(Color(.systemGray3))
-                }
-                .padding(.horizontal, 16).padding(.vertical, 10).contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-
-            bottomRow(icon: "person.circle", label: "My Account", sublabel: "Free Plan")
-
-            Divider().padding(.horizontal, 16).padding(.vertical, 4)
-
-            bottomRow(icon: "gearshape", label: "Settings")
-
-            //changes made by Sara
-            Button {
-                authManager.signOut()
-                close()
-            } label: {
-                HStack(spacing: 10) {
-                    Image(systemName: "rectangle.portrait.and.arrow.right")
-                        .font(.system(size: 15)).foregroundStyle(.secondary).frame(width: 22)
-                    Text("Log Out").font(.system(size: 14)).foregroundStyle(.primary)
-                    Spacer()
-                }
-                .padding(.horizontal, 16).padding(.vertical, 10).contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-        }
-        .padding(.bottom, 20)
-    }
-
-    @ViewBuilder
-    private func bottomRow(icon: String, label: String, sublabel: String? = nil) -> some View {
-        HStack(spacing: 10) {
-            Image(systemName: icon).font(.system(size: 15)).foregroundStyle(.secondary).frame(width: 22)
-            VStack(alignment: .leading, spacing: 1) {
-                Text(label).font(.system(size: 14)).foregroundStyle(.primary)
-                if let sub = sublabel { Text(sub).font(.system(size: 11)).foregroundStyle(.secondary) }
-            }
-            Spacer()
-        }
-        .padding(.horizontal, 16).padding(.vertical, 10).contentShape(Rectangle())
-    }
-
-    private func close() {
-        withAnimation(.spring(response: 0.35, dampingFraction: 0.82)) { isOpen = false }
+        .padding(16)
+        .frame( maxWidth: 200, maxHeight: .infinity, alignment: .topLeading)
+        .background(
+            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .fill(Color(.systemBackground))
+                .shadow(color: Color.black.opacity(0.15), radius: 12, x: 0, y: 8)
+        )
+        .padding(.top, 12)
+        .padding(.bottom, 24)
+        .padding(.leading, 8)
+        .ignoresSafeArea(edges: [.vertical])
     }
 }
 
-// Archive Sheet Section
-// Sprint 2 addition
-struct ArchiveView: View {
-    @ObservedObject var vm: SidebarViewModel
-    @Environment(\.dismiss) private var dismiss
+struct SidebarItem: View {
+    let icon: String
+    let title: String
 
     var body: some View {
-        NavigationStack {
-            Group {
-                if vm.archivedSessions.isEmpty {
-                    VStack(spacing: 12) {
-                        Image(systemName: "archivebox").font(.system(size: 40)).foregroundStyle(Color(.systemGray3))
-                        Text("No archived conversations").font(.system(size: 15)).foregroundStyle(.secondary)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else {
-                    List {
-                        ForEach(vm.archivedSessions) { session in
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(session.title).font(.system(size: 14, weight: .medium))
-                                if !session.preview.isEmpty {
-                                    Text(session.preview).font(.system(size: 12)).foregroundStyle(.secondary).lineLimit(1)
-                                }
-                            }
-                            .swipeActions(edge: .leading) {
-                                Button { withAnimation { vm.toggleArchive(session) } } label: {
-                                    Label("Unarchive", systemImage: "tray.and.arrow.up")
-                                }
-                                .tint(.blue)
-                            }
-                            .swipeActions(edge: .trailing) {
-                                Button(role: .destructive) { vm.delete(session) } label: {
-                                    Label("Delete", systemImage: "trash")
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            .navigationTitle("Archived")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("Done") { dismiss() } } }
+        HStack {
+            Image(systemName: icon)
+            Text(title)
         }
-    }
-}
-
-//Emergency Resources Sheet Section
-// Sprint 2 addition
-struct ResourcesView: View {
-    @Environment(\.dismiss) private var dismiss
-
-    struct Resource: Identifiable {
-        let id = UUID()
-        let category: String
-        let name: String
-        let phone: String?
-        let url: String?
-        let description: String
-        let color: Color
-        let icon: String
-    }
-
-    let resources: [Resource] = [
-        Resource(category: "Domestic Violence", name: "National DV Hotline", phone: "1-800-799-7233",
-                 url: "https://www.thehotline.org", description: "24/7 confidential support for domestic violence survivors.", color: .purple, icon: "heart.shield"),
-        Resource(category: "Domestic Violence", name: "Michigan Coalition to End DV", phone: nil,
-                 url: "https://mcedsv.org", description: "Michigan-specific resources and local shelter finder.", color: .purple, icon: "house.and.flag"),
-        Resource(category: "Housing Crisis", name: "Michigan 2-1-1", phone: "211",
-                 url: "https://www.mi211.org", description: "Emergency housing, utilities, and social services.", color: .blue, icon: "building.2"),
-        Resource(category: "Housing Crisis", name: "HUD Housing Counseling", phone: "1-800-569-4287",
-                 url: "https://www.hud.gov", description: "Free or low-cost housing counseling services.", color: .blue, icon: "house"),
-        Resource(category: "Legal Aid", name: "Michigan Legal Help", phone: nil,
-                 url: "https://michiganlegalhelp.org", description: "Free legal forms, guides, and attorney referrals.", color: .green, icon: "scalemass"),
-        Resource(category: "Legal Aid", name: "Legal Aid & Defender Assoc.", phone: "313-628-2000",
-                 url: "https://ladadetroit.org", description: "Free civil legal help for low-income Michiganders.", color: .green, icon: "person.badge.shield.checkmark"),
-        Resource(category: "Immigration", name: "USCIS Contact Center", phone: "1-800-375-5283",
-                 url: "https://www.uscis.gov", description: "Immigration status, forms, and case inquiries.", color: .teal, icon: "globe"),
-        Resource(category: "Mental Health", name: "988 Suicide & Crisis Lifeline", phone: "988",
-                 url: "https://988lifeline.org", description: "Call or text 988 for immediate mental health crisis support.", color: .orange, icon: "brain.head.profile"),
-    ]
-
-    var grouped: [(String, [Resource])] {
-        var seen: [String] = []
-        for r in resources where !seen.contains(r.category) { seen.append(r.category) }
-        return seen.map { cat in (cat, resources.filter { $0.category == cat }) }
-    }
-
-    var body: some View {
-        NavigationStack {
-            List {
-                ForEach(grouped, id: \.0) { category, items in
-                    Section(category) {
-                        ForEach(items) { resource in
-                            VStack(alignment: .leading, spacing: 8) {
-                                HStack(spacing: 10) {
-                                    Image(systemName: resource.icon)
-                                        .font(.system(size: 14, weight: .medium))
-                                        .foregroundStyle(resource.color)
-                                        .frame(width: 20)
-                                    Text(resource.name)
-                                        .font(.system(size: 14, weight: .semibold))
-                                }
-                                Text(resource.description)
-                                    .font(.system(size: 12)).foregroundStyle(.secondary)
-                                HStack(spacing: 8) {
-                                    if let phone = resource.phone {
-                                        Button {
-                                            let cleaned = phone.replacingOccurrences(of: "-", with: "")
-                                            if let url = URL(string: "tel://\(cleaned)") { UIApplication.shared.open(url) }
-                                        } label: {
-                                            Label(phone, systemImage: "phone.fill")
-                                                .font(.system(size: 12, weight: .medium))
-                                                .foregroundStyle(resource.color)
-                                                .padding(.horizontal, 10).padding(.vertical, 5)
-                                                .background(resource.color.opacity(0.1), in: Capsule())
-                                        }
-                                        .buttonStyle(.plain)
-                                    }
-                                    if let urlStr = resource.url, let url = URL(string: urlStr) {
-                                        Button { UIApplication.shared.open(url) } label: {
-                                            Label("Website", systemImage: "safari")
-                                                .font(.system(size: 12, weight: .medium))
-                                                .foregroundStyle(resource.color)
-                                                .padding(.horizontal, 10).padding(.vertical, 5)
-                                                .background(resource.color.opacity(0.1), in: Capsule())
-                                        }
-                                        .buttonStyle(.plain)
-                                    }
-                                }
-                            }
-                            .padding(.vertical, 4)
-                        }
-                    }
-                }
-            }
-            .navigationTitle("Emergency Resources")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("Done") { dismiss() } } }
-        }
-    }
-}
-
-// Preview Section
-// Sprint 2 addition
-#Preview {
-    @Previewable @State var isOpen = true
-    let vm = SidebarViewModel()
-    ZStack {
-        Color(.systemGroupedBackground).ignoresSafeArea()
-        Text("Main Content").font(.title2).foregroundStyle(.secondary)
-        SideBarView(isOpen: $isOpen, vm: vm)
-            //changes made by Sara
-            .environmentObject(AuthManager())
+        .font(.headline)
     }
 }
