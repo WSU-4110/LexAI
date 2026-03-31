@@ -1,6 +1,6 @@
 import { onCall, HttpsError } from "firebase-functions/v2/https";
 import { setGlobalOptions } from "firebase-functions/v2";
-import OpenAI from "openai";
+import { translateWithChatGPT } from "./translation";
 
 setGlobalOptions({
   region: "us-central1",
@@ -16,6 +16,17 @@ type TranslateTextRequest = {
 
 type TranslateTextResponse = {
   translatedText: string;
+};
+
+type GenerateAnswerRequest = {
+  prompt: unknown;
+  targetLanguage: unknown;
+};
+
+type GenerateAnswerResponse = {
+  originalText: string;
+  displayText: string;
+  targetLanguage: string;
 };
 
 const ALLOWED_TARGET_LANGUAGES = new Set([
@@ -38,81 +49,6 @@ function normalizeOptionalString(value: unknown): string | undefined {
   if (typeof value !== "string") return undefined;
   const trimmed = value.trim();
   return trimmed.length > 0 ? trimmed : undefined;
-}
-
-function buildTranslationInstructions(args: {
-  targetLanguage: string;
-  sourceLanguage?: string;
-  style?: string;
-  context?: string;
-}): string {
-  const { targetLanguage, sourceLanguage, style, context } = args;
-
-  const styleLine = style
-    ? `Style preference: ${style}.`
-    : "Style preference: keep the same tone and politeness level as the original.";
-
-  const sourceLine = sourceLanguage
-    ? `Source language is: ${sourceLanguage}.`
-    : "Detect the source language automatically.";
-
-  const contextLine = context ? `Extra context: ${context}` : undefined;
-
-  return [
-    "You are a translation engine specialized in culturally-aware, nuanced translation.",
-    `Translate the USER_TEXT into ${targetLanguage}.`,
-    sourceLine,
-    styleLine,
-    "Requirements:",
-    "- Preserve meaning exactly. Do not add, remove, or invent facts.",
-    "- Maintain register (formal/informal), politeness, and intent.",
-    "- Prefer natural, culturally appropriate phrasing over literal word-for-word translation.",
-    "- Keep names, bill numbers, citations, and URLs unchanged.",
-    "- If the text contains legal/legislative language, keep it precise (no paraphrasing).",
-    "- Output ONLY the translated text. No quotes, no preface, no explanations.",
-    ...(contextLine ? [contextLine] : []),
-  ].join("\n");
-}
-
-async function translateWithChatGPT(args: {
-  text: string;
-  targetLanguage: string;
-  sourceLanguage?: string;
-  style?: string;
-  context?: string;
-}): Promise<string> {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) {
-    throw new HttpsError(
-      "failed-precondition",
-      "OPENAI_API_KEY is not configured for Functions."
-    );
-  }
-
-  const model = process.env.OPENAI_TRANSLATION_MODEL?.trim() || "gpt-4.1-mini";
-  const client = new OpenAI({ apiKey });
-
-  const instructions = buildTranslationInstructions({
-    targetLanguage: args.targetLanguage,
-    ...(args.sourceLanguage ? { sourceLanguage: args.sourceLanguage } : {}),
-    ...(args.style ? { style: args.style } : {}),
-    ...(args.context ? { context: args.context } : {}),
-  });
-
-  const resp = await client.chat.completions.create({
-    model,
-    messages: [
-      { role: "system", content: instructions },
-      { role: "user", content: args.text },
-    ],
-    temperature: 0.2,
-  });
-
-  const translated = resp.choices[0]?.message?.content?.trim();
-  if (!translated) {
-    throw new HttpsError("internal", "Translation provider returned empty output");
-  }
-  return translated;
 }
 
 export const translateText = onCall<TranslateTextRequest, Promise<TranslateTextResponse>>(
@@ -153,14 +89,6 @@ export const translateText = onCall<TranslateTextRequest, Promise<TranslateTextR
     const style = normalizeOptionalString(request.data.style);
     const context = normalizeOptionalString(request.data.context);
 
-    const provider = (process.env.TRANSLATION_PROVIDER || "chatgpt").trim();
-    if (provider !== "chatgpt") {
-      throw new HttpsError(
-        "failed-precondition",
-        `Unsupported TRANSLATION_PROVIDER '${provider}' (supported: chatgpt)`
-      );
-    }
-
     const translatedText = await translateWithChatGPT({
       text,
       targetLanguage,
@@ -170,5 +98,60 @@ export const translateText = onCall<TranslateTextRequest, Promise<TranslateTextR
     });
 
     return { translatedText };
+  }
+);
+
+export const generateAnswer = onCall<
+  GenerateAnswerRequest,
+  Promise<GenerateAnswerResponse>
+>(
+  {
+    enforceAppCheck: false,
+  },
+  async (request) => {
+    if (!request.auth) {
+      throw new HttpsError("unauthenticated", "Authentication is required.");
+    }
+
+    const prompt = expectString(request.data.prompt, "prompt").trim();
+    const targetLanguage = expectString(
+      request.data.targetLanguage,
+      "targetLanguage"
+    ).trim();
+
+    if (prompt.length === 0) {
+      throw new HttpsError("invalid-argument", "prompt must not be empty");
+    }
+    if (prompt.length > 8000) {
+      throw new HttpsError(
+        "invalid-argument",
+        "prompt is too long (max 8000 characters)"
+      );
+    }
+
+    if (!ALLOWED_TARGET_LANGUAGES.has(targetLanguage)) {
+      throw new HttpsError(
+        "invalid-argument",
+        `targetLanguage must be one of: ${Array.from(ALLOWED_TARGET_LANGUAGES).join(
+          ", "
+        )}`
+      );
+    }
+
+    // Placeholder answer until the tuned model is available.
+    const originalText = "Hello! How can I help you today?";
+
+    if (targetLanguage === "English") {
+      return { originalText, displayText: originalText, targetLanguage };
+    }
+
+    const displayText = await translateWithChatGPT({
+      text: originalText,
+      targetLanguage,
+      context:
+        "This text is an assistant reply. Keep it natural for a chat assistant.",
+    });
+
+    return { originalText, displayText, targetLanguage };
   }
 );
