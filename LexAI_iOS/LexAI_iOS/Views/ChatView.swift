@@ -124,8 +124,8 @@ struct ChatView: View {
     }
 
     private func sendMessage() {
-        let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !text.isEmpty else { return }
+        let text = ChatInputValidator.trimmedMessage(inputText)
+        guard ChatInputValidator.shouldSendMessage(inputText) else { return }
 
         inputText = ""
         messages.append(ChatMessage(text: text, isFromUser: true))

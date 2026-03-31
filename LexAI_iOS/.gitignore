@@ -5,3 +5,4 @@ xcuserdata/
 
 # Google Firebase config (contains API keys)
 GoogleService-Info.plist
+build/
