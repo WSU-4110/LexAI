@@ -12,7 +12,7 @@ struct ChatView: View {
     @State private var messages: [ChatMessage] = []
     @State private var inputText: String = ""
     @State private var showScanDocuments = false
-    @State private var isTranslating = false
+    @State private var isAwaitingReply = false
 
     @Binding var selectedLanguage: String // language in conversation
 
@@ -108,12 +108,12 @@ struct ChatView: View {
                 Button {
                     sendMessage()
                 } label: {
-                    Image(systemName: isTranslating ? "clock.arrow.circlepath" : "arrow.up.circle.fill")
+                    Image(systemName: isAwaitingReply ? "clock.arrow.circlepath" : "arrow.up.circle.fill")
                         .resizable()
                         .frame(width: 35, height: 35)
                         .foregroundStyle(inputText.isEmpty ? Color.white.opacity(0.6) : Color.white)
                 }
-                .disabled(inputText.isEmpty || isTranslating)
+                .disabled(inputText.isEmpty || isAwaitingReply)
                 .padding(.bottom, 4)
 
             }
@@ -145,45 +145,36 @@ struct ChatView: View {
         inputText = ""
         messages.append(ChatMessage(text: text, isFromUser: true))
 
-        // Temporary: until the tuned model call exists in this codebase,
-        // we translate a placeholder assistant response to validate the pipeline.
-        let assistantResponse = "Hello! How can I help you today?"
-
         Task { @MainActor in
-            if selectedLanguage == "English" {
-                messages.append(ChatMessage(text: assistantResponse, isFromUser: false))
-                return
-            }
-
-            isTranslating = true
-            defer { isTranslating = false }
+            isAwaitingReply = true
+            defer { isAwaitingReply = false }
 
             do {
-                let translated = try await translate(text: assistantResponse, targetLanguage: selectedLanguage)
-                messages.append(ChatMessage(text: translated, isFromUser: false))
+                let reply = try await generateAnswer(prompt: text, targetLanguage: selectedLanguage)
+                messages.append(ChatMessage(text: reply, isFromUser: false))
             } catch {
-                messages.append(ChatMessage(text: "Translation error: \(error.localizedDescription)", isFromUser: false))
+                messages.append(ChatMessage(text: "Reply error: \(error.localizedDescription)", isFromUser: false))
             }
         }
     }
 
-    private func translate(text: String, targetLanguage: String) async throws -> String {
-        let callable = functions.httpsCallable("translateText")
+    private func generateAnswer(prompt: String, targetLanguage: String) async throws -> String {
+        let callable = functions.httpsCallable("generateAnswer")
         let result = try await callable.call([
-            "text": text,
+            "prompt": prompt,
             "targetLanguage": targetLanguage,
         ])
 
         guard
             let data = result.data as? [String: Any],
-            let translatedText = data["translatedText"] as? String
+            let displayText = data["displayText"] as? String
         else {
-            throw NSError(domain: "LexAI.Translate", code: 1, userInfo: [
-                NSLocalizedDescriptionKey: "Invalid translation response payload",
+            throw NSError(domain: "LexAI.GenerateAnswer", code: 1, userInfo: [
+                NSLocalizedDescriptionKey: "Invalid reply response payload",
             ])
         }
 
-        return translatedText
+        return displayText
     }
 }
 
