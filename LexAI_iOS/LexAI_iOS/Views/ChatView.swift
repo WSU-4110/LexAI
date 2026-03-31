@@ -97,7 +97,7 @@ struct ChatView: View {
                 .padding(.bottom, 4)
                 .padding(.leading, 20)
 
-                TextField(getLocalizedPlaceholder(), text: $inputText, axis: .vertical)
+                TextField(ChatPlaceholderText.placeholder(forSelectedLanguage: selectedLanguage), text: $inputText, axis: .vertical)
                     .textFieldStyle(.plain)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 10)
@@ -120,21 +120,6 @@ struct ChatView: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
             .padding(.top)
-        }
-    }
-
-    private func getLocalizedPlaceholder() -> String {
-        switch selectedLanguage {
-        case "Spanish":
-            return "Mensaje..."
-        case "French":
-            return "Message..."
-        case "Arabic":
-            return "رسالة..."
-        case "German":
-            return "Nachricht..."
-        default:
-            return "Message..."
         }
     }
 
