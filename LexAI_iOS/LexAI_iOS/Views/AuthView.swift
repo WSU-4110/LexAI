@@ -208,13 +208,8 @@ struct AuthView: View {
         )
     }
     
-    
     private var isFormValid: Bool {
-        let baseValid = !email.isEmpty && password.count >= 6
-        if isSignUpMode {
-            return baseValid && password == confirmPassword
-        }
-        return baseValid
+        AuthFormValidator.isFormValid(email: email, password: password, confirmPassword: confirmPassword, isSignUpMode: isSignUpMode)
     }
     
     private func submit() {
@@ -236,3 +231,12 @@ struct AuthView: View {
 
 
 
+struct AuthFormValidator {
+    static func isFormValid(email: String, password: String, confirmPassword: String, isSignUpMode: Bool) -> Bool {
+        let baseValid = !email.isEmpty && password.count >= 6
+        if isSignUpMode {
+            return baseValid && password == confirmPassword
+        }
+        return baseValid
+    }
+}

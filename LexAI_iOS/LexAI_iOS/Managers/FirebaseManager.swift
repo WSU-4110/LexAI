@@ -34,7 +34,7 @@ class FirebaseManager: ObservableObject {
         }
     }
     
-    // MARK: - Sign Up
+    
     func signUp(email: String, password: String) async {
         isLoading = true
         errorMessage = nil
@@ -56,7 +56,7 @@ class FirebaseManager: ObservableObject {
 //    Test failures
 //    Test successes
     
-    // MARK: - Sign In
+    
     @MainActor
     func signIn(email: String, password: String) async {
         isLoading = true
@@ -76,7 +76,6 @@ class FirebaseManager: ObservableObject {
         isLoading = false
     }
     
-    // MARK: - Sign Out
     @MainActor
     func signOut() {
         do {
@@ -88,7 +87,7 @@ class FirebaseManager: ObservableObject {
         }
     }
     
-    // MARK: - Error Mapping
+    
     
     private func mapFirebaseError(_ error: Error) -> String {
         let nsError = error as NSError
