@@ -19,5 +19,11 @@ final class GenerateAnswerResponseParserTests: XCTestCase {
         XCTAssertThrowsError(
             try GenerateAnswerResponseParser.displayText(fromCallableData: ["displayText": 123])
         )
+
+        XCTAssertThrowsError(try GenerateAnswerResponseParser.displayText(fromCallableData: [:]))
+
+        XCTAssertThrowsError(
+            try GenerateAnswerResponseParser.displayText(fromCallableData: ["text": "wrong key"])
+        )
     }
 }
