@@ -26,6 +26,17 @@ class AuthManager: ObservableObject {
                 self?.isAuthenticated = user != nil
             }
         }
+
+        // Ensure callable Functions can be tested without UI sign-in.
+        if Auth.auth().currentUser == nil {
+            Task { @MainActor in
+                do {
+                    _ = try await Auth.auth().signInAnonymously()
+                } catch {
+                    self.errorMessage = self.mapFirebaseError(error)
+                }
+            }
+        }
     }
     
     deinit {
