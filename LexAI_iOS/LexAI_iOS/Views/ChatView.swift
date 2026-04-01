@@ -1,15 +1,17 @@
+//
 //  ChatView.swift
 //  LexAI_iOS
+//
+
 import SwiftUI
 
 private let bottomAnchorId = "bottom"
 
 struct ChatView: View {
     @EnvironmentObject var locationManager: LocationManager
-    @EnvironmentObject var viewModel: SidebarSessionsViewModel
+    @EnvironmentObject var viewModel: SidebarViewModel
     private let aiService = AIService()
 
-    // view model is truth; empty array if nothing is selected and we skip drama (S)
     private var messages: [ChatMessage] {
         guard let id = viewModel.activeSessionID,
               let session = viewModel.sessions.first(where: { $0.id == id }) else {
@@ -17,20 +19,17 @@ struct ChatView: View {
         }
         return session.messages
     }
+
     @State private var inputText: String = ""
     @State private var showScanDocuments = false
     @State private var isAwaitingResponse = false
     @State private var streamingResponse: String = ""
-    @Binding var selectedLanguage: String //For language in conversation
+    @Binding var selectedLanguage: String
 
-    // systemContext injects hidden location-aware context into AI prompts.
-    // This is NOT shown in the UI and is only used by the model.
-    // location string nudges answers toward local law instead of generic planet Earth (S)
     private var systemContext: String {
         let location = locationManager.locationString.isEmpty
             ? "an unknown location"
             : locationManager.locationString
-
         return """
 You are LexAI, an AI legal assistant. \
 The user is located in \(location). \
@@ -63,25 +62,20 @@ If you are unsure of local law, say so and give general guidance.
             )
             .ignoresSafeArea()
         )
-        // drop partial stream so two threads never share one bubble by accident (S)
         .onChange(of: viewModel.activeSessionID) { _, _ in
             streamingResponse = ""
         }
         .fullScreenCover(isPresented: $showScanDocuments) {
-            //Preview Wrapper
             #if targetEnvironment(simulator)
             VStack(spacing: 20) {
                 Text("Document Scanner Preview")
                     .font(.headline)
                     .padding()
-                Button("Dismiss") {
-                    showScanDocuments = false
-                }
-                .buttonStyle(.borderedProminent)
+                Button("Dismiss") { showScanDocuments = false }
+                    .buttonStyle(.borderedProminent)
             }
             #else
             ScanDocumentsView(isPresented: $showScanDocuments) { scannedText in
-                // no session means nowhere to file the scan so we bail politely (S)
                 guard let id = viewModel.activeSessionID else { return }
                 let next = messages + [ChatMessage(text: scannedText, isFromUser: true)]
                 viewModel.updateSession(id: id, messages: next)
@@ -91,48 +85,45 @@ If you are unsure of local law, say so and give general guidance.
     }
 
     private var messageList: some View {
-         ScrollViewReader { proxy in
-             ScrollView {
-                 LazyVStack(alignment: .leading, spacing: 12) {
-                     ForEach(messages) { message in
-                         MessageBubbleView(message: message)
-                     }
+        ScrollViewReader { proxy in
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 12) {
+                    ForEach(messages) { message in
+                        MessageBubbleView(message: message)
+                    }
 
-                     // ghost bubble while tokens arrive; not stored until the stream finishes (S)
-                     if !streamingResponse.isEmpty {
-                         MessageBubbleView(
-                             message: ChatMessage(text: streamingResponse, isFromUser: false)
-                         )
-                     }
+                    if !streamingResponse.isEmpty {
+                        MessageBubbleView(
+                            message: ChatMessage(text: streamingResponse, isFromUser: false)
+                        )
+                    }
 
-                     Color.clear
-                         .frame(height: 8)
-                         .id(bottomAnchorId)
-                 }
-                 .padding(.horizontal, 16)
-                 .padding(.vertical, 12)
-             }
-             .scrollDismissesKeyboard(.interactively)
-             .onChange(of: messages.count) { _, _ in
-                 withAnimation(.easeOut(duration: 0.25)) {
-                     proxy.scrollTo(bottomAnchorId, anchor: .bottom)
-                 }
-             }
-             .onChange(of: streamingResponse) { _, _ in
-                 withAnimation(.easeOut(duration: 0.25)) {
-                     proxy.scrollTo(bottomAnchorId, anchor: .bottom)
-                 }
-             }
-         }
-         .frame(maxWidth: .infinity, maxHeight: .infinity)
-     }
+                    Color.clear
+                        .frame(height: 8)
+                        .id(bottomAnchorId)
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+            }
+            .scrollDismissesKeyboard(.interactively)
+            .onChange(of: messages.count) { _, _ in
+                withAnimation(.easeOut(duration: 0.25)) {
+                    proxy.scrollTo(bottomAnchorId, anchor: .bottom)
+                }
+            }
+            .onChange(of: streamingResponse) { _, _ in
+                withAnimation(.easeOut(duration: 0.25)) {
+                    proxy.scrollTo(bottomAnchorId, anchor: .bottom)
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
 
     private var inputBar: some View {
         VStack {
             HStack(alignment: .bottom, spacing: 12) {
-                Button(action: {
-                    showScanDocuments = true
-                }) {
+                Button(action: { showScanDocuments = true }) {
                     Image(systemName: "camera")
                         .resizable()
                         .frame(width: 35, height: 35)
@@ -149,9 +140,7 @@ If you are unsure of local law, say so and give general guidance.
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                     .lineLimit(1...6)
 
-                Button {
-                    sendMessage()
-                } label: {
+                Button { sendMessage() } label: {
                     Image(systemName: "arrow.up.circle.fill")
                         .resizable()
                         .frame(width: 35, height: 35)
@@ -171,57 +160,43 @@ If you are unsure of local law, say so and give general guidance.
 
     private func getLocalizedPlaceholder() -> String {
         switch selectedLanguage {
-        case "Spanish":
-            return "Mensaje..."
-        case "French":
-            return "Message..."
-        case "Arabic":
-            return "رسالة..."
-        case "German":
-            return "Nachricht..."
-        default:
-            return "Message..."
+        case "Spanish": return "Mensaje..."
+        case "French":  return "Message..."
+        case "Arabic":  return "رسالة..."
+        case "German":  return "Nachricht..."
+        default:        return "Message..."
         }
     }
 
     private func sendMessage() {
         let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
-        // blank sends help nobody (S)
         guard !text.isEmpty else { return }
-        // no id means no chat bucket; returning beats corrupting state (S)
         guard let sessionId = viewModel.activeSessionID else { return }
-        let userInput = text
-        let currentInput = userInput
+
+        let currentInput = text
         let system = systemContext
         inputText = ""
-        let userMessage = ChatMessage(text: userInput, isFromUser: true)
+
+        let userMessage = ChatMessage(text: currentInput, isFromUser: true)
         viewModel.appendMessage(userMessage, to: sessionId)
         streamingResponse = ""
 
         Task {
-            await MainActor.run {
-                isAwaitingResponse = true
-            }
-            // serial queue because async would happily reorder your sentence (S)
+            await MainActor.run { isAwaitingResponse = true }
+
             let updateQueue = DispatchQueue(label: "stream.queue")
-            // ground truth for the final string; UI timing is not a reliable witness (S)
             let orderedBuffer = NSMutableString()
 
             do {
-                try await aiService.streamMessage(
-                    system: system,
-                    user: currentInput
-                ) { token in
+                try await aiService.streamMessage(system: system, user: currentInput) { token in
                     updateQueue.async {
                         orderedBuffer.append(token)
                         Task { @MainActor in
-                            // handles streaming so the app feels fast instead of awkwardly silent (S)
                             streamingResponse += token
                         }
                     }
                 }
 
-                // drain the queue first so we never snapshot the buffer too early (S)
                 let finalText = await withCheckedContinuation { (continuation: CheckedContinuation<String, Never>) in
                     updateQueue.async {
                         continuation.resume(returning: orderedBuffer as String)
@@ -238,7 +213,6 @@ If you are unsure of local law, say so and give general guidance.
                     isAwaitingResponse = false
                 }
             } catch {
-                // fallback so the user never gets ghosted by the network (S)
                 let fallback = getLocalizedResponse(context: system)
                 let fallbackMessage = ChatMessage(text: fallback, isFromUser: false)
                 await MainActor.run {
@@ -250,32 +224,21 @@ If you are unsure of local law, say so and give general guidance.
         }
     }
 
-    // polite canned text when the API declines to cooperate (S)
     private func getLocalizedResponse(context: String) -> String {
         _ = context
         switch selectedLanguage {
-        case "Spanish":
-            return "¡Hola! ¿En qué puedo ayudarte hoy?"
-        case "French":
-            return "Bonjour ! Comment puis-je vous aider aujourd'hui ?"
-        case "Arabic":
-            return "مرحبا! كيف يمكنني مساعدتك اليوم؟"
-        case "German":
-            return "Hallo! Wie kann ich Ihnen heute helfen?"
+        case "Spanish": return "¡Hola! ¿En qué puedo ayudarte hoy?"
+        case "French":  return "Bonjour ! Comment puis-je vous aider aujourd'hui ?"
+        case "Arabic":  return "مرحبا! كيف يمكنني مساعدتك اليوم؟"
+        case "German":  return "Hallo! Wie kann ich Ihnen heute helfen?"
         default:
-            let location = locationManager.locationString.isEmpty
-                ? "your area"
-                : locationManager.locationString
-
+            let location = locationManager.locationString.isEmpty ? "your area" : locationManager.locationString
             return "Hello from \(location)! How can I help you with legal questions today?"
         }
     }
 }
 
-// MARK: - Message bubble
-
 private struct MessageBubbleView: View {
-
     let message: ChatMessage
 
     var body: some View {
@@ -293,10 +256,10 @@ private struct MessageBubbleView: View {
         }
     }
 }
-//Preview Wrapper
+
 #Preview {
     @Previewable @State var selectedLanguage = "English"
     return ChatView(selectedLanguage: $selectedLanguage)
         .environmentObject(LocationManager())
-        .environmentObject(SidebarSessionsViewModel())
+        .environmentObject(SidebarViewModel())
 }

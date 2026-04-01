@@ -1,10 +1,11 @@
 //
 //  LocationManager.swift
 //  LexAI_iOS
-//
+//Sara
 
 import Combine
 import CoreLocation
+import MapKit
 
 // Uses a single CLGeocoder instance to avoid deprecation warnings
 // and improve performance.
@@ -15,7 +16,6 @@ final class LocationManager: NSObject, ObservableObject {
     @Published var authorizationStatus: CLAuthorizationStatus
 
     private let manager = CLLocationManager()
-    private let geocoder = CLGeocoder()
 
     override init() {
         authorizationStatus = manager.authorizationStatus
@@ -38,17 +38,49 @@ final class LocationManager: NSObject, ObservableObject {
     }
 
     private func reverseGeocode(_ location: CLLocation) {
-        geocoder.cancelGeocode()
-        geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, _ in
-            // if self is gone the user probably left; we let it rest (S)
+        // Use MapKit reverse geocoding to avoid deprecated CLGeocoder
+        let coordinate = location.coordinate
+
+        // Create a reverse geocode request using MKLocalSearch
+        let request = MKLocalSearch.Request()
+        request.pointOfInterestFilter = nil
+        request.naturalLanguageQuery = nil
+        // Set a very small region around the coordinate to bias the search
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        request.region = MKCoordinateRegion(center: coordinate, span: span)
+
+        let search = MKLocalSearch(request: request)
+        search.start { [weak self] response, error in
             guard let self else { return }
-            let str: String
-            if let placemark = placemarks?.first {
-                let city = placemark.locality
-                    ?? placemark.subAdministrativeArea
-                    ?? placemark.administrativeArea
-                    ?? ""
-                let country = placemark.isoCountryCode ?? ""
+
+            // If error occurred or no map items, clear the string
+            guard error == nil, let item = response?.mapItems.first else {
+                DispatchQueue.main.async {
+                    self.locationString = ""
+                }
+                return
+            }
+
+            // Prefer new iOS 26 APIs: address, addressRepresentations, and location
+            var derivedCity: String = ""
+            var derivedCountry: String = ""
+
+            if let addr = item.address {
+                // MKAddress exposes string summaries, not separate city/country fields
+                let short = addr.shortAddress ?? ""
+                let full = addr.fullAddress
+                let summary = short.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? full : short
+                let parts = summary.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
+                if parts.count >= 2 {
+                    derivedCity = parts[0]
+                    derivedCountry = parts[parts.count - 1]
+                } else if let first = parts.first, !first.isEmpty {
+                    derivedCity = first
+                }
+            }
+
+            func finish(with city: String, country: String) {
+                let str: String
                 if !city.isEmpty, !country.isEmpty {
                     str = "\(city), \(country)"
                 } else if !city.isEmpty {
@@ -58,11 +90,25 @@ final class LocationManager: NSObject, ObservableObject {
                 } else {
                     str = ""
                 }
-            } else {
-                str = ""
+                DispatchQueue.main.async {
+                    self.locationString = str
+                }
             }
-            DispatchQueue.main.async {
-                self.locationString = str
+
+            if !derivedCity.isEmpty || !derivedCountry.isEmpty {
+                finish(with: derivedCity, country: derivedCountry)
+            } else {
+                let loc = item.location
+                let geocoder = CLGeocoder()
+                geocoder.reverseGeocodeLocation(loc) { placemarks, _ in
+                    let p = placemarks?.first
+                    let city = p?.locality
+                        ?? p?.subAdministrativeArea
+                        ?? p?.administrativeArea
+                        ?? ""
+                    let country = p?.isoCountryCode ?? p?.country ?? ""
+                    finish(with: city, country: country)
+                }
             }
         }
     }
