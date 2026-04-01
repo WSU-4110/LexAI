@@ -6,8 +6,17 @@ private let bottomAnchorId = "bottom"
 
 struct ChatView: View {
     @EnvironmentObject var locationManager: LocationManager
+    @EnvironmentObject var viewModel: SidebarSessionsViewModel
     private let aiService = AIService()
-    @State private var messages: [ChatMessage] = []
+
+    // view model is truth; empty array if nothing is selected and we skip drama (S)
+    private var messages: [ChatMessage] {
+        guard let id = viewModel.activeSessionID,
+              let session = viewModel.sessions.first(where: { $0.id == id }) else {
+            return []
+        }
+        return session.messages
+    }
     @State private var inputText: String = ""
     @State private var showScanDocuments = false
     @State private var isAwaitingResponse = false
@@ -16,6 +25,7 @@ struct ChatView: View {
 
     // systemContext injects hidden location-aware context into AI prompts.
     // This is NOT shown in the UI and is only used by the model.
+    // location string nudges answers toward local law instead of generic planet Earth (S)
     private var systemContext: String {
         let location = locationManager.locationString.isEmpty
             ? "an unknown location"
@@ -53,6 +63,10 @@ If you are unsure of local law, say so and give general guidance.
             )
             .ignoresSafeArea()
         )
+        // drop partial stream so two threads never share one bubble by accident (S)
+        .onChange(of: viewModel.activeSessionID) { _, _ in
+            streamingResponse = ""
+        }
         .fullScreenCover(isPresented: $showScanDocuments) {
             //Preview Wrapper
             #if targetEnvironment(simulator)
@@ -67,7 +81,10 @@ If you are unsure of local law, say so and give general guidance.
             }
             #else
             ScanDocumentsView(isPresented: $showScanDocuments) { scannedText in
-                messages.append(ChatMessage(text: scannedText, isFromUser: true))
+                // no session means nowhere to file the scan so we bail politely (S)
+                guard let id = viewModel.activeSessionID else { return }
+                let next = messages + [ChatMessage(text: scannedText, isFromUser: true)]
+                viewModel.updateSession(id: id, messages: next)
             }
             #endif
         }
@@ -81,6 +98,7 @@ If you are unsure of local law, say so and give general guidance.
                          MessageBubbleView(message: message)
                      }
 
+                     // ghost bubble while tokens arrive; not stored until the stream finishes (S)
                      if !streamingResponse.isEmpty {
                          MessageBubbleView(
                              message: ChatMessage(text: streamingResponse, isFromUser: false)
@@ -168,19 +186,25 @@ If you are unsure of local law, say so and give general guidance.
 
     private func sendMessage() {
         let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
+        // blank sends help nobody (S)
         guard !text.isEmpty else { return }
+        // no id means no chat bucket; returning beats corrupting state (S)
+        guard let sessionId = viewModel.activeSessionID else { return }
         let userInput = text
         let currentInput = userInput
         let system = systemContext
         inputText = ""
-        messages.append(ChatMessage(text: userInput, isFromUser: true))
+        let userMessage = ChatMessage(text: userInput, isFromUser: true)
+        viewModel.appendMessage(userMessage, to: sessionId)
         streamingResponse = ""
 
         Task {
             await MainActor.run {
                 isAwaitingResponse = true
             }
+            // serial queue because async would happily reorder your sentence (S)
             let updateQueue = DispatchQueue(label: "stream.queue")
+            // ground truth for the final string; UI timing is not a reliable witness (S)
             let orderedBuffer = NSMutableString()
 
             do {
@@ -191,11 +215,13 @@ If you are unsure of local law, say so and give general guidance.
                     updateQueue.async {
                         orderedBuffer.append(token)
                         Task { @MainActor in
+                            // handles streaming so the app feels fast instead of awkwardly silent (S)
                             streamingResponse += token
                         }
                     }
                 }
 
+                // drain the queue first so we never snapshot the buffer too early (S)
                 let finalText = await withCheckedContinuation { (continuation: CheckedContinuation<String, Never>) in
                     updateQueue.async {
                         continuation.resume(returning: orderedBuffer as String)
@@ -205,22 +231,26 @@ If you are unsure of local law, say so and give general guidance.
                 await MainActor.run {
                     let trimmed = finalText.trimmingCharacters(in: .whitespacesAndNewlines)
                     if !trimmed.isEmpty {
-                        messages.append(ChatMessage(text: finalText, isFromUser: false))
+                        let aiMessage = ChatMessage(text: finalText, isFromUser: false)
+                        viewModel.appendMessage(aiMessage, to: sessionId)
                     }
                     streamingResponse = ""
                     isAwaitingResponse = false
                 }
             } catch {
+                // fallback so the user never gets ghosted by the network (S)
                 let fallback = getLocalizedResponse(context: system)
+                let fallbackMessage = ChatMessage(text: fallback, isFromUser: false)
                 await MainActor.run {
+                    viewModel.appendMessage(fallbackMessage, to: sessionId)
                     streamingResponse = ""
                     isAwaitingResponse = false
-                    messages.append(ChatMessage(text: fallback, isFromUser: false))
                 }
             }
         }
     }
 
+    // polite canned text when the API declines to cooperate (S)
     private func getLocalizedResponse(context: String) -> String {
         _ = context
         switch selectedLanguage {
@@ -268,4 +298,5 @@ private struct MessageBubbleView: View {
     @Previewable @State var selectedLanguage = "English"
     return ChatView(selectedLanguage: $selectedLanguage)
         .environmentObject(LocationManager())
+        .environmentObject(SidebarSessionsViewModel())
 }

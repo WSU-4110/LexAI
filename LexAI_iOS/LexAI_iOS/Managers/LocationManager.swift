@@ -8,6 +8,7 @@ import CoreLocation
 
 // Uses a single CLGeocoder instance to avoid deprecation warnings
 // and improve performance.
+// turns coordinates into words the chat can actually use (S)
 final class LocationManager: NSObject, ObservableObject {
     @Published var locationString: String = ""
     @Published var currentLocation: CLLocation?
@@ -39,6 +40,7 @@ final class LocationManager: NSObject, ObservableObject {
     private func reverseGeocode(_ location: CLLocation) {
         geocoder.cancelGeocode()
         geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, _ in
+            // if self is gone the user probably left; we let it rest (S)
             guard let self else { return }
             let str: String
             if let placemark = placemarks?.first {
@@ -74,6 +76,7 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // no fix yet; GPS is still thinking (S)
         guard let location = locations.last else { return }
         DispatchQueue.main.async {
             self.currentLocation = location

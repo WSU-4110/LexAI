@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var authManager: AuthManager
     @EnvironmentObject var locationManager: LocationManager
+    @StateObject private var sidebarSessionsViewModel = SidebarSessionsViewModel()
     @State private var isSidebarOpen = false
     @State private var showToolbar = true
 
@@ -112,6 +113,7 @@ struct HomeView: View {
                     }
                 }
             }
+            .environmentObject(sidebarSessionsViewModel)
         }
     }
 }

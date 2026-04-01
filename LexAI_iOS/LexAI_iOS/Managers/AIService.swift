@@ -20,6 +20,7 @@ final class AIService {
     // API key is securely loaded from Info.plist via xcconfig.
     func sendMessage(system: String, user: String) async throws -> String {
         let apiKey = Bundle.main.object(forInfoDictionaryKey: "OPENAI_API_KEY") as? String ?? ""
+        // without a key we refuse to phone home; dignity intact (S)
         guard !apiKey.isEmpty else {
             throw AIServiceError.invalidAPIKey
         }
@@ -29,6 +30,7 @@ final class AIService {
         request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
+        // system sets the tone, user actually asks; classic division of labor (S)
         let payload = ChatCompletionRequest(
             model: "gpt-4o-mini",
             messages: [
@@ -65,6 +67,7 @@ final class AIService {
     /// Streams assistant tokens via Server-Sent Events. Caller owns threading for `onToken`.
     func streamMessage(system: String, user: String, onToken: @escaping (String) -> Void) async throws {
         let apiKey = Bundle.main.object(forInfoDictionaryKey: "OPENAI_API_KEY") as? String ?? ""
+        // same key check as the one shot path; consistency is the least we can do (S)
         guard !apiKey.isEmpty else {
             throw AIServiceError.invalidAPIKey
         }
@@ -93,12 +96,14 @@ final class AIService {
             throw AIServiceError.httpStatus(http.statusCode)
         }
 
+        // SSE lines are chatty; we ignore the boring ones on purpose (S)
         for try await line in bytes.lines {
             let trimmed = line.trimmingCharacters(in: .whitespacesAndNewlines)
             guard !trimmed.isEmpty else { continue }
             guard trimmed.hasPrefix("data: ") else { continue }
 
             let afterPrefix = trimmed.dropFirst(6).trimmingCharacters(in: .whitespacesAndNewlines)
+            // polite way for the server to hang up without drama (S)
             if afterPrefix == "[DONE]" {
                 break
             }
@@ -116,6 +121,7 @@ final class AIService {
             let piece = content
             guard !piece.isEmpty else { continue }
 
+            // caller decides threading; we just deliver the syllables (S)
             onToken(piece)
         }
     }
