@@ -138,7 +138,9 @@ struct ChatView: View {
                 let reply = try await generateAnswer(prompt: text, targetLanguage: selectedLanguage)
                 messages.append(ChatMessage(text: reply, isFromUser: false))
             } catch {
-                messages.append(ChatMessage(text: "Reply error: \(error.localizedDescription)", isFromUser: false))
+                messages.append(
+                    ChatMessage(text: ChatReplyErrorFormatter.replyErrorMessage(for: error), isFromUser: false)
+                )
             }
         }
     }

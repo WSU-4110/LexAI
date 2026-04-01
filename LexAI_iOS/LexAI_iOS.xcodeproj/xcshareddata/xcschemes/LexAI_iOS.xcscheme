@@ -21,6 +21,20 @@
                ReferencedContainer = "container:LexAI_iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9C2F6A7E2F3E1A6B00B1D9F1"
+               BuildableName = "LexAI_iOSTests.xctest"
+               BlueprintName = "LexAI_iOSTests"
+               ReferencedContainer = "container:LexAI_iOS.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
