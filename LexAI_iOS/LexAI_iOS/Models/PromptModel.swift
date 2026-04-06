@@ -7,17 +7,11 @@
 import Foundation
 import FirebaseAuth
 
-struct Prompt {
+struct Prompt: Codable {
+    let id: String
     let prompt: String
-    let documents: [Any?]
+    let document: [String]
     let location: String
     let language: String
-    let user: User
+    let userID: String
 }
-
-
-//prompt: string,
-//documents: [Any]?,
-//location: string,
-//language: string,
-//user: email
