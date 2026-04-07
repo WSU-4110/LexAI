@@ -8,9 +8,10 @@
 import Foundation
 import Combine
 import FirebaseAuth
+import FirebaseFirestore // new import
 
-
-class AuthManager: ObservableObject {
+//changed class name + filename to FirebaseManager - Mirshod
+class FirebaseManager: ObservableObject {
     
     @Published var user: User?
     @Published var isAuthenticated = false
@@ -42,6 +43,37 @@ class AuthManager: ObservableObject {
     deinit {
         if let listener = authStateListener {
             Auth.auth().removeStateDidChangeListener(listener)
+        }
+    }
+
+    // struct for storing chats
+    struct ChatPrompt{
+        let prompt: String
+        let documents: [String]
+        let location: String
+        let language: String
+        let user: String
+    }
+
+    // MARK: -chat storage - mirshod 3/13
+    func saveChat(prompt: ChatPrompt) {
+        let db = Firestore.firestore()
+
+        let data: [String: Any] = [
+            "prompt": prompt.prompt,
+            "documents": prompt.documents,
+            "location": prompt.location,
+            "language": prompt.language,
+            "user": prompt.user,
+            "timestamp": FieldValue.serverTimestamp()
+        ]
+
+        db.collection("chatHistory").addDocument(data: data) { error in
+            if let error = error {
+                print("Error saving chat: \(error)")
+            } else{
+                print("Chat successfully saved.")
+            }
         }
     }
     
