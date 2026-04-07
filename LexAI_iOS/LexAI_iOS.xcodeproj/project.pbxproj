@@ -32,14 +32,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXTargetDependency section */
-		9C2F6A912F3E1A6B00B1D9F1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7C8354F42F3B97E800582A10 /* LexAI_iOS */;
-			targetProxy = 9C2F6A902F3E1A6B00B1D9F1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXFileReference section */
 		7C8354F52F3B97E800582A10 /* LexAI_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexAI_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C2F6A7B2F3E1A6B00B1D9F1 /* LexAI_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LexAI_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +233,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C2F6A912F3E1A6B00B1D9F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C8354F42F3B97E800582A10 /* LexAI_iOS */;
+			targetProxy = 9C2F6A902F3E1A6B00B1D9F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7C8354FE2F3B97E900582A10 /* Debug */ = {
