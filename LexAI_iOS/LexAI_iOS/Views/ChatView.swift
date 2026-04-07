@@ -96,7 +96,7 @@ struct ChatView: View {
                 }
                 .padding(.bottom, 4)
 
-                TextField(getLocalizedPlaceholder(), text: $inputText, axis: .vertical)
+                TextField(ChatPlaceholderText.placeholder(forSelectedLanguage: selectedLanguage), text: $inputText, axis: .vertical)
                     .textFieldStyle(.plain)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 10)
@@ -121,24 +121,9 @@ struct ChatView: View {
         }
     }
 
-    private func getLocalizedPlaceholder() -> String {
-        switch selectedLanguage {
-        case "Spanish":
-            return "Mensaje..."
-        case "French":
-            return "Message..."
-        case "Arabic":
-            return "رسالة..."
-        case "German":
-            return "Nachricht..."
-        default:
-            return "Message..."
-        }
-    }
-
     private func sendMessage() {
-        let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !text.isEmpty else { return }
+        let text = ChatInputValidator.trimmedMessage(inputText)
+        guard ChatInputValidator.shouldSendMessage(inputText) else { return }
 
         inputText = ""
         messages.append(ChatMessage(text: text, isFromUser: true))
@@ -151,7 +136,9 @@ struct ChatView: View {
                 let reply = try await generateAnswer(prompt: text, targetLanguage: selectedLanguage)
                 messages.append(ChatMessage(text: reply, isFromUser: false))
             } catch {
-                messages.append(ChatMessage(text: "Reply error: \(error.localizedDescription)", isFromUser: false))
+                messages.append(
+                    ChatMessage(text: ChatReplyErrorFormatter.replyErrorMessage(for: error), isFromUser: false)
+                )
             }
         }
     }
@@ -163,16 +150,7 @@ struct ChatView: View {
             "targetLanguage": targetLanguage,
         ])
 
-        guard
-            let data = result.data as? [String: Any],
-            let displayText = data["displayText"] as? String
-        else {
-            throw NSError(domain: "LexAI.GenerateAnswer", code: 1, userInfo: [
-                NSLocalizedDescriptionKey: "Invalid reply response payload",
-            ])
-        }
-
-        return displayText
+        return try GenerateAnswerResponseParser.displayText(fromCallableData: result.data)
     }
 }
 
