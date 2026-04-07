@@ -35,7 +35,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7CDCC4BD2F7C988900530116"
+               BlueprintIdentifier = "7CEF889F2F7ADB2600A2F581"
                BuildableName = "LexAI_iOSTests.xctest"
                BlueprintName = "LexAI_iOSTests"
                ReferencedContainer = "container:LexAI_iOS.xcodeproj">

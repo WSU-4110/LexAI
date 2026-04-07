@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var isSidebarOpen = false
+    @State private var showToolbar = true
     @AppStorage("selectedLanguage") private var selectedLanguage: String = "English"
     @State private var showLanguageDropdown = false
 

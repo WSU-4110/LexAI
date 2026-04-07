@@ -20,10 +20,11 @@
 		7C83551B2F3B9A0D00582A10 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 7C83551A2F3B9A0D00582A10 /* FirebaseMessaging */; };
 		7C83551D2F3B9A0D00582A10 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 7C83551C2F3B9A0D00582A10 /* FirebasePerformance */; };
 		7C83551F2F3B9A0D00582A10 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7C83551E2F3B9A0D00582A10 /* FirebaseStorage */; };
+		7CEF889B2F7AD34F00A2F581 /* disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEF889A2F7AD34E00A2F581 /* disclaimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7CDCC4C22F7C988900530116 /* PBXContainerItemProxy */ = {
+		7CEF88A42F7ADB2600A2F581 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7C8354ED2F3B97E800582A10 /* Project object */;
 			proxyType = 1;
@@ -34,23 +35,26 @@
 
 /* Begin PBXFileReference section */
 		7C8354F52F3B97E800582A10 /* LexAI_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexAI_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CDCC4BE2F7C988900530116 /* LexAI_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LexAI_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CEF889A2F7AD34E00A2F581 /* disclaimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = disclaimer.swift; sourceTree = "<group>"; };
+		7CEF88A02F7ADB2600A2F581 /* LexAI_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LexAI_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		7CDCC4C82F7C989300530116 /* Exceptions for "LexAI_iOS" folder in "LexAI_iOS" target */ = {
+		7CEF88A92F7ADB6600A2F581 /* Exceptions for "LexAI_iOS" folder in "LexAI_iOS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				AuthViewTests.swift,
+				"Unit Tests/DisclaimerManagerTests.swift",
+				"Unit Tests/FirebaseManagerTests.swift",
 			);
 			target = 7C8354F42F3B97E800582A10 /* LexAI_iOS */;
 		};
-		7CDCC4C92F7C989300530116 /* Exceptions for "LexAI_iOS" folder in "LexAI_iOSTests" target */ = {
+		7CEF88AC2F7ADB6900A2F581 /* Exceptions for "LexAI_iOS" folder in "LexAI_iOSTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				AuthViewTests.swift,
+				"Unit Tests/DisclaimerManagerTests.swift",
+				"Unit Tests/FirebaseManagerTests.swift",
 			);
-			target = 7CDCC4BD2F7C988900530116 /* LexAI_iOSTests */;
+			target = 7CEF889F2F7ADB2600A2F581 /* LexAI_iOSTests */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -58,13 +62,13 @@
 		7C8354F72F3B97E800582A10 /* LexAI_iOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				7CDCC4C82F7C989300530116 /* Exceptions for "LexAI_iOS" folder in "LexAI_iOS" target */,
-				7CDCC4C92F7C989300530116 /* Exceptions for "LexAI_iOS" folder in "LexAI_iOSTests" target */,
+				7CEF88A92F7ADB6600A2F581 /* Exceptions for "LexAI_iOS" folder in "LexAI_iOS" target */,
+				7CEF88AC2F7ADB6900A2F581 /* Exceptions for "LexAI_iOS" folder in "LexAI_iOSTests" target */,
 			);
 			path = LexAI_iOS;
 			sourceTree = "<group>";
 		};
-		7CDCC4BF2F7C988900530116 /* LexAI_iOSTests */ = {
+		7CEF88A12F7ADB2600A2F581 /* LexAI_iOSTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = LexAI_iOSTests;
 			sourceTree = "<group>";
@@ -92,7 +96,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7CDCC4BB2F7C988900530116 /* Frameworks */ = {
+		7CEF889D2F7ADB2600A2F581 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -106,8 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				7C8354F72F3B97E800582A10 /* LexAI_iOS */,
-				7CDCC4BF2F7C988900530116 /* LexAI_iOSTests */,
+				7CEF88A12F7ADB2600A2F581 /* LexAI_iOSTests */,
 				7C8354F62F3B97E800582A10 /* Products */,
+				7CEF889A2F7AD34E00A2F581 /* disclaimer.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				7C8354F52F3B97E800582A10 /* LexAI_iOS.app */,
-				7CDCC4BE2F7C988900530116 /* LexAI_iOSTests.xctest */,
+				7CEF88A02F7ADB2600A2F581 /* LexAI_iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,27 +163,27 @@
 			productReference = 7C8354F52F3B97E800582A10 /* LexAI_iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7CDCC4BD2F7C988900530116 /* LexAI_iOSTests */ = {
+		7CEF889F2F7ADB2600A2F581 /* LexAI_iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7CDCC4C42F7C988900530116 /* Build configuration list for PBXNativeTarget "LexAI_iOSTests" */;
+			buildConfigurationList = 7CEF88A62F7ADB2600A2F581 /* Build configuration list for PBXNativeTarget "LexAI_iOSTests" */;
 			buildPhases = (
-				7CDCC4BA2F7C988900530116 /* Sources */,
-				7CDCC4BB2F7C988900530116 /* Frameworks */,
-				7CDCC4BC2F7C988900530116 /* Resources */,
+				7CEF889C2F7ADB2600A2F581 /* Sources */,
+				7CEF889D2F7ADB2600A2F581 /* Frameworks */,
+				7CEF889E2F7ADB2600A2F581 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7CDCC4C32F7C988900530116 /* PBXTargetDependency */,
+				7CEF88A52F7ADB2600A2F581 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				7CDCC4BF2F7C988900530116 /* LexAI_iOSTests */,
+				7CEF88A12F7ADB2600A2F581 /* LexAI_iOSTests */,
 			);
 			name = LexAI_iOSTests;
 			packageProductDependencies = (
 			);
 			productName = LexAI_iOSTests;
-			productReference = 7CDCC4BE2F7C988900530116 /* LexAI_iOSTests.xctest */;
+			productReference = 7CEF88A02F7ADB2600A2F581 /* LexAI_iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -194,7 +199,7 @@
 					7C8354F42F3B97E800582A10 = {
 						CreatedOnToolsVersion = 26.0.1;
 					};
-					7CDCC4BD2F7C988900530116 = {
+					7CEF889F2F7ADB2600A2F581 = {
 						CreatedOnToolsVersion = 26.3;
 						TestTargetID = 7C8354F42F3B97E800582A10;
 					};
@@ -218,7 +223,7 @@
 			projectRoot = "";
 			targets = (
 				7C8354F42F3B97E800582A10 /* LexAI_iOS */,
-				7CDCC4BD2F7C988900530116 /* LexAI_iOSTests */,
+				7CEF889F2F7ADB2600A2F581 /* LexAI_iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,7 +236,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7CDCC4BC2F7C988900530116 /* Resources */ = {
+		7CEF889E2F7ADB2600A2F581 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -245,10 +250,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CEF889B2F7AD34F00A2F581 /* disclaimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7CDCC4BA2F7C988900530116 /* Sources */ = {
+		7CEF889C2F7ADB2600A2F581 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -258,10 +264,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7CDCC4C32F7C988900530116 /* PBXTargetDependency */ = {
+		7CEF88A52F7ADB2600A2F581 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7C8354F42F3B97E800582A10 /* LexAI_iOS */;
-			targetProxy = 7CDCC4C22F7C988900530116 /* PBXContainerItemProxy */;
+			targetProxy = 7CEF88A42F7ADB2600A2F581 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -453,7 +459,7 @@
 			};
 			name = Release;
 		};
-		7CDCC4C52F7C988900530116 /* Debug */ = {
+		7CEF88A72F7ADB2600A2F581 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,7 +481,7 @@
 			};
 			name = Debug;
 		};
-		7CDCC4C62F7C988900530116 /* Release */ = {
+		7CEF88A82F7ADB2600A2F581 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -518,11 +524,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7CDCC4C42F7C988900530116 /* Build configuration list for PBXNativeTarget "LexAI_iOSTests" */ = {
+		7CEF88A62F7ADB2600A2F581 /* Build configuration list for PBXNativeTarget "LexAI_iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7CDCC4C52F7C988900530116 /* Debug */,
-				7CDCC4C62F7C988900530116 /* Release */,
+				7CEF88A72F7ADB2600A2F581 /* Debug */,
+				7CEF88A82F7ADB2600A2F581 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

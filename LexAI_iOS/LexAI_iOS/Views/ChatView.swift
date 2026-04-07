@@ -13,8 +13,9 @@ struct ChatView: View {
     @State private var inputText: String = ""
     @State private var showScanDocuments = false
     @State private var isAwaitingReply = false
-    @Binding var selectedLanguage: String // language in conversation
+    @Binding var selectedLanguage: String
     private let functions = Functions.functions()
+
     var body: some View {
         VStack(spacing: 0) {
             Text("LexAI")
