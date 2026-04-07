@@ -9,6 +9,10 @@ import SwiftUI
 import Vision
 import VisionKit
 
+///View for scanning documents
+///-displays a scanned text preview
+///-user can scan documents  and add scanned text back to the chat
+
 struct ScanDocumentsView: UIViewControllerRepresentable {
     @Binding var isPresented: Bool
     var onTextAdded: ((String) -> Void)?
@@ -105,4 +109,3 @@ struct ScanDocumentsPreviewWrapper: View {
 #Preview {
     ScanDocumentsPreviewWrapper()
 }
-

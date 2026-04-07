@@ -13,11 +13,8 @@ struct ChatView: View {
     @State private var inputText: String = ""
     @State private var showScanDocuments = false
     @State private var isAwaitingReply = false
-
     @Binding var selectedLanguage: String // language in conversation
-
     private let functions = Functions.functions()
-
     var body: some View {
         VStack(spacing: 0) {
             Text("LexAI")
@@ -89,13 +86,14 @@ struct ChatView: View {
         VStack {
             HStack(alignment: .bottom, spacing: 12) {
                 Button(action: { showScanDocuments = true }) {
-                    Image(systemName: "camera")
+                    Image(systemName: "document.viewfinder")
                         .resizable()
                         .frame(width: 35, height: 35)
+                        .fontWeight(.semibold)
                         .foregroundStyle(Color.white)
+                        .shadow(radius: 8, x: 0, y: 8)
                 }
                 .padding(.bottom, 4)
-                .padding(.leading, 20)
 
                 TextField(getLocalizedPlaceholder(), text: $inputText, axis: .vertical)
                     .textFieldStyle(.plain)
@@ -117,8 +115,7 @@ struct ChatView: View {
                 .padding(.bottom, 4)
 
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
+            .padding(.horizontal, 4)
             .padding(.top)
         }
     }
@@ -202,4 +199,3 @@ private struct MessageBubbleView: View {
     @Previewable @State var selectedLanguage = "English"
     return ChatView(selectedLanguage: $selectedLanguage)
 }
-

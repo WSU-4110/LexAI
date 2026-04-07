@@ -77,7 +77,6 @@ class FirebaseManager: ObservableObject {
         }
     }
     
-    // MARK: - Sign Up
     
     func signUp(email: String, password: String) async {
         isLoading = true
@@ -94,8 +93,14 @@ class FirebaseManager: ObservableObject {
         isLoading = false
     }
     
-    // MARK: - Sign In
+//    Import XCTests
+//    Add the special tag over the Test function
+//    Create a function definition that will call the function your testing with mock data
+//    Test failures
+//    Test successes
     
+    
+    @MainActor
     func signIn(email: String, password: String) async {
         isLoading = true
         errorMessage = nil
@@ -104,15 +109,17 @@ class FirebaseManager: ObservableObject {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.user = result.user
             self.isAuthenticated = true
+            print("*****Successfully signed in")
+
         } catch {
             self.errorMessage = mapFirebaseError(error)
+            print("SIGN IN ERROR: \(error)")  // Add this to see the real error
         }
         
         isLoading = false
     }
     
-    // MARK: - Sign Out
-    
+    @MainActor
     func signOut() {
         do {
             try Auth.auth().signOut()
@@ -123,7 +130,7 @@ class FirebaseManager: ObservableObject {
         }
     }
     
-    // MARK: - Error Mapping
+    
     
     private func mapFirebaseError(_ error: Error) -> String {
         let nsError = error as NSError
