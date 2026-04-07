@@ -20,9 +20,6 @@ struct ContentView: View {
                     .environmentObject(authManager)
             }
         }
-        .onAppear() {
-            authManager.signOut()
-        }
     }
 }
 
