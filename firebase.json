@@ -1,7 +1,21 @@
 {
   "functions": [
     {
+      "codebase": "default",
       "source": "functions"
+    },
+    {
+      "source": "lexai-functions",
+      "codebase": "lexai-functions",
+      "disallowLegacyRuntimeConfig": true,
+      "ignore": [
+        "venv",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "runtime": "python313"
     }
   ],
   "emulators": {
@@ -20,4 +34,3 @@
     }
   }
 }
-
