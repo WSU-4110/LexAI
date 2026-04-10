@@ -2,12 +2,16 @@ import json
 import requests
 from firebase_functions import https_fn
 from firebase_admin import initialize_app
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # --- Config ---
-PINECONE_API_KEY = "YOUR_PINECONE_API_KEY"
-PINECONE_INDEX_HOST = "YOUR_PINECONE_INDEX_HOST"  # e.g. "michigan-legislation-abc123.svc.aped-1234.pinecone.io"
-RUNPOD_API_KEY = "YOUR_RUNPOD_API_KEY"
-RUNPOD_ENDPOINT_ID = "yvq3yugtd7a4td"
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+PINECONE_INDEX_HOST = os.getenv("PINECONE_INDEX_HOST")
+RUNPOD_API_KEY = os.getenv("RUNPOD_API_KEY")
+RUNPOD_ENDPOINT_ID = os.getenv("RUNPOD_ENDPOINT_ID")
 EMBED_MODEL = "multilingual-e5-large"
 
 initialize_app()
