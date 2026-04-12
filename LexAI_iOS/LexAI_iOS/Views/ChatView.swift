@@ -144,13 +144,29 @@ struct ChatView: View {
     }
 
     private func generateAnswer(prompt: String, targetLanguage: String) async throws -> String {
-        let callable = functions.httpsCallable("generateAnswer")
+        let callable = functions.httpsCallable("chat")
+
+        // Build chat history from previous messages (exclude the one we just added)
+        let chatHistory: [[String: String]] = messages.dropLast().map { msg in
+            ["role": msg.isFromUser ? "user" : "assistant", "content": msg.text]
+        }
+
         let result = try await callable.call([
             "prompt": prompt,
-            "targetLanguage": targetLanguage,
+            "chat_history": chatHistory,
+            "language": targetLanguage,
         ])
 
-        return try GenerateAnswerResponseParser.displayText(fromCallableData: result.data)
+        // Parse the response
+        if let data = result.data as? [String: Any],
+           let response = data["response"] as? String {
+            return response
+        } else if let data = result.data as? [String: Any],
+                  let error = data["error"] as? String {
+            throw NSError(domain: "LexAI", code: -1, userInfo: [NSLocalizedDescriptionKey: error])
+        }
+
+        throw NSError(domain: "LexAI", code: -1, userInfo: [NSLocalizedDescriptionKey: "Unable to parse response"])
     }
 }
 

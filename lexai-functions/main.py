@@ -1,62 +1,50 @@
 import json
+import os
+import time
 import requests
 from firebase_functions import https_fn
 from firebase_admin import initialize_app
-import os
+from pinecone import Pinecone
 from dotenv import load_dotenv
 
 load_dotenv()
 
 # --- Config ---
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-PINECONE_INDEX_HOST = os.getenv("PINECONE_INDEX_HOST")
 RUNPOD_API_KEY = os.getenv("RUNPOD_API_KEY")
 RUNPOD_ENDPOINT_ID = os.getenv("RUNPOD_ENDPOINT_ID")
+INDEX_NAME = "michigan-legislation"
 EMBED_MODEL = "multilingual-e5-large"
 
 initialize_app()
 
+# Initialize Pinecone
+pc = Pinecone(api_key=PINECONE_API_KEY)
+index = pc.Index(INDEX_NAME)
+
 
 def embed_query(query_text: str) -> list:
     """Embed the user's query using Pinecone's inference API."""
-    response = requests.post(
-        "https://api.pinecone.io/embed",
-        headers={
-            "Api-Key": PINECONE_API_KEY,
-            "Content-Type": "application/json",
-        },
-        json={
-            "model": EMBED_MODEL,
-            "inputs": [{"text": query_text}],
-            "parameters": {"input_type": "query", "truncate": "END"},
-        },
+    embeddings_response = pc.inference.embed(
+        model=EMBED_MODEL,
+        inputs=[query_text],
+        parameters={"input_type": "query", "truncate": "END"},
     )
-    response.raise_for_status()
-    return response.json()["data"][0]["values"]
+    return embeddings_response[0]["values"]
 
 
 def query_pinecone(query_embedding: list, top_k: int = 5) -> list:
     """Query Pinecone for the most relevant legislation chunks."""
-    response = requests.post(
-        f"https://{PINECONE_INDEX_HOST}/query",
-        headers={
-            "Api-Key": PINECONE_API_KEY,
-            "Content-Type": "application/json",
-        },
-        json={
-            "vector": query_embedding,
-            "topK": top_k,
-            "includeMetadata": True,
-        },
+    results = index.query(
+        vector=query_embedding,
+        top_k=top_k,
+        include_metadata=True,
     )
-    response.raise_for_status()
-    matches = response.json().get("matches", [])
-    return [match["metadata"]["chunk_text"] for match in matches]
+    return [match["metadata"]["chunk_text"] for match in results["matches"]]
 
 
 def call_runpod(messages: list) -> str:
     """Send the full prompt to RunPod and wait for the response."""
-    # Use the /run endpoint (async) and poll for result
     run_response = requests.post(
         f"https://api.runpod.ai/v2/{RUNPOD_ENDPOINT_ID}/run",
         headers={
@@ -78,10 +66,8 @@ def call_runpod(messages: list) -> str:
     run_response.raise_for_status()
     job_id = run_response.json()["id"]
 
-    # Poll for completion (max ~60 seconds)
-    import time
-
-    for _ in range(30):
+    # Poll for completion (max ~5 minutes)
+    for _ in range(150):
         status_response = requests.get(
             f"https://api.runpod.ai/v2/{RUNPOD_ENDPOINT_ID}/status/{job_id}",
             headers={"Authorization": f"Bearer {RUNPOD_API_KEY}"},
@@ -90,9 +76,17 @@ def call_runpod(messages: list) -> str:
         result = status_response.json()
 
         if result["status"] == "COMPLETED":
-            # Extract the assistant's message from the OpenAI-format response
             output = result.get("output", {})
-            choices = output.get("choices", [])
+
+            # Handle both dict and list output formats
+            if isinstance(output, list):
+                if len(output) > 0 and isinstance(output[0], dict):
+                    choices = output[0].get("choices", [])
+                else:
+                    return str(output)
+            else:
+                choices = output.get("choices", [])
+
             if choices:
                 return choices[0]["message"]["content"]
             return "No response generated."
@@ -105,7 +99,7 @@ def call_runpod(messages: list) -> str:
     return "Error: Request timed out."
 
 
-@https_fn.on_call()
+@https_fn.on_call(enforce_app_check=False, timeout_sec=300)
 def chat(req: https_fn.CallableRequest) -> dict:
     """
     Main endpoint called by the iOS app.
@@ -151,7 +145,7 @@ def chat(req: https_fn.CallableRequest) -> dict:
 
         messages = [system_message] + chat_history + [{"role": "user", "content": prompt}]
 
-        # 5. Call RunPod
+
         response_text = call_runpod(messages)
 
         return {"response": response_text}
