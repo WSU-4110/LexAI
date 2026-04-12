@@ -24,7 +24,6 @@ index = pc.Index(INDEX_NAME)
 
 
 def embed_query(query_text: str) -> list:
-    """Embed the user's query using Pinecone's inference API."""
     embeddings_response = pc.inference.embed(
         model=EMBED_MODEL,
         inputs=[query_text],
@@ -34,7 +33,6 @@ def embed_query(query_text: str) -> list:
 
 
 def query_pinecone(query_embedding: list, top_k: int = 5) -> list:
-    """Query Pinecone for the most relevant legislation chunks."""
     results = index.query(
         vector=query_embedding,
         top_k=top_k,
@@ -44,7 +42,6 @@ def query_pinecone(query_embedding: list, top_k: int = 5) -> list:
 
 
 def call_runpod(messages: list) -> str:
-    """Send the full prompt to RunPod and wait for the response."""
     run_response = requests.post(
         f"https://api.runpod.ai/v2/{RUNPOD_ENDPOINT_ID}/run",
         headers={
@@ -66,7 +63,7 @@ def call_runpod(messages: list) -> str:
     run_response.raise_for_status()
     job_id = run_response.json()["id"]
 
-    # Poll for completion (max ~5 minutes)
+    # Poll for completion, max 5 minutes
     for _ in range(150):
         status_response = requests.get(
             f"https://api.runpod.ai/v2/{RUNPOD_ENDPOINT_ID}/status/{job_id}",
@@ -101,19 +98,6 @@ def call_runpod(messages: list) -> str:
 
 @https_fn.on_call(enforce_app_check=False, timeout_sec=300)
 def chat(req: https_fn.CallableRequest) -> dict:
-    """
-    Main endpoint called by the iOS app.
-
-    Expects:
-        req.data = {
-            "prompt": "user's question",
-            "chat_history": [
-                {"role": "user", "content": "..."},
-                {"role": "assistant", "content": "..."}
-            ],
-            "language": "en"  # optional
-        }
-    """
     try:
         prompt = req.data.get("prompt", "")
         chat_history = req.data.get("chat_history", [])
@@ -122,16 +106,16 @@ def chat(req: https_fn.CallableRequest) -> dict:
         if not prompt:
             return {"error": "No prompt provided"}
 
-        # 1. Embed the user's query
+
         query_embedding = embed_query(prompt)
 
-        # 2. Query Pinecone for relevant legislation
+
         relevant_chunks = query_pinecone(query_embedding, top_k=5)
 
-        # 3. Build the context string
+
         context = "\n\n---\n\n".join(relevant_chunks)
 
-        # 4. Build the full message list
+
         system_message = {
             "role": "system",
             "content": (
