@@ -13,34 +13,29 @@ struct HomeView: View {
     @State private var showToolbar = true
     @AppStorage("selectedLanguage") private var selectedLanguage: String = "English" //language storing for conversational use
     @State private var showLanguageDropdown = false
-    
-    let languages = [
-        "English",
-        "Spanish",
-        "French",
-        "Arabic",
-        "German"
-    ]
-    
+
+    private let languages = ["English", "Spanish", "French", "Arabic", "German"]
+
     var body: some View {
         NavigationStack {
             ZStack {
-                VStack{
+                VStack {
                     ChatView(selectedLanguage: $selectedLanguage)
                 }
                 
+
                 if isSidebarOpen {
                     Color.black.opacity(0.3)
                         .ignoresSafeArea()
                         .onTapGesture { isSidebarOpen = false }
                 }
                 
+
                 SidebarView(isOpen: $isSidebarOpen)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .offset(x: isSidebarOpen ? -10 : -400)
                     .animation(.easeIn(duration: 0.25), value: isSidebarOpen)
-                
-                //language selection-DropDown Box
+
                 if showLanguageDropdown {
                     VStack(alignment: .leading, spacing: 0) {
                         ForEach(languages, id: \.self) { language in
@@ -60,7 +55,6 @@ struct HomeView: View {
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 12)
                             }
-                            
                             if language != languages.last {
                                 Divider()
                             }
