@@ -1,4 +1,13 @@
-"""OpenAI translation: chat → English for RunPod; RunPod reply → UI language."""
+"""OpenAI helpers wrapping a non-English UI around an English-only RunPod model.
+
+``normalize_to_english`` batches prior turns plus the current user message into one
+structured JSON translation call (stable indices, translation-only system prompt).
+``translate_english_to_ui_language`` maps the assistant's English reply back to the
+client's display language. English UI skips both calls.
+
+Model id: ``OPENAI_TRANSLATION_MODEL`` (default ``gpt-5.1``). ``_chat_complete`` tries
+``max_completion_tokens`` first, then falls back to ``max_tokens`` for older SDK shapes.
+"""
 
 from __future__ import annotations
 
@@ -8,6 +17,7 @@ from typing import Any
 
 from openai import OpenAI
 
+# System prompts: batch in (_BATCH_SYSTEM) vs single assistant string out (_OUT_SYSTEM_TEMPLATE).
 _BATCH_SYSTEM = """You translate legal app chat fragments to English for a downstream English-only legal model.
 
 Rules:
@@ -26,11 +36,13 @@ Rules:
 
 
 def is_ui_english(language: str | None) -> bool:
+    """True when the client is using English; skips translation in/out."""
     s = (language or "").strip().lower()
     return s in ("english", "en", "")
 
 
 def _client() -> OpenAI:
+    """Configured OpenAI client; requires ``OPENAI_API_KEY`` in the environment."""
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
         raise RuntimeError("OPENAI_API_KEY is not set")
@@ -38,10 +50,12 @@ def _client() -> OpenAI:
 
 
 def translation_model() -> str:
+    """Model id for translation calls (not the RunPod legal model)."""
     return os.environ.get("OPENAI_TRANSLATION_MODEL", "gpt-5.1").strip()
 
 
 def require_openai_if_translating(ui_language: str) -> None:
+    """Fail fast before RAG/RunPod when non-English UI is selected but no API key is bound."""
     if is_ui_english(ui_language):
         return
     if not os.environ.get("OPENAI_API_KEY"):
@@ -54,6 +68,7 @@ def _chat_complete(
     messages: list[dict[str, str]],
     json_object: bool,
 ) -> str:
+    """One chat.completions call; ``json_object=True`` for batch translate payloads."""
     model = translation_model()
     kwargs: dict[str, Any] = {
         "model": model,
@@ -63,6 +78,7 @@ def _chat_complete(
     if json_object:
         kwargs["response_format"] = {"type": "json_object"}
     try:
+        # Newer OpenAI Python SDK uses max_completion_tokens.
         resp = client.chat.completions.create(**kwargs, max_completion_tokens=8192)
     except TypeError:
         resp = client.chat.completions.create(**kwargs, max_tokens=8192)
@@ -75,7 +91,11 @@ def normalize_to_english(
     current_prompt: str,
     ui_language: str,
 ) -> tuple[list[dict[str, str]], str]:
-    """Return (chat_history with English contents, English current user prompt)."""
+    """Return ``(history_en, prompt_en)`` for RunPod.
+
+    Non-English: one batched JSON object over all segments so roles stay aligned with
+    translated text. Validates that every input index ``i`` is returned exactly once.
+    """
     history: list[dict[str, str]] = []
     for m in chat_history:
         if not isinstance(m, dict):
@@ -131,6 +151,7 @@ def normalize_to_english(
 
 
 def translate_english_to_ui_language(text: str, ui_language: str) -> str:
+    """Map RunPod's English assistant string to the UI language; no-op for English."""
     if is_ui_english(ui_language):
         return text
     client = _client()
