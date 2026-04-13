@@ -6,6 +6,7 @@ struct HomeView: View {
     @State private var showToolbar = true
     @AppStorage("selectedLanguage") private var selectedLanguage: String = "English" //language storing for conversational use
     @State private var showLanguageDropdown = false
+    @EnvironmentObject var firebaseManager: FirebaseManager
 
     private let languages = ["English", "Spanish", "French", "Arabic", "German"]
 
@@ -14,6 +15,7 @@ struct HomeView: View {
             ZStack {
                 VStack {
                     ChatView(selectedLanguage: $selectedLanguage)
+                        .environmentObject(firebaseManager)
                 }
                 
 
