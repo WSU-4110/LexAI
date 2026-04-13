@@ -27,9 +27,13 @@ Functionalities:
 Contributors:
 
 **Hassan Alkhafaji** | Team Lead - Task organization, backend setup, authentication, GitHub workflow management, merge conflict resolution 
+
 **Sara Al-hachami** | Frontend Developer - Sidebar navigation system (`SideBarView.swift`), chat interface (`ChatView.swift`), integration between components, GitHub assistance 
+
 **Mirshod Sobirov** | Backend Developer - Michigan legislation API integration, JSON data structuring, text chunking logic (`chunk_text.py`), legal disclaimer implementation 
+
 **Ayaan Amir** | Backend/AI Developer - Firebase functions, translation pipeline, response handling logic, chat response integration (`ChatView.swift`) 
+
 **Leah Hashwi** | UI/Document Processing Developer - document scanning and upload, UI layout improvements (`HomeView.swift`, `ChatView.swift`), testing and refinement 
 
 
