@@ -299,11 +299,16 @@ struct SideBarView: View {
                         .font(.system(size: 15, weight: .medium))
                     Spacer()
                 }
-                .foregroundStyle(.primary)
+                .foregroundStyle(.white)
                 .padding(.horizontal, 14)
                 .padding(.vertical, 11)
+                .background(
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .fill(Color("grape"))
+                )
+                .shadow(color: Color("grape").opacity(0.28), radius: 8, x: 0, y: 4)
             }
-            .buttonStyle(NewChatButtonStyle())
+            .buttonStyle(.plain)
             .padding(.horizontal, 16)
             .padding(.bottom, 8)
 

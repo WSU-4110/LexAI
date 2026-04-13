@@ -9,6 +9,7 @@ struct HomeView: View {
 
     @StateObject private var sidebarVM = SidebarViewModel()
     @State private var messages: [ChatMessage] = []
+    @State private var chatViewResetID = UUID()
 
     private let languages = ["English", "Spanish", "French", "Arabic", "German"]
 
@@ -18,6 +19,7 @@ struct HomeView: View {
                 ZStack(alignment: .leading) {
                     VStack {
                         ChatView(messages: $messages, selectedLanguage: $selectedLanguage)
+                            .id(chatViewResetID)
                     }
 
                     if isSidebarOpen {
@@ -27,9 +29,9 @@ struct HomeView: View {
                     }
 
                     SideBarView(isOpen: $isSidebarOpen, vm: sidebarVM, onNewChat: {
-                        // SideBarView already called vm.newSession() internally —
-                        // just clear the message thread to match the fresh session.
+                        // Reset both chat data and local ChatView state for a true fresh thread.
                         messages = []
+                        chatViewResetID = UUID()
                     })
                     .frame(width: geo.size.width * 0.80)
                     .offset(x: isSidebarOpen ? 0 : -(geo.size.width * 0.80))
