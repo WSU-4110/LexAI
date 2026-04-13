@@ -8,9 +8,9 @@
 import Foundation
 import Combine
 import FirebaseAuth
-import FirebaseFirestore // new import
+import FirebaseFirestore
 
-//changed class name + filename to FirebaseManager - Mirshod
+
 class FirebaseManager: ObservableObject {
     
     @Published var user: User?

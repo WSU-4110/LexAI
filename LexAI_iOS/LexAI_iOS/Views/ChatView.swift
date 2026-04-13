@@ -5,6 +5,7 @@
 
 import SwiftUI
 import FirebaseFunctions
+import FirebaseAuth
 
 private let bottomAnchorId = "bottom"
 
@@ -16,7 +17,7 @@ struct ChatView: View {
 
     @Binding var selectedLanguage: String // language in conversation
     @EnvironmentObject var firebaseManager: FirebaseManager
-    @Environment(/.scenePhase) private var scenePhase // to detect app exit
+    @Environment(\.scenePhase) private var scenePhase // to detect app exit
 
     private let functions = Functions.functions()
 
@@ -60,13 +61,13 @@ struct ChatView: View {
             }
             #endif
         }
-        // triger 1: user leaves the view (new chat)
+        // trigger 1: user leaves the view (new chat)
         .onDisappear {
             saveChatIfNeeded()
         }
 
         // trigger 2: app goes to background or is killed
-        .onChange(of: scenePhase) { , newPhase in 
+        .onChange(of: scenePhase) { _, newPhase in
             if newPhase == .background || newPhase == .inactive {
                 saveChatIfNeeded()
             }
@@ -76,21 +77,22 @@ struct ChatView: View {
     // MARK: - Save chat
     private func saveChatIfNeeded() {
         guard !messages.isEmpty else { return }
+        guard let userId = firebaseManager.user?.uid else { return }
 
         // Build a readable transcript from the message array
         let transcript = messages
             .map { ($0.isFromUser ? "User" : "LexAI") + ": " + $0.text }
             .joined(separator: "\n")
 
-        let chatPrompt = FirebaseManager.ChatPrompt(
+        let chatPrompt = ChatPrompt(
             prompt: transcript,
             documents: [],
             location: "",
             language: selectedLanguage,
-            user: firebaseManager.user?.uid ?? "anonymous"
+            user: userId
         )
 
-        firebaseManager.saveChat(prompt: chatPrompt)
+        firebaseManager.saveChat(prompt: chatPrompt) { _ in }
     }
 
     private var messageList: some View {
@@ -146,7 +148,6 @@ struct ChatView: View {
                         .resizable()
                         .frame(width: 35, height: 35)
                         .foregroundStyle(inputText.isEmpty ? Color.white.opacity(0.6) : Color.white)
-                    
                 }
                 .disabled(inputText.isEmpty || isAwaitingReply)
                 .padding(.bottom, 4)
@@ -211,7 +212,7 @@ struct ChatView: View {
 private struct MessageBubbleView: View {
 
     let message: ChatMessage
-    
+
     var body: some View {
         HStack(alignment: .top) {
             if message.isFromUser { Spacer(minLength: 48) }
