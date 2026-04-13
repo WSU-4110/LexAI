@@ -13,9 +13,7 @@ struct ChatView: View {
     @State private var inputText: String = ""
     @State private var showScanDocuments = false
     @State private var isAwaitingReply = false
-
-    @Binding var selectedLanguage: String // language in conversation
-
+    @Binding var selectedLanguage: String
     private let functions = Functions.functions()
 
     var body: some View {
@@ -89,16 +87,16 @@ struct ChatView: View {
         VStack {
             HStack(alignment: .bottom, spacing: 12) {
                 Button(action: { showScanDocuments = true }) {
-                    Image(systemName: "camera")
+                    Image(systemName: "document.viewfinder")
                         .resizable()
                         .frame(width: 35, height: 35)
+                        .fontWeight(.semibold)
                         .foregroundStyle(Color.white)
+                        .shadow(radius: 8, x: 0, y: 8)
                 }
                 .padding(.bottom, 4)
-                .padding(.leading, 20)
 
-                
-                TextField(getLocalizedPlaceholder(), text: $inputText, axis: .vertical)
+                TextField(ChatPlaceholderText.placeholder(forSelectedLanguage: selectedLanguage), text: $inputText, axis: .vertical)
                     .textFieldStyle(.plain)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 10)
@@ -119,30 +117,14 @@ struct ChatView: View {
                 .padding(.bottom, 4)
 
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
+            .padding(.horizontal, 4)
             .padding(.top)
         }
     }
 
-    private func getLocalizedPlaceholder() -> String {
-        switch selectedLanguage {
-        case "Spanish":
-            return "Mensaje..."
-        case "French":
-            return "Message..."
-        case "Arabic":
-            return "رسالة..."
-        case "German":
-            return "Nachricht..."
-        default:
-            return "Message..."
-        }
-    }
-
     private func sendMessage() {
-        let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !text.isEmpty else { return }
+        let text = ChatInputValidator.trimmedMessage(inputText)
+        guard ChatInputValidator.shouldSendMessage(inputText) else { return }
 
         inputText = ""
         messages.append(ChatMessage(text: text, isFromUser: true))
@@ -155,28 +137,37 @@ struct ChatView: View {
                 let reply = try await generateAnswer(prompt: text, targetLanguage: selectedLanguage)
                 messages.append(ChatMessage(text: reply, isFromUser: false))
             } catch {
-                messages.append(ChatMessage(text: "Reply error: \(error.localizedDescription)", isFromUser: false))
+                messages.append(
+                    ChatMessage(text: ChatReplyErrorFormatter.replyErrorMessage(for: error), isFromUser: false)
+                )
             }
         }
     }
 
     private func generateAnswer(prompt: String, targetLanguage: String) async throws -> String {
-        let callable = functions.httpsCallable("generateAnswer")
-        let result = try await callable.call([
-            "prompt": prompt,
-            "targetLanguage": targetLanguage,
-        ])
+        let callable = functions.httpsCallable("chat")
 
-        guard
-            let data = result.data as? [String: Any],
-            let displayText = data["displayText"] as? String
-        else {
-            throw NSError(domain: "LexAI.GenerateAnswer", code: 1, userInfo: [
-                NSLocalizedDescriptionKey: "Invalid reply response payload",
-            ])
+        // Build chat history from previous messages (exclude the one we just added)
+        let chatHistory: [[String: String]] = messages.dropLast().map { msg in
+            ["role": msg.isFromUser ? "user" : "assistant", "content": msg.text]
         }
 
-        return displayText
+        let result = try await callable.call([
+            "prompt": prompt,
+            "chat_history": chatHistory,
+            "language": targetLanguage,
+        ])
+
+        // Parse the response
+        if let data = result.data as? [String: Any],
+           let response = data["response"] as? String {
+            return response
+        } else if let data = result.data as? [String: Any],
+                  let error = data["error"] as? String {
+            throw NSError(domain: "LexAI", code: -1, userInfo: [NSLocalizedDescriptionKey: error])
+        }
+
+        throw NSError(domain: "LexAI", code: -1, userInfo: [NSLocalizedDescriptionKey: "Unable to parse response"])
     }
 }
 
@@ -206,4 +197,3 @@ private struct MessageBubbleView: View {
     @Previewable @State var selectedLanguage = "English"
     return ChatView(selectedLanguage: $selectedLanguage)
 }
-

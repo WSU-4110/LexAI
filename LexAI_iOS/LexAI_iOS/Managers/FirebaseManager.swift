@@ -46,17 +46,10 @@ class FirebaseManager: ObservableObject {
         }
     }
 
-    // struct for storing chats
-    struct ChatPrompt{
-        let prompt: String
-        let documents: [String]
-        let location: String
-        let language: String
-        let user: String
-    }
+   
 
     // MARK: -chat storage - mirshod 3/13
-    func saveChat(prompt: ChatPrompt) {
+    func saveChat(prompt: ChatPrompt, completion: @escaping (Bool) -> Void) {
         let db = Firestore.firestore()
 
         let data: [String: Any] = [
@@ -71,13 +64,62 @@ class FirebaseManager: ObservableObject {
         db.collection("chatHistory").addDocument(data: data) { error in
             if let error = error {
                 print("Error saving chat: \(error)")
+                completion(false)
             } else{
                 print("Chat successfully saved.")
+                completion(true)
             }
         }
     }
+
+    // MARK: - fetching chats (could be used in sidebar) - mirshod 3/24
+    func fetchChats(userId: String, completion: @escaping ([ChatPrompt]) -> Void) {
+        let db = Firestore.firestore()
+
+        db.collection("chatHistory")
+            .whereField("user", isEqualTo: userId)
+            .getDocuments { snapshot, error in
+                var chats: [ChatPrompt] = []
+
+                if let documents = snapshot?.documents {
+                    for doc in documents {
+                        let data = doc.data()
+
+                        let chat = ChatPrompt(
+                            prompt: data["prompt"] as? String ?? "",
+                            documents: data["documents"] as? [String] ?? [],
+                            location: data["location"] as? String ?? "",
+                            language: "",
+                            user: data["user"] as? String ?? ""
+                        )
+                        chats.append(chat)
+                    }
+                }
+                completion(chats)
+            }
+    }
+
+    // MARK: - deleting a chat - mirshod 3/24
+    func deleteChat(chatId: String, completion: @escaping (Bool) -> Void) {
+        let db = Firestore.firestore()
+        db.collection("chatHistory")
+            .document(chatId)
+            .delete { error in 
+                completion(error == nil)
+            }
+    }
+
+    // MARK - updating chat storage - mirshod 3/24
+    func updateChat(chatId: String, newPrompt: String, completion: @escaping (Bool) -> Void) {
+        let db = Firestore.firestore()
+
+        db.collection("chatHistory")
+            .document(chatId)
+            .updateData(["prompt": newPrompt]) { error in
+                completion(error == nil)
+            }
+    }
     
-    // MARK: - Sign Up
     
     func signUp(email: String, password: String) async {
         isLoading = true
@@ -94,8 +136,14 @@ class FirebaseManager: ObservableObject {
         isLoading = false
     }
     
-    // MARK: - Sign In
+//    Import XCTests
+//    Add the special tag over the Test function
+//    Create a function definition that will call the function your testing with mock data
+//    Test failures
+//    Test successes
     
+    
+    @MainActor
     func signIn(email: String, password: String) async {
         isLoading = true
         errorMessage = nil
@@ -104,15 +152,17 @@ class FirebaseManager: ObservableObject {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.user = result.user
             self.isAuthenticated = true
+            print("*****Successfully signed in")
+
         } catch {
             self.errorMessage = mapFirebaseError(error)
+            print("SIGN IN ERROR: \(error)")  // Add this to see the real error
         }
         
         isLoading = false
     }
     
-    // MARK: - Sign Out
-    
+    @MainActor
     func signOut() {
         do {
             try Auth.auth().signOut()
@@ -123,7 +173,7 @@ class FirebaseManager: ObservableObject {
         }
     }
     
-    // MARK: - Error Mapping
+    
     
     private func mapFirebaseError(_ error: Error) -> String {
         let nsError = error as NSError
@@ -150,4 +200,14 @@ class FirebaseManager: ObservableObject {
             return error.localizedDescription
         }
     }
+}
+
+
+// struct for storing chats
+struct ChatPrompt{
+    let prompt: String
+    let documents: [String]
+    let location: String
+    let language: String
+    let user: String
 }

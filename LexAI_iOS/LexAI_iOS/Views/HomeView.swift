@@ -1,10 +1,3 @@
-//
-//  HomeView.swift
-//  LexAI_iOS
-//
-//  Created by Hassan Alkhafaji on 2/17/26.
-//
-
 import SwiftUI
 
 struct HomeView: View {
@@ -31,7 +24,7 @@ struct HomeView: View {
                 }
                 
 
-                SidebarView(isOpen: $isSidebarOpen)
+                SideBarView(isOpen: $isSidebarOpen, vm: SidebarViewModel())
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .offset(x: isSidebarOpen ? -10 : -400)
                     .animation(.easeIn(duration: 0.25), value: isSidebarOpen)
@@ -74,17 +67,14 @@ struct HomeView: View {
             .toolbar {
                 
                 ToolbarItem(placement: .navigationBarLeading) {
-                    if showToolbar {
+                    if !isSidebarOpen {
                         Button {
-                            isSidebarOpen.toggle()
-                            showToolbar.toggle()
+                            isSidebarOpen = true
                         } label: {
                             Image(systemName: "line.horizontal.3")
                         }
                     }
                 }
-                
-                //Addition of globe for Dropdown menu selection
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         showLanguageDropdown.toggle()
@@ -94,6 +84,9 @@ struct HomeView: View {
                     }
                 }
                 
+            }
+            .overlay {
+                LegalDisclaimerAlert()
             }
         }
     }

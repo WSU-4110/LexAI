@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var authManager = AuthManager()
+    @StateObject var authManager = FirebaseManager()
     
     var body: some View {
         Group {

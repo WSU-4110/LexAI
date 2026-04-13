@@ -1,7 +1,10 @@
-# User-specific Xcode metadata (per-developer, should not be shared)
+# Xcode — LexAI_iOS/ subtree root (nested app target uses LexAI_iOS/LexAI_iOS/.gitignore)
+build/
+DerivedData/
 xcuserdata/
 *.xcuserstate
 *.xcuserdatad/
 
-# Google Firebase config (contains API keys)
+# Firebase iOS client config (contains API keys; use a plist template or CI secret)
 GoogleService-Info.plist
+build/
