@@ -15,6 +15,8 @@ struct ChatView: View {
     @State private var isAwaitingReply = false
 
     @Binding var selectedLanguage: String // language in conversation
+    @EnvironmentObject var firebaseManager: FirebaseManager
+    @Environment(/.scenePhase) private var scenePhase // to detect app exit
 
     private let functions = Functions.functions()
 
@@ -58,6 +60,37 @@ struct ChatView: View {
             }
             #endif
         }
+        // triger 1: user leaves the view (new chat)
+        .onDisappear {
+            saveChatIfNeeded()
+        }
+
+        // trigger 2: app goes to background or is killed
+        .onChange(of: scenePhase) { , newPhase in 
+            if newPhase == .background || newPhase == .inactive {
+                saveChatIfNeeded()
+            }
+        }
+    }
+
+    // MARK: - Save chat
+    private func saveChatIfNeeded() {
+        guard !messages.isEmpty else { return }
+
+        // Build a readable transcript from the message array
+        let transcript = messages
+            .map { ($0.isFromUser ? "User" : "LexAI") + ": " + $0.text }
+            .joined(separator: "\n")
+
+        let chatPrompt = FirebaseManager.ChatPrompt(
+            prompt: transcript,
+            documents: [],
+            location: "",
+            language: selectedLanguage,
+            user: firebaseManager.user?.uid ?? "anonymous"
+        )
+
+        firebaseManager.saveChat(prompt: chatPrompt)
     }
 
     private var messageList: some View {
@@ -201,5 +234,6 @@ private struct MessageBubbleView: View {
 #Preview {
     @Previewable @State var selectedLanguage = "English"
     return ChatView(selectedLanguage: $selectedLanguage)
+        .environmentObject(FirebaseManager())
 }
 
