@@ -1,38 +1,42 @@
-#Github and git
+LexAI
 
-CSC4110 Term Project - LexAI
+Purpose:
+LexAI is a macOS application that helps people in the United States navigate legal information when they struggle with English as their primary language. 
+The application provides an accessible way for non-English speakers to understand legal information, 
+ask questions about their rights, and analyze legal documents in a language they are comfortable with.
+It also provides an intuitive interface, document handling, and multilingual support that could assist legal professionals with their clients.
 
-Hassan Alkhafaji - hq3720
+Functionalities:
 
-## Server-side deployment (Firebase Cloud Functions)
+1. **Sidebar Navigation System** - Users can easily navigate between different sections of the app including new chat sessions, chat history, document upload, and settings using `SideBarView.swift`.
 
-This repo includes a Firebase Callable Function used by the iOS app for culturally-aware translation:
+2. **Chat Interface** - Users can ask legal questions and receive AI-generated responses. The chat supports session handling, clearing chat history, and saving conversations using `ChatView.swift`.
 
-- **Function**: `translateText` (region: `us-central1`)
-- **Auth**: required (callable will return `unauthenticated` if the user is not signed in)
-- **Env vars required in Cloud**:
-  - `OPENAI_API_KEY`
-  - `OPENAI_TRANSLATION_MODEL` (optional, defaults to `gpt-4.1-mini`)
-  - `TRANSLATION_PROVIDER` (optional, defaults to `chatgpt`)
+3. **Multilingual Translation Pipeline** - Responses are automatically translated to support non-English users, making legal information accessible across language barriers.
 
-### Deploy steps
+4. **Legal Document Upload & Processing** - Users can scan and upload documents (such as lease agreements, court notices, or legal forms) using `parse_pdf.py` for text extraction and analysis.
 
-1. Ensure you’re logged into Firebase and have a project selected:
+5. **Michigan Legislation Data Retrieval** - The app fetches and structures real legislation data from Michigan using external APIs, storing results in JSON format (`bill_text.json`, `bill_details.json`).
 
-```bash
-npx -y firebase-tools@latest login
-npx -y firebase-tools@latest use --add <FIREBASE_PROJECT_ID>
-```
+6. **Data Chunking for Processing** - Legal text is split into smaller, manageable segments using `chunk_text.py` to enable efficient embedding and AI processing.
 
-2. Set the required environment variables **server-side** (do not commit secrets).
-   - Configure `OPENAI_API_KEY` for the deployed function using your preferred secure method (e.g. Google Cloud Secret Manager / Firebase secrets, or Cloud Functions environment variables).
+7. **Legal Disclaimer on First Launch** - A disclaimer (`disclaimer.swift`) informs users that LexAI is not a substitute for professional legal advice.
 
-3. Deploy Functions:
+8. **Firebase Authentication & Backend** - User authentication and backend services are supported through Firebase integration.
 
-```bash
-cd functions
-npm ci
-npm run deploy
-```
+Contributors:
 
-See `functions/README.md` for emulator-first local testing instructions.
+**Hassan Alkhafaji** | Team Lead - Task organization, backend setup, authentication, GitHub workflow management, merge conflict resolution 
+
+**Sara Al-hachami** | Frontend Developer - Sidebar navigation system (`SideBarView.swift`), chat interface (`ChatView.swift`), integration between components, GitHub assistance 
+
+**Mirshod Sobirov** | Backend Developer - Michigan legislation API integration, JSON data structuring, text chunking logic (`chunk_text.py`), legal disclaimer implementation 
+
+**Ayaan Amir** | Backend/AI Developer - Firebase functions, translation pipeline, response handling logic, chat response integration (`ChatView.swift`) 
+
+**Leah Hashwi** | UI/Document Processing Developer - document scanning and upload, UI layout improvements (`HomeView.swift`, `ChatView.swift`), testing and refinement 
+
+
+
+
+

@@ -9,6 +9,10 @@ import SwiftUI
 import Vision
 import VisionKit
 
+///View for scanning documents
+///-displays a scanned text preview
+///-user can scan documents  and add scanned text back to the chat
+
 struct ScanDocumentsView: UIViewControllerRepresentable {
     @Binding var isPresented: Bool
     var onTextAdded: ((String) -> Void)?
@@ -39,9 +43,12 @@ struct ScanDocumentsView: UIViewControllerRepresentable {
             _ controller: VNDocumentCameraViewController,
             didFinishWith scan: VNDocumentCameraScan
         ) {
+            //Process the scan
             var scannedText = ""
             for pageIndex in 0..<scan.pageCount {
                 let image = scan.imageOfPage(at: pageIndex)
+                
+                //To extract the text from the scan
                 if let text = extractText(from: image) {
                     scannedText += text + "\n"
                 }
@@ -68,7 +75,7 @@ struct ScanDocumentsView: UIViewControllerRepresentable {
 
         private func extractText(from image: UIImage) -> String? {
             guard let cgImage = image.cgImage else { return nil }
-
+            
             let request = VNRecognizeTextRequest()
             request.recognitionLevel = .accurate
 
@@ -105,4 +112,3 @@ struct ScanDocumentsPreviewWrapper: View {
 #Preview {
     ScanDocumentsPreviewWrapper()
 }
-
