@@ -60,6 +60,10 @@ struct ChatView: View {
                         MessageBubbleView(message: message)
                     }
 
+                    if isAwaitingReply {
+                        ThinkingBubbleView()
+                            .transition(.opacity.combined(with: .scale(scale: 0.8)))
+                    }
                     Color.clear
                         .frame(height: 8)
                         .id(bottomAnchorId)
