@@ -18,11 +18,11 @@ Supported MacOS Versions:
 - macOS 15 (Sequoia)
 
 Pre-installations: 
-Step 1: Install Xcode
-Step 2: Install node.js | https://nodejs.org/en/ 
-Step 3: Install git | https://git-scm.com/downloads
-Step 4: Install python 3.9+ | python.org/downloads
-Step 5: Request to be added as a FireBase project member and download the GoogleService-Info.plist
+1.) Xcode
+2.) node.js | https://nodejs.org/en/ 
+3.) Git | https://git-scm.com/downloads
+4.) Python 3.9+ | python.org/downloads
+5.) Request to be added as a FireBase project member and download the GoogleService-Info.plist
 
 Instructions to build and Install the Software
 Step 1: Verify you have all prerequisite and pre-installations to build the project.
@@ -33,25 +33,28 @@ Step 2: Clone the repository | https://github.com/WSU-4110/LexAI.git
 Step 3: Open XCode.
 Step 4: Drop the GoogleService-Info.plist into the LexAI_IOS main folder 
 Step 5: Install Python Dependencies
-# Navigate to backend directory
+- Navigate to backend directory
 cd backend
 
-# Make an environment
+- Create a virtual environment (recommended)
 python3 -m venv venv
 
-# Activate the virtual environment
+- Activate the virtual environment
 source venv/bin/activate
 
-# Install required packages
-pip3 install requests
+- Install required packages
+pip3 install requests>=2.31.0
+pip3 install python-dotenv
+pip3 install firebase-functions>=0.1.0
+pip3 install firebase-admin>=6.0.0
+pip3 install pinecone>=5.0.0
 pip3 install json5
 pip3 install PyPDF2
-pip3 install python-dotenv
 
-# If a requirements.txt file exists, use:
-# pip3 install -r requirements.txt
+- If a requirements.txt file exists, use:
+- pip3 install -r requirements.txt
 
-# Deactivate the virtual environment when done
+- Deactivate the virtual environment when done
 deactivate
 
 Step 6: Locate the "Build" button on the top of the screen of XCode and press it to build the application.
