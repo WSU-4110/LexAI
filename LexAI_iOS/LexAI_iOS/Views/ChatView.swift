@@ -16,6 +16,7 @@ struct ChatView: View {
     @Binding var selectedLanguage: String
     private let functions = Functions.functions()
 
+    //Defines the main chat interface layout, including the title, message list, and input bar.
     var body: some View {
         VStack(spacing: 0) {
             Text("LexAI")
@@ -58,6 +59,7 @@ struct ChatView: View {
         }
     }
 
+    //Makes a scrollable list of chat messages with automatic scrolling to the bottom
     private var messageList: some View {
         ScrollViewReader { proxy in
             ScrollView {
@@ -83,6 +85,7 @@ struct ChatView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
+    //Makes the input bar with scan document button, text field, and send button
     private var inputBar: some View {
         VStack {
             HStack(alignment: .bottom, spacing: 12) {
@@ -122,6 +125,7 @@ struct ChatView: View {
         }
     }
 
+    //Sends the user's message, validates input, and handles the AI response asynchronously
     private func sendMessage() {
         let text = ChatInputValidator.trimmedMessage(inputText)
         guard ChatInputValidator.shouldSendMessage(inputText) else { return }
@@ -144,10 +148,11 @@ struct ChatView: View {
         }
     }
 
+    //Calls the Firebase function to generate an AI response based on the prompt and chat history
     private func generateAnswer(prompt: String, targetLanguage: String) async throws -> String {
         let callable = functions.httpsCallable("chat")
 
-        // Build chat history from previous messages (exclude the one we just added)
+        //Build chat history from previous messages (exclude the one we just added)
         let chatHistory: [[String: String]] = messages.dropLast().map { msg in
             ["role": msg.isFromUser ? "user" : "assistant", "content": msg.text]
         }
@@ -177,6 +182,7 @@ private struct MessageBubbleView: View {
 
     let message: ChatMessage
     
+    //Defines the layout for displaying a single chat message bubble
     var body: some View {
         HStack(alignment: .top) {
             if message.isFromUser { Spacer(minLength: 48) }

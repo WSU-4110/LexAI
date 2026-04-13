@@ -9,6 +9,7 @@ struct HomeView: View {
 
     private let languages = ["English", "Spanish", "French", "Arabic", "German"]
 
+    //Defines the main view layout, including the chat view, sidebar, and language dropdown
     var body: some View {
         NavigationStack {
             ZStack {
