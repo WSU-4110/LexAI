@@ -1,26 +1,49 @@
+"""Firebase callable entrypoint for LexAI chat.
+
+Pipeline: optional translation of user + history into English, embed the English prompt,
+retrieve Michigan legislation chunks from Pinecone, call the English-only RunPod legal
+model, then translate the assistant reply back to the client's UI language when needed.
+
+Pinecone is initialized lazily so deploy-time import/discovery does not require
+``PINECONE_API_KEY`` until a request actually runs.
+"""
+
 import os
 import threading
 import time
+from typing import Any
+
 import requests
 from firebase_functions import https_fn
 from firebase_functions.params import SecretParam, StringParam
 from firebase_admin import initialize_app
 from pinecone import Pinecone
 from dotenv import load_dotenv
-from typing import Any
+
+from openai_translate import (
+    normalize_to_english,
+    require_openai_if_translating,
+    translate_english_to_ui_language,
+)
 
 load_dotenv()
 
-# --- Secret Manager params (injected into os.environ at request time) ---
+# --- Secret Manager (bind in @https_fn.on_call); runtime values appear in os.environ ---
 OPENAI_API_KEY = SecretParam("OPENAI_API_KEY")
 PINECONE_API_KEY = SecretParam("PINECONE_API_KEY")
 RUNPOD_API_KEY = SecretParam("RUNPOD_API_KEY")
 
-# --- Deploy-time / runtime params ---
+# --- Deploy-time / runtime params (non-secret); also read from lexai-functions/.env on deploy ---
 RUNPOD_ENDPOINT_ID = StringParam(
     "RUNPOD_ENDPOINT_ID",
     label="RunPod endpoint ID",
-    description="Serverless endpoint ID from the RunPod console.",
+    description="Serverless endpoint ID from the RunPod console (v2 API path segment).",
+)
+OPENAI_TRANSLATION_MODEL = StringParam(
+    "OPENAI_TRANSLATION_MODEL",
+    default="gpt-5.1",
+    label="OpenAI translation model",
+    description="Model id for translating non-English UI around RunPod.",
 )
 
 INDEX_NAME = "michigan-legislation"
@@ -34,7 +57,7 @@ _PINECONE_LOCK = threading.Lock()
 
 
 def _get_pinecone() -> tuple[Pinecone, Any]:
-    """Lazy Pinecone init so secrets are available at request time, not import time."""
+    """Lazy Pinecone client; thread-safe init for concurrent invocations."""
     global _PINECONE_CLIENT, _PINECONE_INDEX
     if _PINECONE_CLIENT is not None and _PINECONE_INDEX is not None:
         return _PINECONE_CLIENT, _PINECONE_INDEX
@@ -79,7 +102,7 @@ def _legislation_text_from_metadata(metadata: Any) -> str:
 
 def query_pinecone(query_embedding: list, top_k: int = 5) -> list:
     _, index = _get_pinecone()
-    # Prefer chunk vectors (embed_and_store sets chunk_idx). If index has no chunk_idx, fall back to unfiltered query.
+    # Prefer chunk vectors (embed_and_store sets chunk_idx). If index has no chunk_idx, fall back unfiltered.
     for use_chunk_filter in (True, False):
         kwargs: dict[str, Any] = {
             "vector": query_embedding,
@@ -102,6 +125,7 @@ def query_pinecone(query_embedding: list, top_k: int = 5) -> list:
 
 
 def call_runpod(messages: list) -> str:
+    """POST to RunPod serverless ``/run``, then poll ``/status`` until COMPLETED or timeout."""
     endpoint_id = (os.environ.get("RUNPOD_ENDPOINT_ID") or "").strip()
     runpod_key = (os.environ.get("RUNPOD_API_KEY") or "").strip()
     if not endpoint_id:
@@ -142,7 +166,6 @@ def call_runpod(messages: list) -> str:
         if result["status"] == "COMPLETED":
             output = result.get("output", {})
 
-            # Handle both dict and list output formats
             if isinstance(output, list):
                 if len(output) > 0 and isinstance(output[0], dict):
                     choices = output[0].get("choices", [])
@@ -169,6 +192,10 @@ def call_runpod(messages: list) -> str:
     secrets=[OPENAI_API_KEY, PINECONE_API_KEY, RUNPOD_API_KEY],
 )
 def chat(req: https_fn.CallableRequest) -> dict:
+    """HTTPS callable: ``req.data`` may include ``prompt``, ``chat_history``, ``language`` (default ``en``).
+
+    Returns ``{"response": str}`` on success or ``{"error": str}`` on validation/runtime failure.
+    """
     try:
         prompt = req.data.get("prompt", "")
         chat_history = req.data.get("chat_history", [])
@@ -177,31 +204,31 @@ def chat(req: https_fn.CallableRequest) -> dict:
         if not prompt:
             return {"error": "No prompt provided"}
 
+        require_openai_if_translating(language)
 
-        query_embedding = embed_query(prompt)
+        history_en, prompt_en = normalize_to_english(chat_history, prompt, language)
 
+        query_embedding = embed_query(prompt_en)
 
         relevant_chunks = query_pinecone(query_embedding, top_k=5)
 
-
         context = "\n\n---\n\n".join(relevant_chunks)
-
 
         system_message = {
             "role": "system",
             "content": (
-                f"You are LexAI, a legal assistant specializing in Michigan legislation. "
-                f"Answer the user's question based on the following legislation excerpts. "
-                f"If the excerpts don't contain relevant information, say so honestly. "
-                f"Respond in {language}.\n\n"
+                "You are LexAI, a legal assistant specializing in Michigan legislation. "
+                "Answer the user's question based on the following legislation excerpts. "
+                "If the excerpts don't contain relevant information, say so honestly. "
+                "Write your entire answer in clear English.\n\n"
                 f"RELEVANT LEGISLATION:\n{context}"
             ),
         }
 
-        messages = [system_message] + chat_history + [{"role": "user", "content": prompt}]
+        messages = [system_message] + history_en + [{"role": "user", "content": prompt_en}]
 
-
-        response_text = call_runpod(messages)
+        response_en = call_runpod(messages)
+        response_text = translate_english_to_ui_language(response_en, language)
 
         return {"response": response_text}
 

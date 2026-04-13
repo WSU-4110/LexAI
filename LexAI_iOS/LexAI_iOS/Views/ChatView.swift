@@ -35,7 +35,7 @@ struct ChatView: View {
                     Color.white,
                     Color("grape").opacity(0.6),
                     Color("grape").opacity(0.9),
-                    Color("grape")
+                    Color("grape"),
                 ],
                 startPoint: .top,
                 endPoint: .bottom
@@ -113,6 +113,7 @@ struct ChatView: View {
     private func sendMessage() {
         let text = ChatInputValidator.trimmedMessage(inputText)
         guard ChatInputValidator.shouldSendMessage(inputText) else { return }
+
         inputText = ""
 
         messages.append(ChatMessage(text: text, isFromUser: true))
@@ -136,13 +137,15 @@ struct ChatView: View {
 
     private func generateAnswer(prompt: String, targetLanguage: String) async throws -> String {
         let callable = functions.httpsCallable("chat")
+
         let chatHistory: [[String: String]] = messages.dropLast().map { msg in
             ["role": msg.isFromUser ? "user" : "assistant", "content": msg.text]
         }
+
         let result = try await callable.call([
             "prompt": prompt,
             "chat_history": chatHistory,
-            "language": targetLanguage
+            "language": targetLanguage,
         ])
 
         if let data = result.data as? [String: Any],
