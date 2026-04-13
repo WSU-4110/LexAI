@@ -23,6 +23,7 @@ struct ChatView: View {
 
     private let functions = Functions.functions()
 
+    //Defines the main chat interface layout, including the title, message list, and input bar.
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack(spacing: 0) {
@@ -150,6 +151,7 @@ struct ChatView: View {
         .buttonStyle(.plain)
     }
 
+    //Makes a scrollable list of chat messages with automatic scrolling to the bottom
     // MARK: Message List
 
     private var messageList: some View {
@@ -176,6 +178,7 @@ struct ChatView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
+    //Makes the input bar with scan document button, text field, and send button
     // MARK: Input Bar
 
     private var inputBar: some View {
@@ -220,6 +223,7 @@ struct ChatView: View {
         .padding(.top)
     }
 
+    //Sends the user's message, validates input, and handles the AI response asynchronously
     // MARK: File Import Handler
 
     private func handleFileImport(_ result: Result<[URL], Error>) {
@@ -282,8 +286,11 @@ struct ChatView: View {
         }
     }
 
+    //Calls the Firebase function to generate an AI response based on the prompt and chat history
     private func generateAnswer(prompt: String, targetLanguage: String) async throws -> String {
         let callable = functions.httpsCallable("chat")
+
+        //Build chat history from previous messages (exclude the one we just added)
         let chatHistory: [[String: String]] = messages.dropLast().map { msg in
             ["role": msg.isFromUser ? "user" : "assistant", "content": msg.text]
         }
@@ -307,6 +314,8 @@ struct ChatView: View {
 
 private struct MessageBubbleView: View {
     let message: ChatMessage
+    
+    //Defines the layout for displaying a single chat message bubble
 
     var body: some View {
         HStack(alignment: .top) {
