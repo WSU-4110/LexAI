@@ -1,10 +1,11 @@
-//  SideBarView.swift
+//  //  SideBarView.swift
 //  LexAI_iOS
 //
 //  Sprint 3 update (Sidebar UI refinement) — Sara Al-hachami 03/31/26
 //  Simplified sidebar layout and improved visual consistency
-//  Removed placeholder sessions / list starts empty, populated by real chats
+//  Removed placeholder sessions — list starts empty, populated by real chats
 //  Added "New chat" button that closes the sidebar using `isOpen`
+//  Sprint 3.1: sidebar is now 80% width, dim overlay + shadow owned by HomeView
 
 import SwiftUI
 import Combine
@@ -108,23 +109,23 @@ final class SidebarViewModel: ObservableObject {
     @Published var selectedLanguage: SupportedLanguage = supportedLanguages[0]
     @Published var searchQuery: String = ""
 
-    // MARK: Grouped Sessions (by recency, like ChatGPT)
+    // MARK: Grouped Sessions (Today / Yesterday / Previous 7 Days / Previous 30 Days / Older)
 
     var groupedSessions: [(label: String, items: [ChatSession])] {
         let cal = Calendar.current
         let now = Date()
         let startOfToday     = cal.startOfDay(for: now)
-        let startOfYesterday = cal.date(byAdding: .day, value: -1, to: startOfToday)!
-        let startOf7Days     = cal.date(byAdding: .day, value: -7, to: startOfToday)!
+        let startOfYesterday = cal.date(byAdding: .day, value: -1,  to: startOfToday)!
+        let startOf7Days     = cal.date(byAdding: .day, value: -7,  to: startOfToday)!
         let startOf30Days    = cal.date(byAdding: .day, value: -30, to: startOfToday)!
 
         let active = filteredActiveSessions.sorted { $0.createdAt > $1.createdAt }
 
-        var today: [ChatSession]    = []
+        var today: [ChatSession]     = []
         var yesterday: [ChatSession] = []
-        var week: [ChatSession]     = []
-        var month: [ChatSession]    = []
-        var older: [ChatSession]    = []
+        var week: [ChatSession]      = []
+        var month: [ChatSession]     = []
+        var older: [ChatSession]     = []
 
         for s in active {
             if s.createdAt >= startOfToday          { today.append(s) }
@@ -255,6 +256,8 @@ final class SidebarViewModel: ObservableObject {
 }
 
 // MARK: - Main Sidebar View
+// Note: width, shadow, and dim overlay are all controlled by HomeView.
+// SideBarView is purely the panel content.
 
 struct SideBarView: View {
     @Binding var isOpen: Bool
@@ -332,7 +335,6 @@ struct SideBarView: View {
 
             // MARK: Session List
             if vm.sessions.isEmpty {
-                // Empty state — no placeholder data
                 VStack(spacing: 8) {
                     Image(systemName: "bubble.left")
                         .font(.system(size: 32))
@@ -400,7 +402,6 @@ struct SideBarView: View {
         .frame(maxHeight: .infinity)
         .background(Color(.systemBackground))
         .ignoresSafeArea(edges: .vertical)
-        // Rename alert
         .alert("Rename", isPresented: Binding(
             get: { renamingSession != nil },
             set: { if !$0 { renamingSession = nil } }
@@ -430,9 +431,7 @@ struct SideBarView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
         .background(
-            vm.activeSessionID == session.id
-                ? Color(.systemGray5)
-                : Color.clear
+            vm.activeSessionID == session.id ? Color(.systemGray5) : Color.clear
         )
         .contentShape(Rectangle())
         .onTapGesture {
@@ -462,14 +461,23 @@ struct SideBarView: View {
     }
 }
 
-// MARK: - Preview
-
 #Preview {
     @Previewable @State var isOpen = true
     let vm = SidebarViewModel()
-    ZStack {
-        Color(.systemGroupedBackground).ignoresSafeArea()
-        Text("Main Content").font(.title2).foregroundStyle(.secondary)
-        SideBarView(isOpen: $isOpen, vm: vm)
+    GeometryReader { geo in
+        ZStack(alignment: .leading) {
+            Color(.systemGroupedBackground).ignoresSafeArea()
+            Text("Main Content").font(.title2).foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            if isOpen {
+                Color.black.opacity(0.4).ignoresSafeArea()
+                    .onTapGesture { isOpen = false }
+            }
+            SideBarView(isOpen: $isOpen, vm: vm)
+                .frame(width: geo.size.width * 0.80)
+                .offset(x: isOpen ? 0 : -(geo.size.width * 0.80))
+                .shadow(color: .black.opacity(0.2), radius: 16, x: 4, y: 0)
+                .animation(.easeInOut(duration: 0.28), value: isOpen)
+        }
     }
 }

@@ -1,96 +1,100 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-    @State private var isSidebarOpen = false
-    @State private var showToolbar = true
-    @AppStorage("selectedLanguage") private var selectedLanguage: String = "English" //language storing for conversational use
-    @State private var showLanguageDropdown = false
-    @EnvironmentObject var firebaseManager: FirebaseManager
 
+    @State private var isSidebarOpen = false
+    @AppStorage("selectedLanguage") private var selectedLanguage: String = "English"
+    @State private var showLanguageDropdown = false
+    @StateObject private var sidebarVM = SidebarViewModel()
     private let languages = ["English", "Spanish", "French", "Arabic", "German"]
 
     var body: some View {
         NavigationStack {
-            ZStack {
-                VStack {
-                    ChatView(selectedLanguage: $selectedLanguage)
-                        .environmentObject(firebaseManager)
-                }
-                
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    // MARK: Main content
+                    VStack {
+                        ChatView(selectedLanguage: $selectedLanguage)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-                if isSidebarOpen {
-                    Color.black.opacity(0.3)
-                        .ignoresSafeArea()
-                        .onTapGesture { isSidebarOpen = false }
-                }
-                
+                    // MARK: Dim overlay — tap to close
+                    if isSidebarOpen {
+                        Color.black
+                            .opacity(0.4)
+                            .ignoresSafeArea()
+                            .onTapGesture { closeSidebar() }
+                            .transition(.opacity)
+                            .zIndex(1)
+                    }
 
-                SideBarView(isOpen: $isSidebarOpen, vm: SidebarViewModel())
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .offset(x: isSidebarOpen ? -10 : -400)
-                    .animation(.easeIn(duration: 0.25), value: isSidebarOpen)
+                    // MARK: Sidebar — 80% width, slides in from left
+                    SideBarView(isOpen: $isSidebarOpen, vm: sidebarVM)
+                        .frame(width: geo.size.width * 0.80)
+                        .offset(x: isSidebarOpen ? 0 : -(geo.size.width * 0.80))
+                        .shadow(color: .black.opacity(isSidebarOpen ? 0.2 : 0), radius: 16, x: 4, y: 0)
+                        .zIndex(2)
 
-                if showLanguageDropdown {
-                    VStack(alignment: .leading, spacing: 0) {
-                        ForEach(languages, id: \.self) { language in
-                            Button {
-                                selectedLanguage = language
-                                showLanguageDropdown = false
-                            } label: {
-                                HStack {
-                                    Text(language)
-                                        .foregroundColor(.black)
-                                    Spacer()
-                                    if language == selectedLanguage {
-                                        Image(systemName: "checkmark")
-                                            .foregroundColor(.blue)
+                    // MARK: Language dropdown
+                    if showLanguageDropdown {
+                        VStack(alignment: .leading, spacing: 0) {
+                            ForEach(languages, id: \.self) { language in
+                                Button {
+                                    selectedLanguage = language
+                                    showLanguageDropdown = false
+                                } label: {
+                                    HStack {
+                                        Text(language).foregroundColor(.black)
+                                        Spacer()
+                                        if language == selectedLanguage {
+                                            Image(systemName: "checkmark").foregroundColor(.blue)
+                                        }
                                     }
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 12)
                                 }
-                                .padding(.horizontal, 16)
-                                .padding(.vertical, 12)
-                            }
-                            if language != languages.last {
-                                Divider()
+                                if language != languages.last { Divider() }
                             }
                         }
+                        .frame(width: 200)
+                        .background(Color(.systemBackground))
+                        .cornerRadius(12)
+                        .shadow(radius: 6)
+                        .padding(.top, 8)
+                        .padding(.trailing, 16)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                        .zIndex(3)
                     }
-                    .frame(width: 200)
-                    .background(Color(.systemBackground))
-                    .cornerRadius(12)
-                    .shadow(radius: 6)
-                    .padding(.top, 8)
-                    .padding(.trailing, 16)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                    .animation(.easeInOut(duration: 0.2), value: showLanguageDropdown)
-                    
                 }
+                .animation(.easeInOut(duration: 0.28), value: isSidebarOpen)
             }
             .toolbar {
-                
                 ToolbarItem(placement: .navigationBarLeading) {
                     if !isSidebarOpen {
-                        Button {
-                            isSidebarOpen = true
-                        } label: {
+                        Button { openSidebar() } label: {
                             Image(systemName: "line.horizontal.3")
                         }
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showLanguageDropdown.toggle()
-                    } label: {
+                    Button { showLanguageDropdown.toggle() } label: {
                         Image(systemName: "globe")
                             .foregroundColor(Color("grape"))
                     }
                 }
-                
             }
             .overlay {
                 LegalDisclaimerAlert()
             }
         }
+    }
+
+    private func openSidebar() {
+        withAnimation(.easeInOut(duration: 0.28)) { isSidebarOpen = true }
+    }
+
+    private func closeSidebar() {
+        withAnimation(.easeInOut(duration: 0.28)) { isSidebarOpen = false }
     }
 }
 
