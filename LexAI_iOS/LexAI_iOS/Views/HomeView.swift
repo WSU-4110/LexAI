@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @State private var isSidebarOpen = false
     @State private var showToolbar = true
-    @AppStorage("selectedLanguage") private var selectedLanguage: String = "English"
+    @AppStorage("selectedLanguage") private var selectedLanguage: String = "English" //language storing for conversational use
     @State private var showLanguageDropdown = false
 
     private let languages = ["English", "Spanish", "French", "Arabic", "German"]
@@ -21,12 +22,14 @@ struct HomeView: View {
                 VStack {
                     ChatView(selectedLanguage: $selectedLanguage)
                 }
+                
 
                 if isSidebarOpen {
                     Color.black.opacity(0.3)
                         .ignoresSafeArea()
                         .onTapGesture { isSidebarOpen = false }
                 }
+                
 
                 SidebarView(isOpen: $isSidebarOpen)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -65,9 +68,11 @@ struct HomeView: View {
                     .padding(.trailing, 16)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                     .animation(.easeInOut(duration: 0.2), value: showLanguageDropdown)
+                    
                 }
             }
             .toolbar {
+                
                 ToolbarItem(placement: .navigationBarLeading) {
                     if showToolbar {
                         Button {
@@ -78,15 +83,17 @@ struct HomeView: View {
                         }
                     }
                 }
-
+                
+                //Addition of globe for Dropdown menu selection
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         showLanguageDropdown.toggle()
                     } label: {
                         Image(systemName: "globe")
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color("grape"))
                     }
                 }
+                
             }
         }
     }

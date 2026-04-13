@@ -97,6 +97,7 @@ struct ChatView: View {
                 .padding(.bottom, 4)
                 .padding(.leading, 20)
 
+                
                 TextField(getLocalizedPlaceholder(), text: $inputText, axis: .vertical)
                     .textFieldStyle(.plain)
                     .padding(.horizontal, 12)
@@ -112,6 +113,7 @@ struct ChatView: View {
                         .resizable()
                         .frame(width: 35, height: 35)
                         .foregroundStyle(inputText.isEmpty ? Color.white.opacity(0.6) : Color.white)
+                    
                 }
                 .disabled(inputText.isEmpty || isAwaitingReply)
                 .padding(.bottom, 4)
@@ -178,10 +180,12 @@ struct ChatView: View {
     }
 }
 
+
 // MARK: - Message bubble
 private struct MessageBubbleView: View {
-    let message: ChatMessage
 
+    let message: ChatMessage
+    
     var body: some View {
         HStack(alignment: .top) {
             if message.isFromUser { Spacer(minLength: 48) }
@@ -189,8 +193,8 @@ private struct MessageBubbleView: View {
                 Text(message.text)
                     .padding(.horizontal, 14)
                     .padding(.vertical, 10)
-                    .background(message.isFromUser ? Color.accentColor : Color(.secondarySystemGroupedBackground))
-                    .foregroundStyle(message.isFromUser ? .white : .primary)
+                    .background(message.isFromUser ? Color("grape") : Color(.systemGray6))
+                    .foregroundStyle(message.isFromUser ? .white : .black)
                     .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
             }
             if !message.isFromUser { Spacer(minLength: 48) }
