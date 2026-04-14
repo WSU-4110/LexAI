@@ -9,6 +9,7 @@ Pinecone is initialized lazily so deploy-time import/discovery does not require
 """
 
 import os
+import threading
 import time
 from typing import Any
 
@@ -52,18 +53,22 @@ initialize_app()
 
 _PINECONE_CLIENT: Pinecone | None = None
 _PINECONE_INDEX: Any = None
+_PINECONE_LOCK = threading.Lock()
 
 
 def _get_pinecone() -> tuple[Pinecone, Any]:
-    """Lazy Pinecone client so deploy-time discovery does not require API keys at import."""
+    """Lazy Pinecone client; thread-safe init for concurrent invocations."""
     global _PINECONE_CLIENT, _PINECONE_INDEX
     if _PINECONE_CLIENT is not None and _PINECONE_INDEX is not None:
         return _PINECONE_CLIENT, _PINECONE_INDEX
-    api_key = (os.environ.get("PINECONE_API_KEY") or "").strip()
-    if not api_key:
-        raise RuntimeError("PINECONE_API_KEY is not set")
-    _PINECONE_CLIENT = Pinecone(api_key=api_key)
-    _PINECONE_INDEX = _PINECONE_CLIENT.Index(INDEX_NAME)
+    with _PINECONE_LOCK:
+        if _PINECONE_CLIENT is not None and _PINECONE_INDEX is not None:
+            return _PINECONE_CLIENT, _PINECONE_INDEX
+        api_key = (os.environ.get("PINECONE_API_KEY") or "").strip()
+        if not api_key:
+            raise RuntimeError("PINECONE_API_KEY is not set")
+        _PINECONE_CLIENT = Pinecone(api_key=api_key)
+        _PINECONE_INDEX = _PINECONE_CLIENT.Index(INDEX_NAME)
     return _PINECONE_CLIENT, _PINECONE_INDEX
 
 
@@ -77,14 +82,46 @@ def embed_query(query_text: str) -> list:
     return embeddings_response[0]["values"]
 
 
+def _legislation_text_from_metadata(metadata: Any) -> str:
+    """Return first non-empty string from known Pinecone metadata text fields."""
+    if not isinstance(metadata, dict):
+        return ""
+    for key in (
+        "chunk_text",
+        "text",
+        "content",
+        "chunk",
+        "body",
+        "passage",
+    ):
+        val = metadata.get(key)
+        if isinstance(val, str) and val.strip():
+            return val.strip()
+    return ""
+
+
 def query_pinecone(query_embedding: list, top_k: int = 5) -> list:
     _, index = _get_pinecone()
-    results = index.query(
-        vector=query_embedding,
-        top_k=top_k,
-        include_metadata=True,
+    # Prefer chunk vectors (embed_and_store sets chunk_idx). If index has no chunk_idx, fall back unfiltered.
+    for use_chunk_filter in (True, False):
+        kwargs: dict[str, Any] = {
+            "vector": query_embedding,
+            "top_k": top_k,
+            "include_metadata": True,
+        }
+        if use_chunk_filter:
+            kwargs["filter"] = {"chunk_idx": {"$gte": 0}}
+        results = index.query(**kwargs)
+        chunks: list[str] = []
+        for match in results.get("matches", []):
+            text = _legislation_text_from_metadata(match.get("metadata"))
+            if text:
+                chunks.append(text)
+        if chunks:
+            return chunks
+    raise RuntimeError(
+        "No usable legislation text in Pinecone results (metadata missing text fields or index empty)."
     )
-    return [match["metadata"]["chunk_text"] for match in results["matches"]]
 
 
 def call_runpod(messages: list) -> str:
@@ -117,8 +154,8 @@ def call_runpod(messages: list) -> str:
     run_response.raise_for_status()
     job_id = run_response.json()["id"]
 
-    # Poll for completion, max 5 minutes
-    for _ in range(150):
+    # Poll for completion, max ~8 minutes (matches timeout_sec=540)
+    for _ in range(240):
         status_response = requests.get(
             f"https://api.runpod.ai/v2/{endpoint_id}/status/{job_id}",
             headers={"Authorization": f"Bearer {runpod_key}"},
@@ -129,7 +166,6 @@ def call_runpod(messages: list) -> str:
         if result["status"] == "COMPLETED":
             output = result.get("output", {})
 
-            # Handle both dict and list output formats
             if isinstance(output, list):
                 if len(output) > 0 and isinstance(output[0], dict):
                     choices = output[0].get("choices", [])
@@ -152,7 +188,7 @@ def call_runpod(messages: list) -> str:
 
 @https_fn.on_call(
     enforce_app_check=False,
-    timeout_sec=300,
+    timeout_sec=540,
     secrets=[OPENAI_API_KEY, PINECONE_API_KEY, RUNPOD_API_KEY],
 )
 def chat(req: https_fn.CallableRequest) -> dict:

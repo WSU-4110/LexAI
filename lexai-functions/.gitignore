@@ -3,5 +3,6 @@ __pycache__/
 
 # Python virtual environment
 venv/
+.venv_inspect/
 *.local
 .env

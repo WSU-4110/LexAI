@@ -9,16 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var firebaseManager = FirebaseManager()
+    @StateObject var authManager = FirebaseManager()
     
     var body: some View {
         Group {
-            if firebaseManager.isAuthenticated {
+            if authManager.isAuthenticated {
                 HomeView()
-                    .environmentObject(firebaseManager)
             } else {
                 AuthView()
-                    .environmentObject(firebaseManager)
+                    .environmentObject(authManager)
             }
         }
     }

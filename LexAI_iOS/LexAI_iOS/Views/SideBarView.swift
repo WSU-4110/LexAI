@@ -1,4 +1,4 @@
-//  //  SideBarView.swift
+//  SideBarView.swift
 //  LexAI_iOS
 //
 //  Sprint 3 update (Sidebar UI refinement) — Sara Al-hachami 03/31/26
@@ -119,7 +119,9 @@ final class SidebarViewModel: ObservableObject {
         let startOf7Days     = cal.date(byAdding: .day, value: -7,  to: startOfToday)!
         let startOf30Days    = cal.date(byAdding: .day, value: -30, to: startOfToday)!
 
-        let active = filteredActiveSessions.sorted { $0.createdAt > $1.createdAt }
+        let all    = filteredActiveSessions.sorted { $0.createdAt > $1.createdAt }
+        let pinned = all.filter { $0.isPinned }
+        let rest   = all.filter { !$0.isPinned }
 
         var today: [ChatSession]     = []
         var yesterday: [ChatSession] = []
@@ -127,7 +129,7 @@ final class SidebarViewModel: ObservableObject {
         var month: [ChatSession]     = []
         var older: [ChatSession]     = []
 
-        for s in active {
+        for s in rest {
             if s.createdAt >= startOfToday          { today.append(s) }
             else if s.createdAt >= startOfYesterday  { yesterday.append(s) }
             else if s.createdAt >= startOf7Days      { week.append(s) }
@@ -136,6 +138,7 @@ final class SidebarViewModel: ObservableObject {
         }
 
         var groups: [(label: String, items: [ChatSession])] = []
+        if !pinned.isEmpty    { groups.append(("Pinned", pinned)) }
         if !today.isEmpty     { groups.append(("Today", today)) }
         if !yesterday.isEmpty { groups.append(("Yesterday", yesterday)) }
         if !week.isEmpty      { groups.append(("Previous 7 Days", week)) }
@@ -162,7 +165,7 @@ final class SidebarViewModel: ObservableObject {
 
     @discardableResult
     func newSession(tag: SessionTag? = nil) -> ChatSession {
-        let s = ChatSession(title: "New Conversation", preview: "", tag: tag)
+        let s = ChatSession(id: UUID(), title: "New Conversation", preview: "", tag: tag)
         sessions.insert(s, at: 0)
         activeSessionID = s.id
         return s
@@ -211,9 +214,11 @@ final class SidebarViewModel: ObservableObject {
     func updateSession(id: UUID, messages: [ChatMessage]) {
         guard let i = sessions.firstIndex(where: { $0.id == id }) else { return }
         sessions[i].messages = messages
+        // Title: use the first user message as-is (truncated to 50 chars).
+        // Only overwrite while the session still carries the default placeholder.
         if sessions[i].title == "New Conversation",
            let firstUserMsg = messages.first(where: { $0.isFromUser }) {
-            sessions[i].title = generateTitle(from: firstUserMsg.text)
+            sessions[i].title = String(firstUserMsg.text.prefix(50))
         }
         if let lastAI = messages.last(where: { !$0.isFromUser }) {
             sessions[i].preview = String(lastAI.text.prefix(60))
@@ -236,22 +241,15 @@ final class SidebarViewModel: ObservableObject {
     }
 
     private func generateTitle(from query: String) -> String {
-        let lower = query.lowercased()
-        let prefixes: [String] = [
-            "is there any way to ", "how do i ", "how can i ", "can i ", "can my ",
-            "what counts as ", "what is ", "what are ", "am i going to ", "am i ",
-            "do i need to ", "should i ", "will i ", "i need help with ",
-            "i want to know about ", "tell me about ", "help me with ",
-            "what happens if ", "is it legal to ", "is it illegal to "
-        ]
-        var trimmed = lower
-        for prefix in prefixes {
-            if trimmed.hasPrefix(prefix) { trimmed = String(trimmed.dropFirst(prefix.count)); break }
+        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard trimmed.count > 50 else { return trimmed }
+        // Truncate at the last word boundary before 50 chars
+        let index = trimmed.index(trimmed.startIndex, offsetBy: 50)
+        let cut = trimmed[..<index]
+        if let lastSpace = cut.lastIndex(of: " ") {
+            return String(cut[..<lastSpace]) + "…"
         }
-        trimmed = trimmed.trimmingCharacters(in: .punctuationCharacters)
-        let titled = trimmed.prefix(1).uppercased() + trimmed.dropFirst()
-        let result = String(titled.prefix(40))
-        return result.count < titled.count ? result + "..." : result
+        return String(cut) + "…"
     }
 }
 
@@ -262,6 +260,7 @@ final class SidebarViewModel: ObservableObject {
 struct SideBarView: View {
     @Binding var isOpen: Bool
     @ObservedObject var vm: SidebarViewModel
+    var onNewChat: (() -> Void)? = nil
 
     @State private var renamingSession: ChatSession? = nil
     @State private var renameText: String = ""
@@ -290,22 +289,27 @@ struct SideBarView: View {
             // MARK: New Chat
             Button {
                 vm.newSession()
+                onNewChat?()
                 isOpen = false
             } label: {
-                HStack(spacing: 10) {
+                HStack(spacing: 8) {
                     Image(systemName: "square.and.pencil")
-                        .font(.system(size: 15))
-                    Text("New chat")
-                        .font(.system(size: 15))
+                        .font(.system(size: 14, weight: .medium))
+                    Text("New Chat")
+                        .font(.system(size: 15, weight: .medium))
                     Spacer()
                 }
-                .foregroundStyle(.primary)
-                .padding(.horizontal, 12)
-                .padding(.vertical, 10)
-                .background(Color(.systemGray5), in: RoundedRectangle(cornerRadius: 10))
+                .foregroundStyle(.white)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 11)
+                .background(
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .fill(Color("grape"))
+                )
+                .shadow(color: Color("grape").opacity(0.28), radius: 8, x: 0, y: 4)
             }
             .buttonStyle(.plain)
-            .padding(.horizontal, 12)
+            .padding(.horizontal, 16)
             .padding(.bottom, 8)
 
             // MARK: Search
@@ -422,6 +426,12 @@ struct SideBarView: View {
 
     private func sessionRow(_ session: ChatSession) -> some View {
         HStack {
+            if session.isPinned {
+                Image(systemName: "pin.fill")
+                    .font(.system(size: 10))
+                    .foregroundStyle(.secondary)
+                    .rotationEffect(.degrees(45))
+            }
             Text(session.title)
                 .font(.system(size: 14))
                 .foregroundStyle(vm.activeSessionID == session.id ? .primary : Color(.label).opacity(0.8))
@@ -440,6 +450,12 @@ struct SideBarView: View {
         }
         .contextMenu {
             Button {
+                withAnimation { vm.togglePin(session) }
+            } label: {
+                Label(session.isPinned ? "Unpin" : "Pin",
+                      systemImage: session.isPinned ? "pin.slash" : "pin")
+            }
+            Button {
                 renameText = session.title
                 renamingSession = session
             } label: {
@@ -457,6 +473,15 @@ struct SideBarView: View {
             } label: {
                 Label("Delete", systemImage: "trash")
             }
+        }
+        .swipeActions(edge: .leading, allowsFullSwipe: false) {
+            Button {
+                withAnimation { vm.togglePin(session) }
+            } label: {
+                Label(session.isPinned ? "Unpin" : "Pin",
+                      systemImage: session.isPinned ? "pin.slash" : "pin")
+            }
+            .tint(.orange)
         }
     }
 }

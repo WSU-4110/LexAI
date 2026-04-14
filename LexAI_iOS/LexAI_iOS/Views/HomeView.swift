@@ -1,41 +1,43 @@
 import SwiftUI
 
 struct HomeView: View {
-
+    
     @State private var isSidebarOpen = false
+    @State private var showToolbar = true
     @AppStorage("selectedLanguage") private var selectedLanguage: String = "English"
     @State private var showLanguageDropdown = false
+
     @StateObject private var sidebarVM = SidebarViewModel()
+    @State private var messages: [ChatMessage] = []
+    @State private var chatViewResetID = UUID()
+
     private let languages = ["English", "Spanish", "French", "Arabic", "German"]
 
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
-                    // MARK: Main content
                     VStack {
-                        ChatView(selectedLanguage: $selectedLanguage)
+                        ChatView(messages: $messages, selectedLanguage: $selectedLanguage)
+                            .id(chatViewResetID)
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-                    // MARK: Dim overlay — tap to close
                     if isSidebarOpen {
-                        Color.black
-                            .opacity(0.4)
+                        Color.black.opacity(0.3)
                             .ignoresSafeArea()
-                            .onTapGesture { closeSidebar() }
-                            .transition(.opacity)
-                            .zIndex(1)
+                            .onTapGesture { isSidebarOpen = false }
                     }
 
-                    // MARK: Sidebar — 80% width, slides in from left
-                    SideBarView(isOpen: $isSidebarOpen, vm: sidebarVM)
-                        .frame(width: geo.size.width * 0.80)
-                        .offset(x: isSidebarOpen ? 0 : -(geo.size.width * 0.80))
-                        .shadow(color: .black.opacity(isSidebarOpen ? 0.2 : 0), radius: 16, x: 4, y: 0)
-                        .zIndex(2)
+                    SideBarView(isOpen: $isSidebarOpen, vm: sidebarVM, onNewChat: {
+                        // Reset both chat data and local ChatView state for a true fresh thread.
+                        messages = []
+                        chatViewResetID = UUID()
+                    })
+                    .frame(width: geo.size.width * 0.80)
+                    .offset(x: isSidebarOpen ? 0 : -(geo.size.width * 0.80))
+                    .shadow(color: .black.opacity(isSidebarOpen ? 0.2 : 0), radius: 16, x: 4, y: 0)
+                    .animation(.easeInOut(duration: 0.28), value: isSidebarOpen)
 
-                    // MARK: Language dropdown
                     if showLanguageDropdown {
                         VStack(alignment: .leading, spacing: 0) {
                             ForEach(languages, id: \.self) { language in
@@ -63,23 +65,21 @@ struct HomeView: View {
                         .padding(.top, 8)
                         .padding(.trailing, 16)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                        .zIndex(3)
+                        .animation(.easeInOut(duration: 0.2), value: showLanguageDropdown)
                     }
                 }
-                .animation(.easeInOut(duration: 0.28), value: isSidebarOpen)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     if !isSidebarOpen {
-                        Button { openSidebar() } label: {
+                        Button { isSidebarOpen = true } label: {
                             Image(systemName: "line.horizontal.3")
                         }
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button { showLanguageDropdown.toggle() } label: {
-                        Image(systemName: "globe")
-                            .foregroundColor(Color("grape"))
+                        Image(systemName: "globe").foregroundColor(Color("grape"))
                     }
                 }
             }
@@ -87,14 +87,6 @@ struct HomeView: View {
                 LegalDisclaimerAlert()
             }
         }
-    }
-
-    private func openSidebar() {
-        withAnimation(.easeInOut(duration: 0.28)) { isSidebarOpen = true }
-    }
-
-    private func closeSidebar() {
-        withAnimation(.easeInOut(duration: 0.28)) { isSidebarOpen = false }
     }
 }
 
