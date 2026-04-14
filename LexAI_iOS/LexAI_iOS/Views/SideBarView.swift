@@ -261,17 +261,24 @@ struct SideBarView: View {
     var onSelectSession: ((ChatSession) -> Void)? = nil
     var onNewChat: (() -> Void)? = nil
     var onDeleteSession: ((ChatSession) -> Void)? = nil
+    @EnvironmentObject var firebaseManager: FirebaseManager
 
     @State private var renamingSession: ChatSession? = nil
     @State private var renameText: String = ""
+    @State private var showSignOutAlert = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
 
             // MARK: Header
             HStack(spacing: 10) {
-                Image(systemName: "scale.3d")
-                    .font(.system(size: 16, weight: .semibold))
+                Button {
+                    showSignOutAlert = true
+                } label: {
+                    Image(systemName: "person.circle")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundStyle(.secondary)
+                }
                 Text("LexAI")
                     .font(.system(size: 17, weight: .semibold))
                 Spacer()
@@ -419,6 +426,14 @@ struct SideBarView: View {
             }
             Button("Cancel", role: .cancel) { renamingSession = nil }
         }
+        .alert("Sign Out", isPresented: $showSignOutAlert) {
+            Button("Cancel", role: .cancel) {}
+            Button("Sign Out", role: .destructive) {
+                firebaseManager.signOut()
+            }
+        } message: {
+            Text("Are you sure you want to sign out?")
+        }
     }
 
     // MARK: Session Row
@@ -505,6 +520,7 @@ struct SideBarView: View {
                     .onTapGesture { isOpen = false }
             }
             SideBarView(isOpen: $isOpen, vm: vm)
+                .environmentObject(FirebaseManager(isPreview: true))
                 .frame(width: geo.size.width * 0.80)
                 .offset(x: isOpen ? 0 : -(geo.size.width * 0.80))
                 .shadow(color: .black.opacity(0.2), radius: 16, x: 4, y: 0)

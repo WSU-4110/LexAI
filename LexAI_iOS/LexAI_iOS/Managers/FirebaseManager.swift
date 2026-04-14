@@ -32,7 +32,7 @@ class FirebaseManager: ObservableObject {
         authStateListener = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             Task { @MainActor in
                 self?.user = user
-                self?.isAuthenticated = user != nil
+                self?.isAuthenticated = (user?.isAnonymous == false)
             }
         }
         if Auth.auth().currentUser == nil {
