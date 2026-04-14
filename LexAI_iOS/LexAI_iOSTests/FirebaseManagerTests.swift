@@ -7,6 +7,7 @@ final class FirebaseManagerTests: XCTestCase {
         let manager = FirebaseManager()
 
         let chat = ChatPrompt(
+            id: nil,
             prompt: "Test",
             documents: ["doc1"],
             location: "United States",
@@ -16,8 +17,8 @@ final class FirebaseManagerTests: XCTestCase {
 
         let expectation = self.expectation(description: "Save chat completes.")
 
-        manager.saveChat(prompt: chat) { success in
-            XCTAssertNotNil(success) // check
+        manager.saveChat(prompt: chat) { chatID in
+            XCTAssertNotNil(chatID) // check
             expectation.fulfill()
         }
 

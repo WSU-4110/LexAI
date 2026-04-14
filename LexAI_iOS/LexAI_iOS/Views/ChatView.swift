@@ -12,9 +12,11 @@ private let bottomAnchorId = "bottom"
 struct ChatView: View {
     @Binding var messages: [ChatMessage]
     @Binding var selectedLanguage: String
+    @Binding var activeChatDocumentID: String?
 
     var vm: SidebarViewModel? = nil
     var sessionID: UUID? = nil
+    var onChatPersisted: ((String) -> Void)? = nil
 
     @State private var inputText: String = ""
     @State private var showScanDocuments = false
@@ -211,6 +213,7 @@ struct ChatView: View {
     }
 
     private func saveChatIfNeeded() {
+        print("saveChatIfNeeded called, message count: \(messages.count)")
         guard !messages.isEmpty else { return }
         guard let userId = firebaseManager.user?.uid else { return }
 
@@ -219,6 +222,7 @@ struct ChatView: View {
             .joined(separator: "\n")
 
         let chatPrompt = ChatPrompt(
+            id: activeChatDocumentID,
             prompt: transcript,
             documents: [],
             location: "",
@@ -226,7 +230,23 @@ struct ChatView: View {
             user: userId
         )
 
-        firebaseManager.saveChat(prompt: chatPrompt) { _ in }
+        if let existingID = activeChatDocumentID, !existingID.isEmpty {
+            firebaseManager.updateChat(chatId: existingID, newPrompt: transcript) { success in
+                print("Save result: \(success)")
+                if success {
+                    onChatPersisted?(transcript)
+                }
+            }
+        } else {
+            firebaseManager.saveChat(prompt: chatPrompt) { newDocumentID in
+                let success = (newDocumentID != nil)
+                print("Save result: \(success)")
+                if let newDocumentID {
+                    activeChatDocumentID = newDocumentID
+                    onChatPersisted?(transcript)
+                }
+            }
+        }
     }
 
     private func sendMessage() {

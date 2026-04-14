@@ -214,11 +214,10 @@ final class SidebarViewModel: ObservableObject {
     func updateSession(id: UUID, messages: [ChatMessage]) {
         guard let i = sessions.firstIndex(where: { $0.id == id }) else { return }
         sessions[i].messages = messages
-        // Title: use the first user message as-is (truncated to 50 chars).
-        // Only overwrite while the session still carries the default placeholder.
+        // Title: use the first user message for context.
         if sessions[i].title == "New Conversation",
            let firstUserMsg = messages.first(where: { $0.isFromUser }) {
-            sessions[i].title = String(firstUserMsg.text.prefix(50))
+            sessions[i].title = generateTitle(from: firstUserMsg.text)
         }
         if let lastAI = messages.last(where: { !$0.isFromUser }) {
             sessions[i].preview = String(lastAI.text.prefix(60))
@@ -242,14 +241,13 @@ final class SidebarViewModel: ObservableObject {
 
     private func generateTitle(from query: String) -> String {
         let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard trimmed.count > 50 else { return trimmed }
-        // Truncate at the last word boundary before 50 chars
-        let index = trimmed.index(trimmed.startIndex, offsetBy: 50)
-        let cut = trimmed[..<index]
-        if let lastSpace = cut.lastIndex(of: " ") {
-            return String(cut[..<lastSpace]) + "…"
-        }
-        return String(cut) + "…"
+        let words = trimmed.split(whereSeparator: { $0.isWhitespace })
+        guard !words.isEmpty else { return "New Conversation" }
+
+        let maxWords = 6
+        let prefixWords = words.prefix(maxWords).joined(separator: " ")
+        let title = String(prefixWords)
+        return words.count > maxWords ? title + "..." : title
     }
 }
 
@@ -260,7 +258,9 @@ final class SidebarViewModel: ObservableObject {
 struct SideBarView: View {
     @Binding var isOpen: Bool
     @ObservedObject var vm: SidebarViewModel
+    var onSelectSession: ((ChatSession) -> Void)? = nil
     var onNewChat: (() -> Void)? = nil
+    var onDeleteSession: ((ChatSession) -> Void)? = nil
 
     @State private var renamingSession: ChatSession? = nil
     @State private var renameText: String = ""
@@ -288,7 +288,6 @@ struct SideBarView: View {
 
             // MARK: New Chat
             Button {
-                vm.newSession()
                 onNewChat?()
                 isOpen = false
             } label: {
@@ -446,6 +445,7 @@ struct SideBarView: View {
         .contentShape(Rectangle())
         .onTapGesture {
             vm.activeSessionID = session.id
+            onSelectSession?(session)
             isOpen = false
         }
         .contextMenu {
@@ -462,14 +462,20 @@ struct SideBarView: View {
                 Label("Rename", systemImage: "pencil")
             }
             Button(role: .destructive) {
-                withAnimation { vm.delete(session) }
+                withAnimation {
+                    vm.delete(session)
+                    onDeleteSession?(session)
+                }
             } label: {
                 Label("Delete", systemImage: "trash")
             }
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(role: .destructive) {
-                withAnimation { vm.delete(session) }
+                withAnimation {
+                    vm.delete(session)
+                    onDeleteSession?(session)
+                }
             } label: {
                 Label("Delete", systemImage: "trash")
             }
