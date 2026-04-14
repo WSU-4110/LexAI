@@ -3,6 +3,9 @@
 
 import SwiftUI
 import FirebaseFunctions
+import UniformTypeIdentifiers
+import PDFKit
+import FirebaseAuth
 
 private let bottomAnchorId = "bottom"
 
@@ -14,7 +17,11 @@ struct ChatView: View {
     var sessionID: UUID? = nil
 
     @State private var inputText: String = ""
+    @State private var showScanDocuments = false
+    @State private var showFilePicker = false
     @State private var isAwaitingReply = false
+    @EnvironmentObject var firebaseManager: FirebaseManager
+    @Environment(\.scenePhase) private var scenePhase
     private let functions = Functions.functions()
 
     var body: some View {
@@ -42,6 +49,36 @@ struct ChatView: View {
             )
             .ignoresSafeArea()
         )
+        .fullScreenCover(isPresented: $showScanDocuments) {
+            #if targetEnvironment(simulator)
+            VStack(spacing: 20) {
+                Text("Document Scanner Preview")
+                    .font(.headline)
+                    .padding()
+                Button("Dismiss") { showScanDocuments = false }
+                    .buttonStyle(.borderedProminent)
+            }
+            #else
+            ScanDocumentsView(isPresented: $showScanDocuments) { scannedText in
+                messages.append(ChatMessage(text: scannedText, isFromUser: true))
+            }
+            #endif
+        }
+        .fileImporter(
+            isPresented: $showFilePicker,
+            allowedContentTypes: [.plainText, .pdf],
+            allowsMultipleSelection: false
+        ) { result in
+            handleFileImport(result)
+        }
+        .onDisappear {
+            saveChatIfNeeded()
+        }
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase == .background || newPhase == .inactive {
+                saveChatIfNeeded()
+            }
+        }
     }
 
     private var messageList: some View {
@@ -82,32 +119,114 @@ struct ChatView: View {
     }
 
     private var inputBar: some View {
-        HStack(alignment: .bottom, spacing: 12) {
-            TextField(
-                ChatPlaceholderText.placeholder(forSelectedLanguage: selectedLanguage),
-                text: $inputText,
-                axis: .vertical
-            )
-            .textFieldStyle(.plain)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 10)
-            .background(Color(.tertiarySystemGroupedBackground))
-            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .lineLimit(1...6)
-
-            Button {
-                sendMessage()
-            } label: {
-                Image(systemName: isAwaitingReply ? "clock.arrow.circlepath" : "arrow.up.circle.fill")
-                    .resizable()
-                    .frame(width: 35, height: 35)
-                    .foregroundStyle(inputText.isEmpty ? Color.white.opacity(0.6) : Color.white)
+        VStack(spacing: 10) {
+            HStack(spacing: 10) {
+                actionButton(icon: "document.viewfinder", label: "Scan Document") {
+                    showScanDocuments = true
+                }
+                actionButton(icon: "arrow.up.doc", label: "Upload Document") {
+                    showFilePicker = true
+                }
+                Spacer()
             }
-            .disabled(inputText.isEmpty || isAwaitingReply)
-            .padding(.bottom, 4)
+            .padding(.horizontal, 4)
+
+            HStack(alignment: .bottom, spacing: 12) {
+                TextField(
+                    ChatPlaceholderText.placeholder(forSelectedLanguage: selectedLanguage),
+                    text: $inputText,
+                    axis: .vertical
+                )
+                .textFieldStyle(.plain)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 10)
+                .background(Color(.tertiarySystemGroupedBackground))
+                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .lineLimit(1...6)
+
+                Button {
+                    sendMessage()
+                } label: {
+                    Image(systemName: isAwaitingReply ? "clock.arrow.circlepath" : "arrow.up.circle.fill")
+                        .resizable()
+                        .frame(width: 35, height: 35)
+                        .foregroundStyle(inputText.isEmpty ? Color.white.opacity(0.6) : Color.white)
+                }
+                .disabled(inputText.isEmpty || isAwaitingReply)
+                .padding(.bottom, 4)
+            }
         }
         .padding(.horizontal, 4)
         .padding(.top)
+    }
+
+    private func actionButton(icon: String, label: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 6) {
+                Image(systemName: icon)
+                    .font(.system(size: 13, weight: .semibold))
+                Text(label)
+                    .font(.system(size: 12, weight: .semibold))
+            }
+            .foregroundStyle(.white)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 8)
+            .background(Color.white.opacity(0.22), in: Capsule())
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func handleFileImport(_ result: Result<[URL], Error>) {
+        switch result {
+        case .success(let urls):
+            guard let url = urls.first else { return }
+            guard url.startAccessingSecurityScopedResource() else { return }
+            defer { url.stopAccessingSecurityScopedResource() }
+
+            let extracted: String?
+            if url.pathExtension.lowercased() == "pdf" {
+                extracted = extractTextFromPDF(url: url)
+            } else {
+                extracted = try? String(contentsOf: url, encoding: .utf8)
+            }
+
+            if let text = extracted, !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                messages.append(ChatMessage(text: text.trimmingCharacters(in: .whitespacesAndNewlines), isFromUser: true))
+            }
+
+        case .failure(let error):
+            print("File import error: \(error)")
+        }
+    }
+
+    private func extractTextFromPDF(url: URL) -> String? {
+        guard let pdf = PDFDocument(url: url) else { return nil }
+        var text = ""
+        for i in 0..<pdf.pageCount {
+            if let page = pdf.page(at: i), let content = page.string {
+                text += content + "\n"
+            }
+        }
+        return text.isEmpty ? nil : text
+    }
+
+    private func saveChatIfNeeded() {
+        guard !messages.isEmpty else { return }
+        guard let userId = firebaseManager.user?.uid else { return }
+
+        let transcript = messages
+            .map { ($0.isFromUser ? "User" : "LexAI") + ": " + $0.text }
+            .joined(separator: "\n")
+
+        let chatPrompt = ChatPrompt(
+            prompt: transcript,
+            documents: [],
+            location: "",
+            language: selectedLanguage,
+            user: userId
+        )
+
+        firebaseManager.saveChat(prompt: chatPrompt) { _ in }
     }
 
     private func sendMessage() {

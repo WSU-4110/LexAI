@@ -226,7 +226,7 @@ struct AuthView: View {
 
 #Preview {
     AuthView()
-        .environmentObject(FirebaseManager())
+        .environmentObject(FirebaseManager(isPreview: true))
 }
 
 

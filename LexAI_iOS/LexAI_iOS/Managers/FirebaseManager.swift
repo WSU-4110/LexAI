@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
 
@@ -19,9 +20,15 @@ class FirebaseManager: ObservableObject {
     @Published var isLoading = false
 
     private var authStateListener: AuthStateDidChangeListenerHandle?
-    private let db = Firestore.firestore()
+    private lazy var db = Firestore.firestore()
+    private let isPreview: Bool
 
-    init() {
+    init(isPreview: Bool = false) {
+        let runningInPreviews = ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
+        self.isPreview = isPreview || runningInPreviews
+        guard !self.isPreview else { return }
+        guard FirebaseApp.app() != nil else { return }
+
         authStateListener = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             Task { @MainActor in
                 self?.user = user

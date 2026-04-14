@@ -10,6 +10,7 @@ struct HomeView: View {
     @StateObject private var sidebarVM = SidebarViewModel()
     @State private var messages: [ChatMessage] = []
     @State private var chatViewResetID = UUID()
+    @EnvironmentObject var firebaseManager: FirebaseManager
 
     private let languages = ["English", "Spanish", "French", "Arabic", "German"]
 
@@ -19,6 +20,7 @@ struct HomeView: View {
                 ZStack(alignment: .leading) {
                     VStack {
                         ChatView(messages: $messages, selectedLanguage: $selectedLanguage)
+                            .environmentObject(firebaseManager)
                             .id(chatViewResetID)
                     }
 
@@ -92,4 +94,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environmentObject(FirebaseManager(isPreview: true))
 }
