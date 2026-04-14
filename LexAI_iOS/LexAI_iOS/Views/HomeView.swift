@@ -12,6 +12,7 @@ struct HomeView: View {
     @State private var messages: [ChatMessage] = []
     @State private var chatViewResetID = UUID()
     @State private var activeChatDocumentID: String?
+    @State private var hasSavedBeforeLeaving = false
     @State private var chatBySessionID: [UUID: ChatPrompt] = [:]
     @EnvironmentObject var firebaseManager: FirebaseManager
 
@@ -26,6 +27,7 @@ struct HomeView: View {
                             messages: $messages,
                             selectedLanguage: $selectedLanguage,
                             activeChatDocumentID: $activeChatDocumentID,
+                            hasSavedBeforeLeaving: $hasSavedBeforeLeaving,
                             vm: sidebarVM,
                             sessionID: sidebarVM.activeSessionID,
                             onChatPersisted: { transcript in
@@ -47,15 +49,19 @@ struct HomeView: View {
                         vm: sidebarVM,
                         onSelectSession: { session in
                             if let chat = chatBySessionID[session.id] {
-                                messages = parseTranscript(chat.prompt)
-                                activeChatDocumentID = chat.id
+                                saveCurrentConversation {
+                                    messages = parseTranscript(chat.prompt)
+                                    activeChatDocumentID = chat.id
+                                    hasSavedBeforeLeaving = false
+                                }
                             }
                         },
                         onNewChat: {
-                            persistCurrentChatIfNeeded {
+                            saveCurrentConversation {
                                 messages = []
                                 activeChatDocumentID = nil
                                 sidebarVM.activeSessionID = nil
+                                hasSavedBeforeLeaving = false
                                 chatViewResetID = UUID()
                                 reloadChatHistory()
                             }
@@ -67,10 +73,14 @@ struct HomeView: View {
                                     if activeChatDocumentID == chatID {
                                         messages = []
                                         activeChatDocumentID = nil
+                                        hasSavedBeforeLeaving = false
                                     }
                                     reloadChatHistory()
                                 }
                             }
+                        },
+                        onSidebarAppear: {
+                            reloadChatHistory()
                         }
                     )
                     .frame(width: geo.size.width * 0.80)
@@ -213,7 +223,7 @@ struct HomeView: View {
         return parsed
     }
 
-    private func persistCurrentChatIfNeeded(completion: @escaping () -> Void) {
+    private func saveCurrentConversation(completion: @escaping () -> Void) {
         guard !messages.isEmpty else {
             completion()
             return
@@ -229,6 +239,7 @@ struct HomeView: View {
 
         if let existingID = activeChatDocumentID, !existingID.isEmpty {
             firebaseManager.updateChat(chatId: existingID, newPrompt: transcript) { _ in
+                hasSavedBeforeLeaving = true
                 completion()
             }
             return
@@ -245,6 +256,7 @@ struct HomeView: View {
         firebaseManager.saveChat(prompt: prompt) { newID in
             if let newID {
                 activeChatDocumentID = newID
+                hasSavedBeforeLeaving = true
             }
             completion()
         }

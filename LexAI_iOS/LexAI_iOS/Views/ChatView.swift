@@ -13,6 +13,7 @@ struct ChatView: View {
     @Binding var messages: [ChatMessage]
     @Binding var selectedLanguage: String
     @Binding var activeChatDocumentID: String?
+    @Binding var hasSavedBeforeLeaving: Bool
 
     var vm: SidebarViewModel? = nil
     var sessionID: UUID? = nil
@@ -213,7 +214,8 @@ struct ChatView: View {
     }
 
     private func saveChatIfNeeded() {
-        print("saveChatIfNeeded called, message count: \(messages.count)")
+        print("saveChatIfNeeded called — messages: \(messages.count), chatId: \(activeChatDocumentID ?? "nil")")
+        guard !hasSavedBeforeLeaving else { return }
         guard !messages.isEmpty else { return }
         guard let userId = firebaseManager.user?.uid else { return }
 
@@ -234,6 +236,7 @@ struct ChatView: View {
             firebaseManager.updateChat(chatId: existingID, newPrompt: transcript) { success in
                 print("Save result: \(success)")
                 if success {
+                    hasSavedBeforeLeaving = true
                     onChatPersisted?(transcript)
                 }
             }
@@ -243,6 +246,7 @@ struct ChatView: View {
                 print("Save result: \(success)")
                 if let newDocumentID {
                     activeChatDocumentID = newDocumentID
+                    hasSavedBeforeLeaving = true
                     onChatPersisted?(transcript)
                 }
             }
@@ -252,6 +256,7 @@ struct ChatView: View {
     private func sendMessage() {
         let text = ChatInputValidator.trimmedMessage(inputText)
         guard ChatInputValidator.shouldSendMessage(inputText) else { return }
+        hasSavedBeforeLeaving = false
 
         inputText = ""
 

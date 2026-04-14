@@ -261,6 +261,7 @@ struct SideBarView: View {
     var onSelectSession: ((ChatSession) -> Void)? = nil
     var onNewChat: (() -> Void)? = nil
     var onDeleteSession: ((ChatSession) -> Void)? = nil
+    var onSidebarAppear: (() -> Void)? = nil
     @EnvironmentObject var firebaseManager: FirebaseManager
 
     @State private var renamingSession: ChatSession? = nil
@@ -433,6 +434,9 @@ struct SideBarView: View {
             }
         } message: {
             Text("Are you sure you want to sign out?")
+        }
+        .onAppear {
+            onSidebarAppear?()
         }
     }
 
