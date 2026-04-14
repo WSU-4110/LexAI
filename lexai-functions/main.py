@@ -100,6 +100,30 @@ def _legislation_text_from_metadata(metadata: Any) -> str:
     return ""
 
 
+def _extract_matches(results: Any) -> list[Any]:
+    """Support both dict-like and object-like Pinecone query responses."""
+    if isinstance(results, dict):
+        return results.get("matches", []) or []
+    matches = getattr(results, "matches", None)
+    if matches is not None:
+        return list(matches)
+    if hasattr(results, "to_dict"):
+        return (results.to_dict() or {}).get("matches", []) or []
+    return []
+
+
+def _extract_metadata(match: Any) -> Any:
+    """Support both dict-like and object-like Pinecone match records."""
+    if isinstance(match, dict):
+        return match.get("metadata")
+    metadata = getattr(match, "metadata", None)
+    if metadata is not None:
+        return metadata
+    if hasattr(match, "to_dict"):
+        return (match.to_dict() or {}).get("metadata")
+    return None
+
+
 def query_pinecone(query_embedding: list, top_k: int = 5) -> list:
     _, index = _get_pinecone()
     # Prefer chunk vectors (embed_and_store sets chunk_idx). If index has no chunk_idx, fall back unfiltered.
@@ -111,10 +135,16 @@ def query_pinecone(query_embedding: list, top_k: int = 5) -> list:
         }
         if use_chunk_filter:
             kwargs["filter"] = {"chunk_idx": {"$gte": 0}}
-        results = index.query(**kwargs)
+        try:
+            results = index.query(**kwargs)
+        except Exception:
+            if use_chunk_filter:
+                # Some indexes don't support this metadata filter shape; retry unfiltered.
+                continue
+            raise
         chunks: list[str] = []
-        for match in results.get("matches", []):
-            text = _legislation_text_from_metadata(match.get("metadata"))
+        for match in _extract_matches(results):
+            text = _legislation_text_from_metadata(_extract_metadata(match))
             if text:
                 chunks.append(text)
         if chunks:

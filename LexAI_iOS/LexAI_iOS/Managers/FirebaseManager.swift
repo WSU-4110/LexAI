@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
 
@@ -19,13 +20,19 @@ class FirebaseManager: ObservableObject {
     @Published var isLoading = false
 
     private var authStateListener: AuthStateDidChangeListenerHandle?
-    private let db = Firestore.firestore()
+    private lazy var db = Firestore.firestore()
+    private let isPreview: Bool
 
-    init() {
+    init(isPreview: Bool = false) {
+        let runningInPreviews = ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
+        self.isPreview = isPreview || runningInPreviews
+        guard !self.isPreview else { return }
+        guard FirebaseApp.app() != nil else { return }
+
         authStateListener = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             Task { @MainActor in
                 self?.user = user
-                self?.isAuthenticated = user != nil
+                self?.isAuthenticated = (user?.isAnonymous == false)
             }
         }
         if Auth.auth().currentUser == nil {
@@ -163,7 +170,7 @@ class FirebaseManager: ObservableObject {
 
     // MARK: - Legacy: single-prompt chat history (kept for backwards compatibility)
 
-    func saveChat(prompt: ChatPrompt, completion: @escaping (Bool) -> Void) {
+    func saveChat(prompt: ChatPrompt, completion: @escaping (String?) -> Void) {
         let data: [String: Any] = [
             "prompt": prompt.prompt,
             "documents": prompt.documents,
@@ -172,8 +179,13 @@ class FirebaseManager: ObservableObject {
             "user": prompt.user,
             "timestamp": FieldValue.serverTimestamp()
         ]
-        db.collection("chatHistory").addDocument(data: data) { error in
-            completion(error == nil)
+        var ref: DocumentReference?
+        ref = db.collection("chatHistory").addDocument(data: data) { error in
+            if error != nil {
+                completion(nil)
+                return
+            }
+            completion(ref?.documentID)
         }
     }
 
@@ -184,6 +196,7 @@ class FirebaseManager: ObservableObject {
                 let chats: [ChatPrompt] = snapshot?.documents.compactMap { doc in
                     let d = doc.data()
                     return ChatPrompt(
+                        id: doc.documentID,
                         prompt: d["prompt"] as? String ?? "",
                         documents: d["documents"] as? [String] ?? [],
                         location: d["location"] as? String ?? "",
@@ -269,9 +282,31 @@ class FirebaseManager: ObservableObject {
 // MARK: - Models
 
 struct ChatPrompt {
+    var id: String?
     let prompt: String
     let documents: [String]
     let location: String
     let language: String
     let user: String
+
+    var previewTitle: String {
+        let firstLine = prompt
+            .split(separator: "\n", maxSplits: 1, omittingEmptySubsequences: false)
+            .first
+            .map(String.init) ?? prompt
+
+        let cleaned: String
+        if firstLine.hasPrefix("User: ") {
+            cleaned = String(firstLine.dropFirst("User: ".count))
+        } else {
+            cleaned = firstLine
+        }
+
+        let words = cleaned.split(whereSeparator: { $0.isWhitespace })
+        guard !words.isEmpty else { return "Conversation" }
+
+        let maxWords = 8
+        let title = words.prefix(maxWords).joined(separator: " ")
+        return words.count > maxWords ? title + "..." : title
+    }
 }

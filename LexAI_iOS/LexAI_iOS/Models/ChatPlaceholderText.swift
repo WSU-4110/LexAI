@@ -10,15 +10,15 @@ enum ChatPlaceholderText {
     static func placeholder(forSelectedLanguage language: String) -> String {
         switch language {
         case "Spanish":
-            return "Mensaje..."
+            return "Haz una pregunta sobre una ley..."
         case "French":
-            return "Message..."
+            return "Posez une question sur une loi..."
         case "Arabic":
-            return "رسالة..."
+            return "اطرح سؤالا حول قانون..."
         case "German":
-            return "Nachricht..."
+            return "Stellen Sie eine Frage zu einem Gesetz..."
         default:
-            return "Message..."
+            return "Ask a question about a law..."
         }
     }
 }

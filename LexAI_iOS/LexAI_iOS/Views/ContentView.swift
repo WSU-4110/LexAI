@@ -15,6 +15,7 @@ struct ContentView: View {
         Group {
             if authManager.isAuthenticated {
                 HomeView()
+                    .environmentObject(authManager)
             } else {
                 AuthView()
                     .environmentObject(authManager)
