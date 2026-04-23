@@ -6,7 +6,10 @@
 //
 import SwiftUI
 
+/// Shows a 3-dot typing indicator while LexAI is generating a reply.
+/// Uses staggered `.easeInOut` animations on three circles that repeat indefinitely.
 struct ThinkingBubbleView: View {
+    /// Toggles the pulsing dots and is set to `true` in `onAppear`.
     @State private var animating = false
 
     var body: some View {

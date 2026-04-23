@@ -1,11 +1,7 @@
-"""Firebase callable entrypoint for LexAI chat.
+"""Firebase Cloud Function backend for LexAI.
 
-Pipeline: optional translation of user + history into English, embed the English prompt,
-retrieve Michigan legislation chunks from Pinecone, call the English-only RunPod legal
-model, then translate the assistant reply back to the client's UI language when needed.
-
-Pinecone is initialized lazily so deploy-time import/discovery does not require
-``PINECONE_API_KEY`` until a request actually runs.
+Implements the RAG pipeline: retrieve legal context from Pinecone and
+generate answers through the RunPod-hosted model.
 """
 
 import os
@@ -73,6 +69,13 @@ def _get_pinecone() -> tuple[Pinecone, Any]:
 
 
 def embed_query(query_text: str) -> list:
+    """Convert user text into an embedding vector.
+
+    Args:
+        query_text: Raw query text.
+    Returns:
+        List of float values for Pinecone search.
+    """
     pc, _ = _get_pinecone()
     embeddings_response = pc.inference.embed(
         model=EMBED_MODEL,
@@ -125,6 +128,14 @@ def _extract_metadata(match: Any) -> Any:
 
 
 def query_pinecone(query_embedding: list, top_k: int = 5) -> list:
+    """Fetch top legislation chunks from Pinecone.
+
+    Args:
+        query_embedding: Embedding vector for lookup.
+        top_k: Number of matches to retrieve.
+    Returns:
+        List of chunk text strings from top metadata matches.
+    """
     _, index = _get_pinecone()
     # Prefer chunk vectors (embed_and_store sets chunk_idx). If index has no chunk_idx, fall back unfiltered.
     for use_chunk_filter in (True, False):
@@ -155,7 +166,13 @@ def query_pinecone(query_embedding: list, top_k: int = 5) -> list:
 
 
 def call_runpod(messages: list) -> str:
-    """POST to RunPod serverless ``/run``, then poll ``/status`` until COMPLETED or timeout."""
+    """Call RunPod chat completion and return generated text.
+
+    Args:
+        messages: OpenAI-style role/content messages.
+    Returns:
+        Generated text or an error string after polling for completion.
+    """
     endpoint_id = (os.environ.get("RUNPOD_ENDPOINT_ID") or "").strip()
     runpod_key = (os.environ.get("RUNPOD_API_KEY") or "").strip()
     if not endpoint_id:
@@ -173,6 +190,8 @@ def call_runpod(messages: list) -> str:
             "input": {
                 "openai_route": "/v1/chat/completions",
                 "openai_input": {
+                    # Fine-tuned LLaMA 3 8B via QLoRA (4-bit NF4 + LoRA adapters)
+                    # on Michigan legal Q&A + IDK examples, then merged for RunPod.
                     "model": "hbalkhafaji/llama3-8b-legal-merged",
                     "messages": messages,
                     "max_tokens": 1024,
@@ -222,9 +241,12 @@ def call_runpod(messages: list) -> str:
     secrets=[OPENAI_API_KEY, PINECONE_API_KEY, RUNPOD_API_KEY],
 )
 def chat(req: https_fn.CallableRequest) -> dict:
-    """HTTPS callable: ``req.data`` may include ``prompt``, ``chat_history``, ``language`` (default ``en``).
+    """Handle Firebase callable chat requests.
 
-    Returns ``{"response": str}`` on success or ``{"error": str}`` on validation/runtime failure.
+    Args:
+        req: Request with `prompt` and optional `chat_history`/`language` in `req.data`.
+    Returns:
+        `{"response": text}` on success or `{"error": message}` on failure.
     """
     try:
         prompt = req.data.get("prompt", "")
@@ -244,6 +266,8 @@ def chat(req: https_fn.CallableRequest) -> dict:
 
         context = "\n\n---\n\n".join(relevant_chunks)
 
+        # This prompt line reinforces fine-tuned IDK/unlearning behavior so the
+        # model declines out-of-scope questions when excerpts are insufficient.
         system_message = {
             "role": "system",
             "content": (
