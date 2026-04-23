@@ -23,6 +23,7 @@ Step 2: node.js | https://nodejs.org/en/
 Step 3: Git | https://git-scm.com/downloads
 Step 4: Python 3.9+ | python.org/downloads
 Step 5: Request to be added as a FireBase project member and download the GoogleService-Info.plist
+Step 6: You'll need an OPENAI key, our Pinecone VectorDB key, and Runpods API key
 
 Instructions to build and Install the Software
 Step 1: Verify you have all prerequisite and pre-installations to build the project.
