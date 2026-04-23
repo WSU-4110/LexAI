@@ -19,6 +19,8 @@ class FirebaseManager: ObservableObject {
     @Published var errorMessage: String?
     @Published var isLoading = false
 
+    /// Listens for Firebase auth changes and updates published state.
+    /// Removed in `deinit` to avoid stale callbacks.
     private var authStateListener: AuthStateDidChangeListenerHandle?
     private lazy var db = Firestore.firestore()
     private let isPreview: Bool
@@ -35,6 +37,8 @@ class FirebaseManager: ObservableObject {
                 self?.isAuthenticated = (user?.isAnonymous == false)
             }
         }
+        // Keeps a valid auth token available for callable functions
+        // before the user performs explicit account auth.
         if Auth.auth().currentUser == nil {
             Task { @MainActor in
                 do {
@@ -223,6 +227,10 @@ class FirebaseManager: ObservableObject {
 
     // MARK: - Auth
 
+    /// Creates a new Firebase Auth account with email/password.
+    /// On success it sets `user` and `isAuthenticated`; on failure it maps errors.
+    /// - Parameter email: Email for the new account.
+    /// - Parameter password: Password for the new account.
     func signUp(email: String, password: String) async {
         isLoading = true
         errorMessage = nil
@@ -237,6 +245,10 @@ class FirebaseManager: ObservableObject {
     }
 
     @MainActor
+    /// Signs in an existing Firebase user with email/password.
+    /// Updates `user` and `isAuthenticated`; maps failures to friendly messages.
+    /// - Parameter email: Account email.
+    /// - Parameter password: Account password.
     func signIn(email: String, password: String) async {
         isLoading = true
         errorMessage = nil
@@ -251,6 +263,8 @@ class FirebaseManager: ObservableObject {
     }
 
     @MainActor
+    /// Signs out the current user and clears auth state.
+    /// Setting `user = nil` and `isAuthenticated = false` routes back to `AuthView`.
     func signOut() {
         do {
             try Auth.auth().signOut()
@@ -261,6 +275,10 @@ class FirebaseManager: ObservableObject {
         }
     }
 
+    /// Converts Firebase Auth errors into user-friendly UI text.
+    /// Maps common `AuthErrorCode` values and falls back to localized descriptions.
+    /// - Parameter error: Firebase auth error to convert.
+    /// - Returns: Message safe to show in UI.
     private func mapFirebaseError(_ error: Error) -> String {
         let nsError = error as NSError
         guard let errorCode = AuthErrorCode(rawValue: nsError.code) else {

@@ -22,6 +22,8 @@ struct ChatView: View {
     @State private var inputText: String = ""
     @State private var showScanDocuments = false
     @State private var showFilePicker = false
+    // Tracks when a model response is in progress.
+    // Used for ThinkingBubbleView visibility and send-button disabling.
     @State private var isAwaitingReply = false
     @EnvironmentObject var firebaseManager: FirebaseManager
     @Environment(\.scenePhase) private var scenePhase
@@ -101,6 +103,8 @@ struct ChatView: View {
                     }
 
                     if isAwaitingReply {
+                        // Shows typing animation while waiting for LexAI.
+                        // Fades/scales out when the response is appended.
                         ThinkingBubbleView()
                             .transition(.opacity.combined(with: .scale(scale: 0.8)))
                     }
